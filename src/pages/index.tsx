@@ -13,7 +13,7 @@ const IndexPage = () => {
       <section className="featured">
         <div className="container">
           <article
-            style={{ backgroundImage: "url(/images/featured-1.jpg)" }}
+            style={{ backgroundImage: "url(/images/uoftcampusimg1.png)" }}
             className="featured-item featured-item-large"
           >
             <div className="featured-item__content">
@@ -25,7 +25,7 @@ const IndexPage = () => {
           </article>
 
           <article
-            style={{ backgroundImage: "url(/images/featured-2.jpg)" }}
+            style={{ backgroundImage: "url(/images/uoftimg2.jpg)" }}
             className="featured-item featured-item-small-first"
           >
             <div className="featured-item__content">

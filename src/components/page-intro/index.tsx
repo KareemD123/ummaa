@@ -10,11 +10,11 @@ const PageIntro = () => {
         <SwiperSlide>
           <div
             className="page-intro__slide"
-            style={{ backgroundImage: "url('/images/slide-1.jpg')" }}
+            style={{ backgroundImage: "url('/images/uoftimg3.jpg')" }}
           >
             <div className="container">
               <div className="page-intro__slide__content">
-                <h2>Connecting Muslim Alumni Across Generations</h2>
+                <h3>Connecting Muslim Alumni Across Generations</h3>
                 <a href="/register" className="btn-shop">
                   <i className="icon-right" />
                   Join UTMAA
@@ -27,11 +27,11 @@ const PageIntro = () => {
         <SwiperSlide>
           <div
             className="page-intro__slide"
-            style={{ backgroundImage: "url('/images/slide-2.jpg')" }}
+            style={{ backgroundImage: "url('/images/slide-1.jpg')" }}
           >
             <div className="container">
               <div className="page-intro__slide__content">
-                <h2>Professional Excellence Through Community</h2>
+                <h3>Professional Excellence Through Community</h3>
                 <a href="/events" className="btn-shop">
                   <i className="icon-right" />
                   View Events

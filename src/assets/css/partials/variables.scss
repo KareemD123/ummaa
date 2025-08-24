@@ -1,20 +1,20 @@
 :root {
-  // UTMAA Brand Colors
-  --color-primary: #116466;        // Deep Teal
-  --color-secondary: #31708e;      // University Blue
-  --color-accent: #fff500;         // Warm Gold
-  --color-dark: #212a31;           // Charcoal
-  --color-light: #d3d9d4;          // Light Gray
-  --color-supporting: #687864;     // Sage Green
+  // UTMAA Brand Colors - Grey & Blue Emphasis with Gold Accents
+  --color-primary: #31708e;        // University Blue (primary focus)
+  --color-secondary: #d3d9d4;      // Light Gray (secondary focus)
+  --color-accent: #fff500;         // Warm Gold (accent highlights)
+  --color-dark: #687864;           // Sage Green (dark text)
+  --color-light: #212a31;          // Charcoal (contrast backgrounds)
+  --color-supporting: #116466;     // Deep Teal (supporting elements)
   
-  // Legacy color mappings for compatibility
-  --color-orange: #fff500;         // Map to gold accent
-  --color-orange-light: #d3d9d4;   // Map to light gray
-  --color-black: #212a31;          // Map to charcoal
-  --color-text: #687864;           // Map to sage green
+  // Legacy color mappings for compatibility - Updated for grey/blue theme
+  --color-orange: #fff500;         // Gold accent for buttons/highlights
+  --color-orange-light: #31708e;   // University Blue for light accents
+  --color-black: #687864;          // Sage Green for main text
+  --color-text: #212a31;           // Charcoal for primary text
   --color-white: #FFFFFF;
-  --color-gray: #687864;           // Map to sage green
-  --color-red: #116466;            // Map to primary teal
+  --color-gray: #d3d9d4;           // Light Gray for backgrounds
+  --color-red: #31708e;            // University Blue for alerts/emphasis
 }
 
 @mixin inputPlaceholder() {

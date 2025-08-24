@@ -95,7 +95,7 @@ const Footer = () => {
 
       <div className="site-footer__bottom">
         <div className="container">
-          <p>© 2025 University of Toronto Muslim Alumni Association. ALL RIGHTS RESERVED.</p>
+          <p>© 2025 University of Toronto Muslim Alumni Association. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
