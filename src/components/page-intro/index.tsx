@@ -27,7 +27,7 @@ const PageIntro = () => {
         <SwiperSlide>
           <div
             className="page-intro__slide"
-            style={{ backgroundImage: "url('/images/slide-1.jpg')" }}
+            style={{ backgroundImage: "url('/images/UofTcampus.avif')" }}
           >
             <div className="container">
               <div className="page-intro__slide__content">
