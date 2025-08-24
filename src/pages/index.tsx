@@ -61,8 +61,9 @@ const IndexPage = () => {
               <div className="data-item__content">
                 <h4>Professional Excellence</h4>
                 <p>
-                  Connecting Muslim alumni across all faculties and decades to foster
-                  strong professional networks rooted in academic excellence.
+                  Connecting Muslim alumni across all faculties and decades to
+                  foster strong professional networks rooted in academic
+                  excellence.
                 </p>
               </div>
             </li>

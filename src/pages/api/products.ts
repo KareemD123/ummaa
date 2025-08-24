@@ -4,8 +4,8 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import members from "../../utils/data/members";
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.method !== 'GET') {
-    return res.status(405).json({ error: 'Method not allowed' });
+  if (req.method !== "GET") {
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
   try {
@@ -15,9 +15,9 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
         res.status(200).json(members);
       }
     }, 800);
-  } catch (error) {
+  } catch {
     if (!res.headersSent) {
-      res.status(500).json({ error: 'Internal server error' });
+      res.status(500).json({ error: "Internal server error" });
     }
   }
 };

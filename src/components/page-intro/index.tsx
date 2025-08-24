@@ -65,7 +65,9 @@ const PageIntro = () => {
               <i className="icon-cash" />
               <div className="data-item__content">
                 <h4>Student Support</h4>
-                <p>Mentorship and scholarship opportunities for current students</p>
+                <p>
+                  Mentorship and scholarship opportunities for current students
+                </p>
               </div>
             </li>
           </ul>

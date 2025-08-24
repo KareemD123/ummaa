@@ -17,8 +17,8 @@ export const members = [
     achievements: [
       "Chief of Cardiology at Toronto General Hospital",
       "Published 50+ peer-reviewed research papers",
-      "Recipient of Ontario Medical Excellence Award 2023"
-    ]
+      "Recipient of Ontario Medical Excellence Award 2023",
+    ],
   },
   {
     id: "2",
@@ -38,8 +38,8 @@ export const members = [
     achievements: [
       "Founded TechNova Solutions (valued at $50M)",
       "Forbes 30 Under 30 recipient",
-      "Mentor to 20+ Muslim tech entrepreneurs"
-    ]
+      "Mentor to 20+ Muslim tech entrepreneurs",
+    ],
   },
   {
     id: "3",
@@ -59,8 +59,8 @@ export const members = [
     achievements: [
       "Director of U of T Interfaith Programs",
       "Author of 3 books on Islamic studies",
-      "Recipient of Teaching Excellence Award"
-    ]
+      "Recipient of Teaching Excellence Award",
+    ],
   },
   {
     id: "4",
@@ -80,8 +80,8 @@ export const members = [
     achievements: [
       "Senior Partner at Bay Street Legal Partners",
       "Expert in Islamic finance law",
-      "Pro bono legal services for Muslim community"
-    ]
+      "Pro bono legal services for Muslim community",
+    ],
   },
   {
     id: "5",
@@ -101,8 +101,8 @@ export const members = [
     achievements: [
       "Lead scientist on 3 FDA-approved cancer drugs",
       "Published 40+ research papers",
-      "Mentor for Women in STEM program"
-    ]
+      "Mentor for Women in STEM program",
+    ],
   },
   {
     id: "6",
@@ -122,9 +122,9 @@ export const members = [
     achievements: [
       "Managing Director at RBC Capital Markets",
       "Pioneer in Canadian Islamic finance",
-      "Board member of Islamic Finance Council"
-    ]
-  }
+      "Board member of Islamic Finance Council",
+    ],
+  },
 ];
 
 export default members;

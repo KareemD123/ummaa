@@ -39,11 +39,11 @@ const Header = ({ isErrorPage }: HeaderType) => {
       headerClass();
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Cleanup event listener
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [router.pathname, isErrorPage]);
 

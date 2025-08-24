@@ -5,7 +5,8 @@ export const events = [
     date: "2024-04-15",
     time: "6:00 PM - 9:00 PM",
     location: "Hart House, University of Toronto",
-    description: "Join us for our annual community Iftar dinner, bringing together Muslim alumni, current students, and faculty for an evening of networking, reflection, and community building during the holy month of Ramadan.",
+    description:
+      "Join us for our annual community Iftar dinner, bringing together Muslim alumni, current students, and faculty for an evening of networking, reflection, and community building during the holy month of Ramadan.",
     category: "Community",
     image: "/images/featured-1.jpg",
     capacity: 150,
@@ -19,8 +20,8 @@ export const events = [
       "7:00 PM - Iftar & Dinner",
       "8:00 PM - Keynote Speech",
       "8:30 PM - Community Updates",
-      "9:00 PM - Closing"
-    ]
+      "9:00 PM - Closing",
+    ],
   },
   {
     id: "2",
@@ -28,7 +29,8 @@ export const events = [
     date: "2024-05-20",
     time: "7:00 PM - 8:30 PM",
     location: "Virtual Event (Zoom)",
-    description: "Explore career opportunities in technology with successful Muslim alumni who are leading innovation in AI, fintech, and healthcare technology. Perfect for current students and recent graduates.",
+    description:
+      "Explore career opportunities in technology with successful Muslim alumni who are leading innovation in AI, fintech, and healthcare technology. Perfect for current students and recent graduates.",
     category: "Professional Development",
     image: "/images/featured-2.jpg",
     capacity: 200,
@@ -40,8 +42,8 @@ export const events = [
       "7:00 PM - Introduction & Panelist Presentations",
       "7:30 PM - Q&A Session",
       "8:00 PM - Networking Breakout Rooms",
-      "8:30 PM - Closing Remarks"
-    ]
+      "8:30 PM - Closing Remarks",
+    ],
   },
   {
     id: "3",
@@ -49,7 +51,8 @@ export const events = [
     date: "2024-06-18",
     time: "12:00 PM - 4:00 PM",
     location: "High Park, Toronto",
-    description: "Celebrate Eid al-Adha with the UTMAA community! Family-friendly event with food, activities for children, and opportunities to connect with fellow alumni and their families.",
+    description:
+      "Celebrate Eid al-Adha with the UTMAA community! Family-friendly event with food, activities for children, and opportunities to connect with fellow alumni and their families.",
     category: "Community",
     image: "/images/featured-3.jpg",
     capacity: 300,
@@ -63,8 +66,8 @@ export const events = [
       "1:00 PM - BBQ & Lunch",
       "2:00 PM - Children's Activities",
       "3:00 PM - Community Games",
-      "4:00 PM - Cleanup & Farewell"
-    ]
+      "4:00 PM - Cleanup & Farewell",
+    ],
   },
   {
     id: "4",
@@ -72,7 +75,8 @@ export const events = [
     date: "2024-07-25",
     time: "6:30 PM - 9:00 PM",
     location: "Toronto General Hospital Conference Center",
-    description: "Connect with Muslim healthcare professionals across various specialties. Discuss career advancement, research opportunities, and community health initiatives.",
+    description:
+      "Connect with Muslim healthcare professionals across various specialties. Discuss career advancement, research opportunities, and community health initiatives.",
     category: "Professional Development",
     image: "/images/slide-1.jpg",
     capacity: 80,
@@ -85,8 +89,8 @@ export const events = [
       "7:00 PM - Networking Dinner",
       "8:00 PM - Career Panel Discussion",
       "8:30 PM - Open Networking",
-      "9:00 PM - Closing"
-    ]
+      "9:00 PM - Closing",
+    ],
   },
   {
     id: "5",
@@ -94,7 +98,8 @@ export const events = [
     date: "2024-09-14",
     time: "6:00 PM - 10:00 PM",
     location: "Fairmont Royal York Hotel, Toronto",
-    description: "Our premier fundraising event to support the UTMAA Scholarship Fund, providing financial assistance to deserving Muslim students at the University of Toronto.",
+    description:
+      "Our premier fundraising event to support the UTMAA Scholarship Fund, providing financial assistance to deserving Muslim students at the University of Toronto.",
     category: "Fundraising",
     image: "/images/slide-2.jpg",
     capacity: 250,
@@ -108,8 +113,8 @@ export const events = [
       "8:00 PM - Welcome & Mission Presentation",
       "8:30 PM - Scholarship Recipients Testimonials",
       "9:00 PM - Fundraising Auction",
-      "10:00 PM - Closing & Thank You"
-    ]
+      "10:00 PM - Closing & Thank You",
+    ],
   },
   {
     id: "6",
@@ -117,7 +122,8 @@ export const events = [
     date: "2024-10-08",
     time: "7:00 PM - 8:30 PM",
     location: "Virtual Event (Zoom)",
-    description: "Launch of our structured mentorship program connecting experienced alumni with current students and recent graduates. Learn about program structure, expectations, and how to participate.",
+    description:
+      "Launch of our structured mentorship program connecting experienced alumni with current students and recent graduates. Learn about program structure, expectations, and how to participate.",
     category: "Student Support",
     image: "/images/products/product-1.jpg",
     capacity: 100,
@@ -131,9 +137,9 @@ export const events = [
       "7:30 PM - Matching Process Explanation",
       "7:45 PM - Success Stories",
       "8:00 PM - Q&A Session",
-      "8:30 PM - Next Steps & Registration"
-    ]
-  }
+      "8:30 PM - Next Steps & Registration",
+    ],
+  },
 ];
 
 export default events;
