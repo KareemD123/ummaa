@@ -2,4 +2,4 @@ const dev = process.env.NODE_ENV !== "production";
 
 export const server = dev
   ? "http://localhost:3000"
-  : process.env.NEXT_PUBLIC_API_URL || "https://utmaa-website.vercel.app";
+  : process.env.NEXT_PUBLIC_API_URL || "https://ummaa.org";
