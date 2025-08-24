@@ -5,7 +5,7 @@ import ProductsFilter from "@/components/products-filter";
 
 import Layout from "../layouts/Main";
 
-const Products = () => (
+const Members = () => (
   <Layout>
     <Breadcrumb />
     <section className="products-page">
@@ -18,4 +18,4 @@ const Products = () => (
   </Layout>
 );
 
-export default Products;
+export default Members;

@@ -17,9 +17,9 @@ const IndexPage = () => {
             className="featured-item featured-item-large"
           >
             <div className="featured-item__content">
-              <h3>New arrivals are now in!</h3>
-              <a href="#" className="btn btn--rounded">
-                Show Collection
+              <h3>Join Our Growing Community</h3>
+              <a href="/register" className="btn btn--rounded">
+                Become a Member
               </a>
             </div>
           </article>
@@ -29,9 +29,9 @@ const IndexPage = () => {
             className="featured-item featured-item-small-first"
           >
             <div className="featured-item__content">
-              <h3>Basic t-shirts $29,99</h3>
-              <a href="#" className="btn btn--rounded">
-                More details
+              <h3>Upcoming Events</h3>
+              <a href="/events" className="btn btn--rounded">
+                View Calendar
               </a>
             </div>
           </article>
@@ -41,9 +41,9 @@ const IndexPage = () => {
             className="featured-item featured-item-small"
           >
             <div className="featured-item__content">
-              <h3>Sale this summer</h3>
-              <a href="#" className="btn btn--rounded">
-                VIEW ALL
+              <h3>Mentorship Program</h3>
+              <a href="/mentorship" className="btn btn--rounded">
+                GET INVOLVED
               </a>
             </div>
           </article>
@@ -53,17 +53,17 @@ const IndexPage = () => {
       <section className="section">
         <div className="container">
           <header className="section__intro">
-            <h4>Why should you choose us?</h4>
+            <h4>Our Mission & Values</h4>
           </header>
 
           <ul className="shop-data-items">
             <li>
               <i className="icon-shipping" />
               <div className="data-item__content">
-                <h4>Free Shipping</h4>
+                <h4>Professional Excellence</h4>
                 <p>
-                  All purchases over $199 are eligible for free shipping via
-                  USPS First Class Mail.
+                  Connecting Muslim alumni across all faculties and decades to foster
+                  strong professional networks rooted in academic excellence.
                 </p>
               </div>
             </li>
@@ -71,10 +71,10 @@ const IndexPage = () => {
             <li>
               <i className="icon-payment" />
               <div className="data-item__content">
-                <h4>Easy Payments</h4>
+                <h4>Student Support</h4>
                 <p>
-                  All payments are processed instantly over a secure payment
-                  protocol.
+                  Supporting current Muslim students through mentorship, career
+                  guidance, and scholarship opportunities.
                 </p>
               </div>
             </li>
@@ -82,10 +82,10 @@ const IndexPage = () => {
             <li>
               <i className="icon-cash" />
               <div className="data-item__content">
-                <h4>Money-Back Guarantee</h4>
+                <h4>Community Building</h4>
                 <p>
-                  If an item arrived damaged or you've changed your mind, you
-                  can send it back for a full refund.
+                  Creating meaningful connections among alumni who share common
+                  values, experiences, and Islamic principles.
                 </p>
               </div>
             </li>
@@ -93,10 +93,10 @@ const IndexPage = () => {
             <li>
               <i className="icon-materials" />
               <div className="data-item__content">
-                <h4>Finest Quality</h4>
+                <h4>Social Responsibility</h4>
                 <p>
-                  Designed to last, each of our products has been crafted with
-                  the finest materials.
+                  Contributing positively to Canadian society through community
+                  engagement, interfaith dialogue, and service.
                 </p>
               </div>
             </li>
@@ -104,7 +104,7 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <ProductsFeatured />
+      {/* <ProductsFeatured /> */}
       <Subscribe />
       <Footer />
     </Layout>

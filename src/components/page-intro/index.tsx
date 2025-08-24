@@ -14,10 +14,10 @@ const PageIntro = () => {
           >
             <div className="container">
               <div className="page-intro__slide__content">
-                <h2>Sale of the summer collection</h2>
-                <a href="#" className="btn-shop">
+                <h2>Connecting Muslim Alumni Across Generations</h2>
+                <a href="/register" className="btn-shop">
                   <i className="icon-right" />
-                  Shop now
+                  Join UTMAA
                 </a>
               </div>
             </div>
@@ -31,10 +31,10 @@ const PageIntro = () => {
           >
             <div className="container">
               <div className="page-intro__slide__content">
-                <h2>Make your house into a home</h2>
-                <a href="#" className="btn-shop">
+                <h2>Professional Excellence Through Community</h2>
+                <a href="/events" className="btn-shop">
                   <i className="icon-right" />
-                  Shop now
+                  View Events
                 </a>
               </div>
             </div>
@@ -48,24 +48,24 @@ const PageIntro = () => {
             <li>
               <i className="icon-shipping" />
               <div className="data-item__content">
-                <h4>Free Shipping</h4>
-                <p>On purchases over $199</p>
+                <h4>Growing Network</h4>
+                <p>100+ Muslim alumni across all U of T faculties</p>
               </div>
             </li>
 
             <li>
               <i className="icon-shipping" />
               <div className="data-item__content">
-                <h4>99% Satisfied Customers</h4>
-                <p>Our clients' opinions speak for themselves</p>
+                <h4>Professional Excellence</h4>
+                <p>Our members lead in healthcare, tech, finance, and law</p>
               </div>
             </li>
 
             <li>
               <i className="icon-cash" />
               <div className="data-item__content">
-                <h4>Originality Guaranteed</h4>
-                <p>30 days warranty for each product from our store</p>
+                <h4>Student Support</h4>
+                <p>Mentorship and scholarship opportunities for current students</p>
               </div>
             </li>
           </ul>

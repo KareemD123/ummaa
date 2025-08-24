@@ -1,5 +1,5 @@
 {
-  "name": "next-ecommerce",
+  "name": "utmaa-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,7 +12,10 @@
   "keywords": [
     "react",
     "reactjs",
-    "ecommerce",
+    "alumni",
+    "university",
+    "toronto",
+    "muslim",
     "nextjs",
     "next"
   ],

@@ -1,10 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
 import useOnClickOutside from "use-onclickoutside";
-
-import type { RootState } from "@/store";
 
 import Logo from "../../assets/icons/logo";
 
@@ -14,7 +11,6 @@ type HeaderType = {
 
 const Header = ({ isErrorPage }: HeaderType) => {
   const router = useRouter();
-  const { cartItems } = useSelector((state: RootState) => state.cart);
   const arrayPaths = ["/"];
 
   const [onTop, setOnTop] = useState(
@@ -39,10 +35,17 @@ const Header = ({ isErrorPage }: HeaderType) => {
     }
 
     headerClass();
-    window.onscroll = function () {
+    const handleScroll = () => {
       headerClass();
     };
-  }, []);
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup event listener
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [router.pathname, isErrorPage]);
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -62,18 +65,19 @@ const Header = ({ isErrorPage }: HeaderType) => {
         <Link href="/">
           <h1 className="site-logo">
             <Logo />
-            E-Shop
+            UMMAA
           </h1>
         </Link>
         <nav
           ref={navRef}
           className={`site-nav ${menuOpen ? "site-nav--open" : ""}`}
         >
-          <Link href="/products">Products</Link>
-          <a href="#">Inspiration</a>
-          <a href="#">Rooms</a>
+          <Link href="/about">About</Link>
+          <Link href="/events">Events</Link>
+          <Link href="/members">Members</Link>
+          <Link href="/resources">Resources</Link>
           <button className="site-nav__btn">
-            <p>Account</p>
+            <p>Member Portal</p>
           </button>
         </nav>
 
@@ -90,7 +94,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
               <input
                 type="text"
                 name="search"
-                placeholder="Enter the product you are looking for"
+                placeholder="Search members, events, or resources"
               />
             </form>
             <i
@@ -98,19 +102,17 @@ const Header = ({ isErrorPage }: HeaderType) => {
               className="icon-search"
             />
           </button>
-          <Link href="/cart" legacyBehavior>
+          {/* <Link href="/register" legacyBehavior>
             <button className="btn-cart">
               <i className="icon-cart" />
-              {cartItems.length > 0 && (
-                <span className="btn-cart__count">{cartItems.length}</span>
-              )}
+              <span>Join</span>
             </button>
           </Link>
           <Link href="/login" legacyBehavior>
             <button className="site-header__btn-avatar">
               <i className="icon-avatar" />
             </button>
-          </Link>
+          </Link> */}
           <button
             onClick={() => setMenuOpen(true)}
             className="site-header__btn-menu"

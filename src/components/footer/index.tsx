@@ -7,11 +7,12 @@ const Footer = () => {
         <div className="site-footer__top">
           <div className="site-footer__description">
             <h6>
-              <Logo /> <span>E</span>-Shop
+              <Logo /> <span>UMMAA</span>
             </h6>
             <p>
-              House My Brand designs clothing for the young, the old & everyone
-              in between – but most importantly, for the fashionable
+              University of Toronto Muslim Alumni Association connects Muslim
+              graduates across all faculties, fostering professional networks
+              rooted in shared faith and academic excellence.
             </p>
             <ul className="site-footer__social-networks">
               <li>
@@ -44,48 +45,48 @@ const Footer = () => {
 
           <div className="site-footer__links">
             <ul>
-              <li>Shopping online</li>
+              <li>Get Involved</li>
               <li>
-                <a href="#">Order Status</a>
+                <a href="/events">Upcoming Events</a>
               </li>
               <li>
-                <a href="#">Shipping and Delivery</a>
+                <a href="/mentorship">Mentorship Program</a>
               </li>
               <li>
-                <a href="#">Returns</a>
+                <a href="/volunteer">Volunteer Opportunities</a>
               </li>
               <li>
-                <a href="#">Payment options</a>
+                <a href="/scholarships">Scholarship Fund</a>
               </li>
               <li>
-                <a href="#">Contact Us</a>
+                <a href="/contact">Contact Us</a>
               </li>
             </ul>
             <ul>
-              <li>Information</li>
+              <li>Resources</li>
               <li>
-                <a href="#">Gift Cards</a>
+                <a href="/members">Member Directory</a>
               </li>
               <li>
-                <a href="#">Find a store</a>
+                <a href="/career">Career Resources</a>
               </li>
               <li>
-                <a href="#">Newsletter</a>
+                <a href="/newsletter">Newsletter</a>
               </li>
               <li>
-                <a href="#">Bacome a member</a>
+                <a href="/register">Become a Member</a>
               </li>
               <li>
-                <a href="#">Site feedback</a>
+                <a href="/feedback">Site Feedback</a>
               </li>
             </ul>
             <ul>
               <li>Contact</li>
               <li>
-                <a href="#">store@uikit.com</a>
+                <a href="mailto:info@umaa.org">info@utmaa.org</a>
               </li>
               <li>
-                <a href="#">Hotline: +1 131 138 138</a>
+                <a href="tel:+14161234567">Phone: +1 416 123 4567</a>
               </li>
             </ul>
           </div>
@@ -94,7 +95,7 @@ const Footer = () => {
 
       <div className="site-footer__bottom">
         <div className="container">
-          <p>DESIGN BY ICEO.CO - © 2019. ALL RIGHTS RESERVED.</p>
+          <p>© 2025 University of Toronto Muslim Alumni Association. ALL RIGHTS RESERVED.</p>
         </div>
       </div>
     </footer>

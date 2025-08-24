@@ -2,10 +2,10 @@ import ShoppingCart from "@/components/shopping-cart";
 
 import Layout from "../layouts/Main";
 
-const Products = () => (
+const MembershipRegistration = () => (
   <Layout>
     <ShoppingCart />
   </Layout>
 );
 
-export default Products;
+export default MembershipRegistration;

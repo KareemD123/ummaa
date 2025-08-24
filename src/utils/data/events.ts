@@ -1,0 +1,139 @@
+export const events = [
+  {
+    id: "1",
+    title: "Annual Iftar Dinner 2024",
+    date: "2024-04-15",
+    time: "6:00 PM - 9:00 PM",
+    location: "Hart House, University of Toronto",
+    description: "Join us for our annual community Iftar dinner, bringing together Muslim alumni, current students, and faculty for an evening of networking, reflection, and community building during the holy month of Ramadan.",
+    category: "Community",
+    image: "/images/featured-1.jpg",
+    capacity: 150,
+    registered: 89,
+    price: "Free",
+    organizer: "UTMAA Events Committee",
+    speakers: ["Dr. Sarah Ahmed", "Prof. Aisha Khan"],
+    agenda: [
+      "6:00 PM - Registration & Networking",
+      "6:30 PM - Welcome Remarks",
+      "7:00 PM - Iftar & Dinner",
+      "8:00 PM - Keynote Speech",
+      "8:30 PM - Community Updates",
+      "9:00 PM - Closing"
+    ]
+  },
+  {
+    id: "2",
+    title: "Tech Industry Panel: Muslim Leaders in Innovation",
+    date: "2024-05-20",
+    time: "7:00 PM - 8:30 PM",
+    location: "Virtual Event (Zoom)",
+    description: "Explore career opportunities in technology with successful Muslim alumni who are leading innovation in AI, fintech, and healthcare technology. Perfect for current students and recent graduates.",
+    category: "Professional Development",
+    image: "/images/featured-2.jpg",
+    capacity: 200,
+    registered: 156,
+    price: "Free",
+    organizer: "UTMAA Professional Development Committee",
+    speakers: ["Eng. Omar Hassan", "Dr. Fatima Noor", "Ahmed Malik"],
+    agenda: [
+      "7:00 PM - Introduction & Panelist Presentations",
+      "7:30 PM - Q&A Session",
+      "8:00 PM - Networking Breakout Rooms",
+      "8:30 PM - Closing Remarks"
+    ]
+  },
+  {
+    id: "3",
+    title: "Eid Celebration & Family BBQ",
+    date: "2024-06-18",
+    time: "12:00 PM - 4:00 PM",
+    location: "High Park, Toronto",
+    description: "Celebrate Eid al-Adha with the UTMAA community! Family-friendly event with food, activities for children, and opportunities to connect with fellow alumni and their families.",
+    category: "Community",
+    image: "/images/featured-3.jpg",
+    capacity: 300,
+    registered: 234,
+    price: "$15 per family",
+    organizer: "UTMAA Community Outreach",
+    speakers: [],
+    agenda: [
+      "12:00 PM - Registration & Setup",
+      "12:30 PM - Community Prayer",
+      "1:00 PM - BBQ & Lunch",
+      "2:00 PM - Children's Activities",
+      "3:00 PM - Community Games",
+      "4:00 PM - Cleanup & Farewell"
+    ]
+  },
+  {
+    id: "4",
+    title: "Healthcare Professionals Networking Night",
+    date: "2024-07-25",
+    time: "6:30 PM - 9:00 PM",
+    location: "Toronto General Hospital Conference Center",
+    description: "Connect with Muslim healthcare professionals across various specialties. Discuss career advancement, research opportunities, and community health initiatives.",
+    category: "Professional Development",
+    image: "/images/slide-1.jpg",
+    capacity: 80,
+    registered: 67,
+    price: "$25 per person",
+    organizer: "UTMAA Healthcare Chapter",
+    speakers: ["Dr. Sarah Ahmed"],
+    agenda: [
+      "6:30 PM - Registration & Welcome Reception",
+      "7:00 PM - Networking Dinner",
+      "8:00 PM - Career Panel Discussion",
+      "8:30 PM - Open Networking",
+      "9:00 PM - Closing"
+    ]
+  },
+  {
+    id: "5",
+    title: "Annual Scholarship Fundraising Gala",
+    date: "2024-09-14",
+    time: "6:00 PM - 10:00 PM",
+    location: "Fairmont Royal York Hotel, Toronto",
+    description: "Our premier fundraising event to support the UTMAA Scholarship Fund, providing financial assistance to deserving Muslim students at the University of Toronto.",
+    category: "Fundraising",
+    image: "/images/slide-2.jpg",
+    capacity: 250,
+    registered: 198,
+    price: "$150 per person",
+    organizer: "UTMAA Scholarship Committee",
+    speakers: ["Prof. Aisha Khan", "Barrister Yusuf Ali"],
+    agenda: [
+      "6:00 PM - Cocktail Reception",
+      "7:00 PM - Dinner Service",
+      "8:00 PM - Welcome & Mission Presentation",
+      "8:30 PM - Scholarship Recipients Testimonials",
+      "9:00 PM - Fundraising Auction",
+      "10:00 PM - Closing & Thank You"
+    ]
+  },
+  {
+    id: "6",
+    title: "Mentorship Program Launch",
+    date: "2024-10-08",
+    time: "7:00 PM - 8:30 PM",
+    location: "Virtual Event (Zoom)",
+    description: "Launch of our structured mentorship program connecting experienced alumni with current students and recent graduates. Learn about program structure, expectations, and how to participate.",
+    category: "Student Support",
+    image: "/images/products/product-1.jpg",
+    capacity: 100,
+    registered: 78,
+    price: "Free",
+    organizer: "UTMAA Mentorship Committee",
+    speakers: ["CPA Ahmed Malik", "Eng. Omar Hassan"],
+    agenda: [
+      "7:00 PM - Program Overview",
+      "7:15 PM - Mentor & Mentee Expectations",
+      "7:30 PM - Matching Process Explanation",
+      "7:45 PM - Success Stories",
+      "8:00 PM - Q&A Session",
+      "8:30 PM - Next Steps & Registration"
+    ]
+  }
+];
+
+export default events;

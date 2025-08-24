@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-// member data
-import members from "../../utils/data/members";
+// events data
+import events from "../../utils/data/events";
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== 'GET') {
@@ -12,9 +12,9 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     // fake loading time
     setTimeout(() => {
       if (!res.headersSent) {
-        res.status(200).json(members);
+        res.status(200).json(events);
       }
-    }, 800);
+    }, 500);
   } catch (error) {
     if (!res.headersSent) {
       res.status(500).json({ error: 'Internal server error' });
