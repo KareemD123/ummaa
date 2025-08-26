@@ -26,6 +26,13 @@ export default class CustomDocument extends Document<DocumentProps> {
     return (
       <Html lang="en">
         <Head>
+          {/* Favicon */}
+          <link
+            rel="icon"
+            type="image/svg+xml"
+            href="/images/logos/UMMAA-Logo-SVG.svg"
+          />
+          <link rel="icon" type="image/x-icon" href="/favicon.ico" />
           {/* We only want to add the scripts if in production */}
           {isProduction && (
             <>

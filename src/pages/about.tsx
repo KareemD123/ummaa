@@ -367,52 +367,6 @@ const About = () => {
                 </div>
               </div>
             </div>
-
-            <div
-              className="membership-section"
-              style={{
-                backgroundColor: "var(--color-primary)",
-                color: "white",
-                padding: "40px",
-                borderRadius: "15px",
-                textAlign: "center",
-              }}
-            >
-              <h2 style={{ marginBottom: "20px" }}>Join Our Community</h2>
-              <p
-                style={{
-                  fontSize: "16px",
-                  lineHeight: "1.6",
-                  marginBottom: "30px",
-                }}
-              >
-                Our target membership includes Muslim alumni from all U of T
-                campuses (St. George, Mississauga, Scarborough) spanning
-                undergraduate, graduate, and professional programs across all
-                faculties.
-              </p>
-              <button
-                style={{
-                  backgroundColor: "var(--color-accent)",
-                  color: "var(--color-dark)",
-                  padding: "15px 30px",
-                  border: "none",
-                  borderRadius: "25px",
-                  fontSize: "16px",
-                  fontWeight: "600",
-                  cursor: "pointer",
-                  transition: "transform 0.3s ease",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "scale(1.05)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
-                }}
-              >
-                Become a Member
-              </button>
-            </div>
           </div>
         </div>
       </section>

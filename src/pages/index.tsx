@@ -9,6 +9,94 @@ const IndexPage = () => {
     <Layout>
       <PageIntro />
 
+      <section
+        className="section"
+        style={{ padding: "50px 0", backgroundColor: "transparent" }}
+      >
+        <div className="container">
+          <div
+            className="member-stats"
+            style={{
+              padding: "40px 0",
+              textAlign: "center",
+            }}
+          >
+            <h3
+              style={{
+                color: "var(--charcoal)",
+                marginBottom: "30px",
+                fontSize: "24px",
+              }}
+            >
+              Our Community Impact
+            </h3>
+            {/* TODO: Fetch these stats dynamically */}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                gap: "30px",
+              }}
+            >
+              <div>
+                <h4
+                  style={{
+                    color: "var(--university-blue)",
+                    fontSize: "42px",
+                    fontWeight: "600",
+                    marginBottom: "5px",
+                  }}
+                >
+                  150+
+                </h4>
+                <p style={{ color: "var(--charcoal)" }}>Active Alumni</p>
+              </div>
+              <div>
+                <h4
+                  style={{
+                    color: "var(--university-blue)",
+                    fontSize: "42px",
+                    fontWeight: "600",
+                    marginBottom: "5px",
+                  }}
+                >
+                  50+
+                </h4>
+                <p style={{ color: "var(--charcoal)" }}>Available Mentors</p>
+              </div>
+              <div>
+                <h4
+                  style={{
+                    color: "var(--university-blue)",
+                    fontSize: "42px",
+                    fontWeight: "600",
+                    marginBottom: "5px",
+                  }}
+                >
+                  6
+                </h4>
+                <p style={{ color: "var(--charcoal)" }}>
+                  Industries Represented
+                </p>
+              </div>
+              <div>
+                <h4
+                  style={{
+                    color: "var(--university-blue)",
+                    fontSize: "42px",
+                    fontWeight: "600",
+                    marginBottom: "5px",
+                  }}
+                >
+                  15+
+                </h4>
+                <p style={{ color: "var(--charcoal)" }}>Years of Experience</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="featured">
         <div className="container">
           <article
@@ -106,6 +194,44 @@ const IndexPage = () => {
 
       {/* <ProductsFeatured /> */}
       <Subscribe />
+
+      <section className="section">
+        <div className="container">
+          <div
+            className="membership-section"
+            style={{
+              backgroundColor: "var(--light-gray)",
+              padding: "60px",
+              borderRadius: "15px",
+              textAlign: "center",
+              margin: "50px 0",
+            }}
+          >
+            <h2 style={{ color: "var(--charcoal)", marginBottom: "20px" }}>
+              Join Our Community
+            </h2>
+            <p
+              style={{
+                color: "var(--charcoal)",
+                fontSize: "18px",
+                lineHeight: "1.6",
+                marginBottom: "30px",
+                maxWidth: "700px",
+                margin: "0 auto 30px auto",
+              }}
+            >
+              Our target membership includes Muslim alumni from all U of T
+              campuses (St. George, Mississauga, Scarborough) spanning
+              undergraduate, graduate, and professional programs across all
+              faculties.
+            </p>
+            <a href="/register" className="btn btn--rounded btn--yellow">
+              Become a Member
+            </a>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </Layout>
   );

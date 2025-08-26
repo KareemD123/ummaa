@@ -1,12 +1,23 @@
-import SwiperCore, { EffectFade, Navigation } from "swiper";
+import SwiperCore, { Autoplay, EffectFade, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const PageIntro = () => {
-  SwiperCore.use([EffectFade, Navigation]);
+  SwiperCore.use([EffectFade, Navigation, Autoplay]);
 
   return (
     <section className="page-intro">
-      <Swiper navigation effect="fade" className="swiper-wrapper">
+      <Swiper
+        navigation
+        effect="slide"
+        speed={2000}
+        loop={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        className="swiper-wrapper"
+      >
         <SwiperSlide>
           <div
             className="page-intro__slide"
@@ -17,7 +28,7 @@ const PageIntro = () => {
                 <h3>Connecting Muslim Alumni Across Generations</h3>
                 <a href="/register" className="btn-shop">
                   <i className="icon-right" />
-                  Join UTMAA
+                  Join UMMAA
                 </a>
               </div>
             </div>
