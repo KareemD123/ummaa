@@ -206,7 +206,7 @@ h5 {
     margin-right: auto;
   }
 
-  @include breakpoint(tablet-lg) {
+  @include breakpoint(phone) {
     max-width: 980px;
     margin-left: auto;
     margin-right: auto;
@@ -361,6 +361,247 @@ h5 {
   }
 }
 
+// Desktop Navigation Styles
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-left: 10rem;
+  flex-wrap: nowrap;
+  overflow: hidden;
+
+  // Responsive gap adjustments for smaller desktop/tablet screens
+  @media (max-width: 1200px) {
+    gap: 1.5rem;
+    margin-left: 5rem;
+  }
+
+  @media (max-width: 1024px) {
+    gap: 1rem;
+    margin-left: 2rem;
+  }
+
+  @media (max-width: 900px) {
+    gap: 0.5rem;
+    margin-left: 1rem;
+  }
+
+  .nav-item {
+    position: relative;
+
+    &.has-dropdown {
+      .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .dropdown-arrow {
+          width: 16px;
+          height: 16px;
+          transition: transform 0.2s ease;
+        }
+      }
+
+      &:hover .dropdown-arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .nav-link {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+
+    // Responsive padding adjustments
+    @media (max-width: 1200px) {
+      padding: 0.5rem 0.75rem;
+    }
+
+    @media (max-width: 1024px) {
+      padding: 0.5rem 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      padding: 0.5rem 0.25rem;
+      font-size: 0.9rem;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      color: var(--color-primary);
+    }
+  }
+
+  .nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    z-index: 1000;
+
+    &.nav-dropdown--active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-link {
+      display: block;
+      color: var(--color-text);
+      text-decoration: none;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #f0f0f0;
+      transition: color 0.2s ease;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+}
+
+// Mobile Navigation Styles
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background: white;
+  z-index: 999;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+
+  &.mobile-nav--open {
+    right: 0;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  &__logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo-img {
+    height: 80px;
+    width: auto;
+    max-width: 120px;
+  }
+
+  &__close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-text);
+    }
+  }
+
+  &__content {
+    padding: 1rem;
+  }
+}
+
+.mobile-nav-item {
+  margin-bottom: 1rem;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 0;
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+
+  &--dropdown {
+    .dropdown-arrow {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s ease;
+
+      &.dropdown-arrow--active {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.mobile-nav-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+
+  &.mobile-nav-dropdown--active {
+    max-height: 300px;
+  }
+}
+
+.mobile-dropdown-link {
+  display: block;
+  color: var(--color-primary);
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  margin-left: 1rem;
+  border-left: 2px solid #f0f0f0;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: var(--color-primary);
+    border-left-color: var(--color-primary);
+  }
+}
+
 .site-header {
   position: fixed;
   width: 100%;
@@ -402,13 +643,15 @@ h5 {
   .site-header__btn-avatar {
     display: none;
 
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
       display: block;
     }
   }
 
   .site-header__btn-menu {
-    @include breakpoint(tablet-lg) {
+    display: block;
+
+    @include breakpoint(phone) {
       display: none;
     }
   }
@@ -418,14 +661,14 @@ h5 {
     display: flex;
     align-items: center;
 
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
       margin-left: 0;
     }
 
     button {
       margin-left: 15px;
 
-      @include breakpoint(tablet-lg) {
+      @include breakpoint(phone) {
         margin-left: 25px;
       }
     }
@@ -452,7 +695,7 @@ h5 {
     transition: all .3s ease;
     border-left: 1px solid var(--university-blue);
 
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
       position: relative;
       height: auto;
       right: 0;
@@ -468,7 +711,7 @@ h5 {
       font-weight: 500;
       text-align: left;
 
-      @include breakpoint(tablet-lg) {
+      @include breakpoint(phone) {
         display: none;
       }
     }
@@ -486,7 +729,7 @@ h5 {
       text-align: left;
       padding: 15px 18px;
 
-      @include breakpoint(tablet-lg) {
+      @include breakpoint(phone) {
         width: auto;
         padding: 0;
         color: #FFF;
@@ -528,7 +771,7 @@ h5 {
     }
 
     .icon-search {
-      color: var(--university-blue) !important;
+      color: var(--color-secondary) !important;
     }
   }
 
@@ -646,12 +889,12 @@ h5 {
       .search-form {
         top: 0;
 
-        @include breakpoint(tablet-lg) {
+        @include breakpoint(phone) {
           top: auto;
         }
 
         input {
-          @include breakpoint(tablet-lg) {
+          @include breakpoint(phone) {
             border: 1px solid #ABABAB;
           }
         }
@@ -674,7 +917,7 @@ h5 {
     transition: all .3s ease;
     background-color: var(--charcoal);
 
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
       position: static;
       height: auto;
       top: auto;
@@ -686,7 +929,7 @@ h5 {
       cursor: pointer;
       position: absolute;
 
-      @include breakpoint(tablet-lg) {
+      @include breakpoint(phone) {
         display: none;
       }
     }
@@ -709,7 +952,7 @@ h5 {
         color: #808080;
       }
 
-      @include breakpoint(tablet-lg) {
+      @include breakpoint(phone) {
         width: 0;
         top: 50%;
         left: auto;
@@ -730,7 +973,7 @@ h5 {
       padding-right: 40px;
       background-color: #FFF;
 
-      @include breakpoint(tablet-lg) {
+      @include breakpoint(phone) {
         width: 300px;
         padding: 0 19px;
         text-align: left;
@@ -774,7 +1017,7 @@ h5 {
       display: flex;
     }
 
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
       width: 72px;
       height: 72px;
       bottom: 30px;
@@ -852,7 +1095,7 @@ h5 {
           margin-left: 30px;
         }
 
-        @include breakpoint(tablet-lg) {
+        @include breakpoint(phone) {
           margin-left: 80px;
           display: flex;
         }
@@ -874,7 +1117,7 @@ h5 {
             margin-bottom: 15px;
           }
 
-          @include breakpoint(tablet-lg) {
+          @include breakpoint(phone) {
             margin-bottom: 0;
           }
         }
@@ -995,7 +1238,7 @@ h5 {
       justify-content: space-between;
     }
 
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
       display: grid;
       grid-gap: 34px;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -1015,7 +1258,7 @@ h5 {
       width: 49%;
     }
 
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
       width: 100%;
     }
   }
@@ -1027,7 +1270,7 @@ h5 {
       width: 49%;
     }
 
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
       width: 100%;
     }
   }
@@ -1048,7 +1291,7 @@ h5 {
       margin-bottom: 10px;
     }
 
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
       margin-bottom: 0;
     }
 
@@ -1299,7 +1542,7 @@ h5 {
       padding: 40px 60px 40px 60px;
     }
 
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
       padding: 80px 125px 80px 105px;
       display: flex;
       align-items: center;
@@ -1333,7 +1576,7 @@ h5 {
         font-size: 23px;
       }
 
-      @include breakpoint(tablet-lg) {
+      @include breakpoint(phone) {
         width: 504px;
         font-size: 26px;
         margin-bottom: 0;
@@ -1461,7 +1704,7 @@ h5 {
       margin-bottom: 30px;
     }
 
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
       margin-bottom: 0;
     }
 
@@ -1776,7 +2019,7 @@ h5 {
         top: 134px;
       }
 
-      @include breakpoint(tablet-lg) {
+      @include breakpoint(phone) {
         position: relative;
         left: 0;
         top: 0;
@@ -1813,7 +2056,7 @@ h5 {
         top: 100px;
       }
 
-      @include breakpoint(tablet-lg) {
+      @include breakpoint(phone) {
         display: none;
       }
 
@@ -1835,7 +2078,7 @@ h5 {
       margin-bottom: 13px;
       border: 1px solid #E6E6E6;
 
-      @include breakpoint(tablet-lg) {
+      @include breakpoint(phone) {
         padding: 24px 31px;
       }
 
@@ -1932,7 +2175,7 @@ h5 {
           margin-top: 30px;
         }
 
-        @include breakpoint(tablet-lg) {
+        @include breakpoint(phone) {
           width: auto;
           margin-top: 0;
         }
@@ -2098,7 +2341,7 @@ h5 {
     margin-right: -33px;
   }
 
-  @include breakpoint(tablet-lg) {
+  @include breakpoint(phone) {
     margin-right: -63px;
   }
 
@@ -2113,7 +2356,7 @@ h5 {
       width: calc(100%/3 - 33px);
     }
 
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
       margin-right: 63px;
       margin-bottom: 85px;
       width: calc(100%/3 - 63px);
@@ -2317,7 +2560,7 @@ h5 {
       width: 100%;
       margin-left: auto;
 
-      @include breakpoint(tablet-lg) {
+      @include breakpoint(phone) {
         width: 48%;
       }
     }
@@ -2597,7 +2840,7 @@ h5 {
     flex-wrap: wrap;
   }
 
-  @include breakpoint(tablet-lg) {
+  @include breakpoint(phone) {
     width: 52%;
   }
 
@@ -2803,7 +3046,7 @@ h5 {
         margin-top: 30px;
       }
 
-      @include breakpoint(tablet-lg) {
+      @include breakpoint(phone) {
         width: auto;
         margin-top: 0;
       }
@@ -2880,7 +3123,7 @@ h5 {
       margin-right: 0;
     }
 
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
       margin-right: 70px;
     }
 
@@ -2893,7 +3136,7 @@ h5 {
     font-weight: 300;
     margin-right: auto;
 
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
       margin-right: 60px;
     }
 
@@ -3413,7 +3656,7 @@ h5 {
   .checkout__col-6 {
     width: 100%;
 
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
       width: 53%;
     }
 
@@ -3426,7 +3669,7 @@ h5 {
     width: 100%;
     margin-top: 30px;
 
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
       width: 41%;
       margin-top: 0;
     }
@@ -3440,7 +3683,7 @@ h5 {
     width: 100%;
     margin-top: 30px;
 
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
       width: 300px;
     }
 
@@ -3590,26 +3833,36 @@ h5 {
 }
 
 // Mobile responsive adjustments for navigation dropdowns
-@include breakpointMax(tablet-lg) {
+@include breakpointMax(phone) {
   .site-header .site-nav {
+
+    // Ensure mobile nav positioning is preserved
+    &:not(.site-nav--open) {
+      right: -250px;
+    }
+
     .nav-dropdown {
       position: static;
-      opacity: 1;
-      visibility: visible;
+      opacity: 0;
+      visibility: hidden;
       transform: none;
       box-shadow: none;
       border: none;
       border-radius: 0;
       min-width: auto;
       background: transparent;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 0.3s ease, max-height 0.3s ease, visibility 0.3s ease;
 
       .dropdown-content {
         grid-template-columns: 1fr;
-        padding: 10px 0;
+        padding: 0;
+        transition: padding 0.3s ease;
       }
 
       .dropdown-section {
-        padding: 10px 20px;
+        padding: 0 20px;
         border-right: none !important;
 
         &:first-child {
@@ -3619,22 +3872,56 @@ h5 {
         h4 {
           color: var(--warm-gold);
           margin-bottom: 10px;
+          font-size: 12px;
         }
 
         a {
-          color: var(--charcoal);
-          padding: 5px 0;
+          color: var(--sage-green);
+          padding: 8px 0;
+          font-size: 14px;
+          display: block;
 
           &:hover {
             color: var(--warm-gold);
-            padding-left: 0;
+            padding-left: 10px;
           }
         }
       }
     }
 
-    .nav-item.has-dropdown>a::after {
-      display: none;
+    // Show dropdown when active on mobile
+    .nav-item.has-dropdown.active .nav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      max-height: 500px;
+
+      .dropdown-content {
+        padding: 15px 0;
+      }
+    }
+
+    // Mobile dropdown arrow indicator
+    .nav-item.has-dropdown>a {
+      position: relative;
+
+      &::after {
+        content: '▼';
+        font-size: 10px;
+        margin-left: 8px;
+        transition: transform 0.2s ease;
+        color: var(--warm-gold);
+      }
+    }
+
+    .nav-item.has-dropdown.active>a::after {
+      transform: rotate(180deg);
+    }
+
+    // Disable hover effects on mobile
+    .nav-item.has-dropdown:hover .nav-dropdown {
+      opacity: 0;
+      visibility: hidden;
+      max-height: 0;
     }
   }
 }
