@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Footer from "@/components/footer";
 import PageIntro from "@/components/page-intro";
 import Subscribe from "@/components/subscribe";
@@ -105,9 +107,9 @@ const IndexPage = () => {
           >
             <div className="featured-item__content">
               <h3>Join Our Growing Community</h3>
-              <a href="/register" className="btn btn--rounded">
+              <Link href="/register" className="btn btn--rounded">
                 Become a Member
-              </a>
+              </Link>
             </div>
           </article>
 
@@ -117,9 +119,9 @@ const IndexPage = () => {
           >
             <div className="featured-item__content">
               <h3>Upcoming Events</h3>
-              <a href="/events" className="btn btn--rounded">
+              <Link href="/events" className="btn btn--rounded">
                 View Calendar
-              </a>
+              </Link>
             </div>
           </article>
 
@@ -129,9 +131,9 @@ const IndexPage = () => {
           >
             <div className="featured-item__content">
               <h3>Mentorship Program</h3>
-              <a href="/mentorship" className="btn btn--rounded">
+              <Link href="/mentorship" className="btn btn--rounded">
                 GET INVOLVED
-              </a>
+              </Link>
             </div>
           </article>
         </div>
@@ -225,9 +227,9 @@ const IndexPage = () => {
               undergraduate, graduate, and professional programs across all
               faculties.
             </p>
-            <a href="/register" className="btn btn--rounded btn--yellow">
+            <Link href="/register" className="btn btn--rounded btn--yellow">
               Become a Member
-            </a>
+            </Link>
           </div>
         </div>
       </section>

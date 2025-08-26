@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Footer = () => {
   return (
     <footer className="site-footer">
@@ -16,37 +18,37 @@ const Footer = () => {
               <ul>
                 <li>Get Involved</li>
                 <li>
-                  <a href="/events">Upcoming Events</a>
+                  <Link href="/events">Upcoming Events</Link>
                 </li>
                 <li>
-                  <a href="/mentorship">Mentorship Program</a>
+                  <Link href="/mentorship">Mentorship Program</Link>
                 </li>
                 <li>
-                  <a href="/volunteer">Volunteer Opportunities</a>
+                  <Link href="/volunteer">Volunteer Opportunities</Link>
                 </li>
                 <li>
-                  <a href="/scholarships">Scholarship Fund</a>
+                  <Link href="/scholarships">Scholarship Fund</Link>
                 </li>
                 <li>
-                  <a href="/contact">Contact Us</a>
+                  <Link href="/contact">Contact Us</Link>
                 </li>
               </ul>
               <ul>
                 <li>Resources</li>
                 <li>
-                  <a href="/members">Member Directory</a>
+                  <Link href="/members">Member Directory</Link>
                 </li>
                 <li>
-                  <a href="/career">Career Resources</a>
+                  <Link href="/career">Career Resources</Link>
                 </li>
                 <li>
-                  <a href="/newsletter">Newsletter</a>
+                  <Link href="/newsletter">Newsletter</Link>
                 </li>
                 <li>
-                  <a href="/register">Become a Member</a>
+                  <Link href="/register">Become a Member</Link>
                 </li>
                 <li>
-                  <a href="/feedback">Site Feedback</a>
+                  <Link href="/feedback">Site Feedback</Link>
                 </li>
               </ul>
               <ul>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SwiperCore, { Autoplay, EffectFade, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -26,10 +27,10 @@ const PageIntro = () => {
             <div className="container">
               <div className="page-intro__slide__content">
                 <h3>Connecting Muslim Alumni Across Generations</h3>
-                <a href="/register" className="btn-shop">
+                <Link href="/register" className="btn-shop">
                   <i className="icon-right" />
                   Join UMMAA
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -43,10 +44,10 @@ const PageIntro = () => {
             <div className="container">
               <div className="page-intro__slide__content">
                 <h3>Professional Excellence Through Community</h3>
-                <a href="/events" className="btn-shop">
+                <Link href="/events" className="btn-shop">
                   <i className="icon-right" />
                   View Events
-                </a>
+                </Link>
               </div>
             </div>
           </div>

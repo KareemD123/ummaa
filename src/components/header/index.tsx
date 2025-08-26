@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import useOnClickOutside from "use-onclickoutside";
 
 type HeaderType = {
@@ -9,7 +9,7 @@ type HeaderType = {
 
 const Header = ({ isErrorPage }: HeaderType) => {
   const router = useRouter();
-  const arrayPaths = ["/"];
+  const arrayPaths = useMemo(() => ["/"], []);
 
   const [onTop, setOnTop] = useState(
     !(!arrayPaths.includes(router.pathname) || isErrorPage),
@@ -45,7 +45,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [router.pathname, isErrorPage]);
+  }, [router.pathname, isErrorPage, arrayPaths]);
 
   const closeMenu = () => {
     setMenuOpen(false);
