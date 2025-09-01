@@ -1,0 +1,184 @@
+// Events page styles
+@import '../../assets/css/partials/variables.scss';
+@import '../../assets/css/partials/breakpoints.scss';
+
+.events-page {
+  padding: 50px 0;
+
+  .events-page__header {
+    text-align: center;
+    margin-bottom: 40px;
+
+    .events-page__title {
+      color: var(--university-blue);
+      margin-bottom: 20px;
+    }
+
+    .events-page__description {
+      color: var(--charcoal);
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .events-page__category-filter {
+    margin-bottom: 40px;
+    text-align: center;
+
+    .events-page__category-button {
+      margin: 0 10px 10px 0;
+      padding: 10px 20px;
+      border: 2px solid var(--university-blue);
+      background-color: transparent;
+      color: var(--university-blue);
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+
+      &--active {
+        background-color: var(--university-blue);
+        color: white;
+      }
+    }
+  }
+
+  .events-page__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+  }
+
+  .events-page__card {
+    border: 1px solid var(--light-gray);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+
+    .events-page__card-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+
+      .events-page__category-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: var(--warm-gold);
+        color: var(--sage-green);
+        padding: 5px 12px;
+        border-radius: 15px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+
+    .events-page__card-content {
+      padding: 25px;
+
+      .events-page__card-title {
+        color: var(--university-blue);
+        margin-bottom: 15px;
+        font-size: 20px;
+        line-height: 1.3;
+      }
+
+      .events-page__card-details {
+        margin-bottom: 15px;
+
+        p {
+          margin-bottom: 8px;
+          font-size: 14px;
+
+          &.events-page__card-date {
+            color: var(--charcoal);
+            font-weight: 600;
+          }
+
+          &.events-page__card-time,
+          &.events-page__card-location {
+            color: var(--charcoal);
+          }
+
+          &.events-page__card-price {
+            color: var(--deep-teal);
+            font-weight: 600;
+          }
+        }
+      }
+
+      .events-page__card-description {
+        color: var(--charcoal);
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .events-page__registration {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+
+        .events-page__registration-count {
+          font-size: 12px;
+          color: var(--charcoal);
+        }
+
+        .events-page__progress-bar {
+          width: 100px;
+          height: 6px;
+          background-color: var(--light-gray);
+          border-radius: 3px;
+          overflow: hidden;
+
+          .events-page__progress-fill {
+            height: 100%;
+            background-color: var(--deep-teal);
+            transition: width 0.3s ease;
+          }
+        }
+      }
+
+      .events-page__register-button {
+        width: 100%;
+        padding: 12px;
+        background-color: var(--university-blue);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: var(--deep-teal);
+        }
+      }
+    }
+  }
+
+  .events-page__loading {
+    text-align: center;
+    padding: 50px 0;
+    color: var(--charcoal);
+    font-size: 16px;
+  }
+
+  .events-page__no-results {
+    text-align: center;
+    padding: 50px 0;
+    color: var(--charcoal);
+    font-size: 18px;
+  }
+}

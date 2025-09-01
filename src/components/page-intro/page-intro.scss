@@ -1,0 +1,239 @@
+// Page intro component styles
+@import '../../assets/css/partials/variables.scss';
+@import '../../assets/css/partials/breakpoints.scss';
+
+.page-intro {
+  position: relative;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    bottom: 20px;
+    top: auto;
+    transform: translateX(50%);
+    right: 14%;
+    left: auto;
+    width: 42px;
+    height: 42px;
+    z-index: 100;
+    font-size: 13px;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    display: none;
+    background-color: rgba(255, 255, 255, .12);
+
+    @include breakpoint(phone) {
+      width: 52px;
+      height: 52px;
+      bottom: 30px;
+      font-size: 17px;
+      display: flex;
+    }
+
+    @include breakpoint(phone) {
+      width: 72px;
+      height: 72px;
+      bottom: 30px;
+      font-size: 21px;
+      display: flex;
+    }
+
+    &:before {
+      color: #FFF;
+      content: '\e80b';
+      font-family: 'icons';
+    }
+
+    &:hover {
+      background: #FFF;
+
+      &:before {
+        color: #000;
+      }
+    }
+  }
+
+  .swiper-button-next {
+    right: 20px;
+
+    @include breakpoint(phone) {
+      right: 7%;
+    }
+
+    &:before {
+      content: '\e811';
+    }
+  }
+
+  .page-intro__data {
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    z-index: 99;
+    display: none;
+    position: absolute;
+    padding: 36px 30px 30px 30px;
+
+    @include breakpoint(phone) {
+      display: block;
+    }
+
+    &:before {
+      background: #FFF;
+      content: '';
+      left: 0;
+      bottom: 0;
+      top: 0;
+      width: 100%;
+      display: block;
+      z-index: 1;
+      border-radius: 0 70px 0 0;
+      position: absolute;
+    }
+
+    .page-intro__data-items {
+      width: 100%;
+      z-index: 10;
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+
+      li {
+        display: flex;
+        margin-left: 80px;
+
+        @include breakpoint(phone) {
+          display: block;
+          margin-left: 30px;
+        }
+
+        @include breakpoint(phone) {
+          margin-left: 80px;
+          display: flex;
+        }
+
+        i {
+          margin-right: 27px;
+          height: 39px;
+          width: 39px;
+          font-size: 13px;
+          flex-shrink: 0;
+          display: flex;
+          border-radius: 10px;
+          color: var(--warm-gold);
+          background: var(--university-blue);
+          justify-content: center;
+          align-items: center;
+
+          @include breakpoint(phone) {
+            margin-bottom: 15px;
+          }
+
+          @include breakpoint(phone) {
+            margin-bottom: 0;
+          }
+        }
+
+        .page-intro__data-item-content {
+          h4 {
+            font-size: 14px;
+            margin-bottom: 7px;
+          }
+
+          p {
+            font-size: 12px;
+            line-height: 135%;
+          }
+        }
+      }
+    }
+  }
+
+  .page-intro__slide {
+    height: 450px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #FAFAFA;
+
+    @include breakpoint(phone) {
+      height: 90vh;
+    }
+
+    &:before {
+      content: '';
+      left: 0;
+      z-index: 5;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+      z-index: 10;
+      display: flex;
+      position: relative;
+      align-items: center;
+      height: 100%;
+    }
+
+    .page-intro__slide__content {
+      margin-top: auto;
+      margin-bottom: 40px;
+      padding: 15px 25px;
+      background: rgba(33, 42, 49, 0.7);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: inline-block;
+
+      @include breakpoint(phone) {
+        margin-bottom: 80px;
+        margin-top: 0;
+        padding: 20px 30px;
+        border-radius: 15px;
+      }
+
+      h3 {
+        font-size: 28px;
+        color: var(--light-gray);
+        font-weight: 600;
+        line-height: 120%;
+        margin-bottom: 25px;
+        background: none;
+        padding: 0;
+        border: none;
+        backdrop-filter: none;
+
+        @include breakpoint(phone) {
+          font-size: 42px;
+          max-width: 500px;
+        }
+      }
+
+      .page-intro__cta-button {
+        display: flex;
+        color: var(--light-gray);
+        align-items: center;
+
+        i {
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          width: 40px;
+          height: 40px;
+          color: var(--warm-gold);
+          font-size: 15px;
+          margin-right: 10px;
+          background-color: var(--deep-teal);
+          border-radius: 100%;
+        }
+      }
+    }
+  }
+}

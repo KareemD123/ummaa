@@ -1,3 +1,5 @@
+// Breadcrumb styles are imported in main.scss
+
 const Breadcrumb = () => (
   <section className="breadcrumb">
     <div className="container">

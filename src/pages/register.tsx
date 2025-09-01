@@ -4,26 +4,21 @@ import Layout from "../layouts/Main";
 
 const RegisterPage = () => (
   <Layout>
-    <section className="form-page">
+    <section className="register-page">
       <div className="container">
-        <div className="back-button-section">
-          <Link href="/products">
-            <i className="icon-left" />
-            Back to store
-          </Link>
-        </div>
+        <Link href="/" className="register-page__back-button">
+          <i className="icon-left" />
+          Back to home
+        </Link>
 
-        <div className="form-block">
-          <h2 className="form-block__title">
-            Create an account and discover the benefits
-          </h2>
-          <p className="form-block__description">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s
+        <div className="register-page__form-block">
+          <h2 className="register-page__title">Join the UMMAA Community</h2>
+          <p className="register-page__description">
+            Create your account to connect with fellow Muslim alumni, access
+            exclusive events, and join our growing community.
           </p>
 
-          <form className="form">
+          <form className="register-page__form">
             <div className="form__input-row">
               <input
                 className="form__input"

@@ -1,0 +1,223 @@
+// Footer component styles
+@import '../../assets/css/partials/variables.scss';
+@import '../../assets/css/partials/breakpoints.scss';
+
+// Footer component (BEM Block)
+.footer {
+  background-color: var(--light-gray);
+  padding: 60px 0 0 0;
+  margin-top: 80px;
+
+  @include breakpoint(phone) {
+    padding: 80px 0 0 0;
+    margin-top: 100px;
+  }
+
+  // Footer container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include breakpoint(phone) {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      gap: 40px;
+    }
+  }
+
+  // Footer logo
+  &__logo {
+    flex-shrink: 0;
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  // Footer description section
+  &__description {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid rgba(104, 120, 100, 0.2);
+
+    @include breakpoint(phone) {
+      padding: 25px 0;
+      margin-bottom: 30px;
+    }
+
+    @include breakpoint(phone) {
+      margin-bottom: 0;
+    }
+
+    svg {
+      object-fit: contain;
+      width: 45px;
+      height: 35px;
+      fill: #000;
+      margin-right: 15px;
+    }
+
+    h6 {
+      display: none;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--sage-green);
+      margin-bottom: 25px;
+      font-weight: 400;
+    }
+  }
+
+  // Footer social networks
+  &__social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+
+    &-item {
+      margin: 0;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: var(--university-blue);
+      color: white;
+      border-radius: 50%;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+
+      &:hover {
+        background-color: var(--warm-gold);
+        color: var(--sage-green);
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  // Footer links section
+  &__links {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @media (max-width: 767px) {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      width: 100%;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    &-group {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      @include breakpoint(phone) {
+        margin-bottom: 0;
+      }
+    }
+
+    &-item {
+      font-size: 14px;
+      margin-bottom: 12px;
+      color: var(--sage-green);
+      line-height: 1.5;
+
+      &--title {
+        font-weight: 600;
+        color: var(--charcoal);
+        margin-bottom: 20px;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    &-link {
+      color: var(--sage-green);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-weight: 400;
+
+      &:hover {
+        color: var(--university-blue);
+      }
+    }
+  }
+
+  // Footer bottom section
+  &__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+
+    &-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    &-text {
+      margin: 0;
+      color: var(--charcoal);
+      font-size: 14px;
+    }
+
+    &-social {
+      display: flex;
+      gap: 15px;
+    }
+
+    &-social-link {
+      color: var(--charcoal);
+      font-size: 18px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--university-blue);
+      }
+    }
+
+    @include breakpointMax(phone) {
+      &-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  }
+}

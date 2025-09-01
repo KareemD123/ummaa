@@ -1,0 +1,114 @@
+// About page styles
+@import '../../assets/css/partials/variables.scss';
+@import '../../assets/css/partials/breakpoints.scss';
+
+.about-page {
+  padding: 50px 0;
+
+  .about-page__header {
+    text-align: center;
+    margin-bottom: 50px;
+
+    .about-page__title {
+      color: var(--university-blue);
+      margin-bottom: 20px;
+    }
+
+    .about-page__subtitle {
+      color: var(--charcoal);
+      font-size: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+  .about-page__content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .about-page__mission {
+    margin-bottom: 50px;
+
+    .about-page__section-title {
+      color: var(--university-blue);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .about-page__mission-text {
+      color: var(--charcoal);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+  }
+
+  .about-page__goals {
+    margin-bottom: 50px;
+
+    .about-page__section-title {
+      color: var(--university-blue);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .about-page__goals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 40px;
+    }
+
+    .about-page__goals-section {
+      .about-page__goals-subtitle {
+        color: var(--deep-teal);
+        margin-bottom: 20px;
+      }
+
+      .about-page__goals-list {
+        color: var(--charcoal);
+        font-size: 16px;
+        line-height: 1.6;
+
+        li {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .about-page__activities {
+    margin-bottom: 50px;
+
+    .about-page__section-title {
+      color: var(--university-blue);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .about-page__activities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .about-page__activity-card {
+      padding: 25px;
+      background-color: var(--light-gray);
+      border-radius: 10px;
+
+      .about-page__activity-title {
+        color: var(--university-blue);
+        margin-bottom: 15px;
+      }
+
+      .about-page__activity-description {
+        color: var(--charcoal);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+    }
+  }
+
+}

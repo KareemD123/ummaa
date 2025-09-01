@@ -26,12 +26,13 @@ export default class CustomDocument extends Document<DocumentProps> {
     return (
       <Html lang="en">
         <Head>
-          {/* Favicon - Multiple formats for better browser support */}
-          <link rel="icon" type="image/svg+xml" href="/images/logos/UMMAA-Logo-SVG.svg" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/UMMAA-Logo-SVG.svg" />
-          <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/UMMAA-Logo-SVG.svg" />
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/UMMAA-Logo-SVG.svg" />
-          <link rel="shortcut icon" href="/images/logos/UMMAA-Logo-SVG.svg" />
+          {/* Favicon */}
+          <link
+            rel="icon"
+            type="image/svg+xml"
+            href="/images/logos/UMMAA-Logo-SVG.svg"
+          />
+          <link rel="icon" type="image/x-icon" href="/favicon.ico" />
           {/* We only want to add the scripts if in production */}
           {isProduction && (
             <>

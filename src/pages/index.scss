@@ -1,0 +1,207 @@
+// Homepage styles
+@import '../assets/css/partials/variables.scss';
+@import '../assets/css/partials/breakpoints.scss';
+
+.homepage {
+  .homepage__community-stats {
+    padding: 40px 0;
+    text-align: center;
+
+    .homepage__community-stats-title {
+      color: var(--charcoal);
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    .homepage__community-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+
+    .homepage__community-stats-number {
+      color: var(--university-blue);
+      font-size: 42px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .homepage__community-stats-label {
+      color: var(--charcoal);
+    }
+  }
+
+  .homepage__membership-section {
+    background-color: var(--light-gray);
+    padding: 60px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 50px 0;
+
+    .homepage__membership-title {
+      color: var(--charcoal);
+      margin-bottom: 20px;
+    }
+
+    .homepage__membership-description {
+      color: var(--charcoal);
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+    }
+  }
+
+  .homepage__section--transparent {
+    padding: 50px 0;
+    background-color: transparent;
+  }
+
+  .homepage__featured {
+    padding: 35px 0 62px 0;
+
+    @include breakpoint(phone) {
+      padding: 70px 0 92px 0;
+    }
+
+    .container {
+      @include breakpoint(phone) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      @include breakpoint(phone) {
+        display: grid;
+        grid-gap: 34px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "\31  \31  \31  \31  \31  \31  \32  \32  \32  \33  \33  \33 ";
+      }
+    }
+
+    .homepage__featured-item-large {
+      grid-area: \31;
+      width: 100%;
+    }
+
+    .homepage__featured-item-small-first {
+      grid-area: \32;
+
+      @include breakpoint(phone) {
+        width: 49%;
+      }
+
+      @include breakpoint(phone) {
+        width: 100%;
+      }
+    }
+
+    .homepage__featured-item-small {
+      grid-area: \33;
+
+      @include breakpoint(phone) {
+        width: 49%;
+      }
+
+      @include breakpoint(phone) {
+        width: 100%;
+      }
+    }
+
+    .homepage__featured-item {
+      height: 200px;
+      display: flex;
+      margin-bottom: 10px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 21px 22px;
+      position: relative;
+
+      @include breakpoint(phone) {
+        height: 300px;
+        margin-bottom: 0;
+      }
+
+      &:before {
+        content: '';
+        left: 0;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      .homepage__featured-item-content {
+        z-index: 10;
+        display: flex;
+        position: relative;
+        align-items: flex-end;
+        width: 100%;
+
+        h3 {
+          font-size: 18px;
+          color: #FFF;
+          font-weight: 600;
+          line-height: 120%;
+          margin-bottom: 15px;
+
+          @include breakpoint(phone) {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+
+  .homepage__mission-values {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @include breakpoint(phone) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+
+      i {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--university-blue);
+        color: var(--warm-gold);
+        border-radius: 10px;
+        font-size: 20px;
+      }
+
+      .homepage__mission-values-content {
+        h4 {
+          color: var(--charcoal);
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 10px;
+        }
+
+        p {
+          color: var(--charcoal);
+          font-size: 14px;
+          line-height: 1.6;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

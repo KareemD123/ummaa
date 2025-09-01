@@ -20,22 +20,26 @@ const ForgotPassword = () => {
 
   return (
     <Layout>
-      <section className="form-page">
+      <section className="forgot-password-page">
         <div className="container">
-          <div className="back-button-section">
-            <Link href="/products">
-              <i className="icon-left" />
-              Back to shop
-            </Link>
-          </div>
+          <Link href="/login" className="forgot-password-page__back-button">
+            <i className="icon-left" />
+            Back to login
+          </Link>
 
-          <div className="form-block">
-            <h2 className="form-block__title">Forgot your password?</h2>
-            <p className="form-block__description">
-              Enter your email or phone number and recover your account
+          <div className="forgot-password-page__form-block">
+            <h2 className="forgot-password-page__title">
+              Forgot your password?
+            </h2>
+            <p className="forgot-password-page__description">
+              Enter your email address and we'll send you a link to reset your
+              password.
             </p>
 
-            <form className="form" onSubmit={handleSubmit(onSubmit)}>
+            <form
+              className="forgot-password-page__form"
+              onSubmit={handleSubmit(onSubmit)}
+            >
               <div className="form__input-row">
                 <input
                   className="form__input"

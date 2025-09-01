@@ -1,0 +1,29 @@
+// Breadcrumb component styles
+@import '../../assets/css/partials/variables.scss';
+@import '../../assets/css/partials/breakpoints.scss';
+
+.breadcrumb {
+  padding: 20px 0 20px 0;
+
+  @include breakpoint(phone) {
+    padding: 29px 0 35px 0;
+  }
+
+  .breadcrumb-list {
+    display: flex;
+
+    li {
+      font-size: 13px;
+      color: #B2B2B2;
+
+      &:not(:first-child) {
+        margin-left: 10px;
+
+        &:before {
+          content: '/ ';
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+}

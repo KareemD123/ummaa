@@ -1,3 +1,5 @@
+// Subscribe styles are imported in main.scss
+
 const Subscribe = () => {
   return (
     <section className="subscribe">
@@ -12,7 +14,10 @@ const Subscribe = () => {
 
           <form className="subscribe__form">
             <input type="email" placeholder="Email address" />
-            <button type="submit" className="btn btn--rounded btn--yellow">
+            <button
+              type="submit"
+              className="subscribe__button btn btn--rounded btn--yellow"
+            >
               Subscribe
             </button>
           </form>

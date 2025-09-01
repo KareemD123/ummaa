@@ -6,6 +6,8 @@ import useOnClickOutside from "use-onclickoutside";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 
+// Header styles are imported in main.scss
+
 type HeaderType = {
   isErrorPage?: boolean;
 };
@@ -18,7 +20,6 @@ const Header = ({ isErrorPage }: HeaderType) => {
     !(!arrayPaths.includes(router.pathname) || isErrorPage),
   );
   const [menuOpen, setMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const searchRef = useRef(null);
@@ -54,7 +55,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
   };
 
   const closeSearch = () => {
-    setSearchOpen(false);
+    // Search functionality to be implemented
   };
 
   // Check if we're on mobile
@@ -73,10 +74,10 @@ const Header = ({ isErrorPage }: HeaderType) => {
   useOnClickOutside(searchRef, closeSearch);
 
   return (
-    <header className={`site-header ${!onTop ? "site-header--fixed" : ""}`}>
-      <div className="container">
+    <header className={`header ${!onTop ? "header--fixed" : ""}`}>
+      <div className="header__container container">
         <Link href="/">
-          <h1 className="site-logo">
+          <h1 className="header__logo">
             {/* <img
               src="/images/logos/UMMAA-Logo-SVG.svg"
               alt="UMMAA Logo"
@@ -96,15 +97,15 @@ const Header = ({ isErrorPage }: HeaderType) => {
           />
         )}
 
-        <div className="site-header__actions">
-          <button
+        <div className="header__actions">
+          {/* <button
             ref={searchRef}
-            className={`search-form-wrapper ${searchOpen ? "search-form--active" : ""}`}
+            className={`header__search ${searchOpen ? "header__search--active" : ""}`}
           >
-            <form className="search-form">
+            <form className="header__search-form">
               <i
                 className="icon-cancel"
-                onClick={() => setSearchOpen(!searchOpen)}
+                onClick={closeSearch}
               />
               <input
                 type="text"
@@ -113,10 +114,10 @@ const Header = ({ isErrorPage }: HeaderType) => {
               />
             </form>
             <i
-              onClick={() => setSearchOpen(!searchOpen)}
+              onClick={closeSearch}
               className="icon-search"
             />
-          </button>
+          </button> */}
           {/* <Link href="/register" legacyBehavior>
             <button className="btn-cart">
               <i className="icon-cart" />
@@ -124,15 +125,17 @@ const Header = ({ isErrorPage }: HeaderType) => {
             </button>
           </Link>
           <Link href="/login" legacyBehavior>
-            <button className="site-header__btn-avatar">
+            <button className="header__btn-avatar">
               <i className="icon-avatar" />
             </button>
           </Link> */}
           <button
             onClick={() => setMenuOpen(true)}
-            className="site-header__btn-menu"
+            className="header__btn-menu"
           >
-            <i className="btn-hamburger">
+            <i
+              className={`header__hamburger ${menuOpen ? "header__hamburger--active" : ""}`}
+            >
               <span />
             </i>
           </button>

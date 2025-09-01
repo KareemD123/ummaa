@@ -22,24 +22,24 @@ const LoginPage = () => {
 
   return (
     <Layout>
-      <section className="form-page">
+      <section className="login-page">
         <div className="container">
-          <div className="back-button-section">
-            <Link href="/products">
-              <i className="icon-left" />
-              Back to store
-            </Link>
-          </div>
+          <Link href="/" className="login-page__back-button">
+            <i className="icon-left" />
+            Back to home
+          </Link>
 
-          <div className="form-block">
-            <h2 className="form-block__title">Log in</h2>
-            <p className="form-block__description">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s
+          <div className="login-page__form-block">
+            <h2 className="login-page__title">Log in</h2>
+            <p className="login-page__description">
+              Welcome back! Please sign in to access your UMMAA member account
+              and connect with fellow alumni.
             </p>
 
-            <form className="form" onSubmit={handleSubmit(onSubmit)}>
+            <form
+              className="login-page__form"
+              onSubmit={handleSubmit(onSubmit)}
+            >
               <div className="form__input-row">
                 <input
                   className="form__input"
@@ -97,15 +97,12 @@ const LoginPage = () => {
                     <p>Keep me signed in</p>
                   </label>
                 </div>
-                <Link
-                  href="/forgot-password"
-                  className="form__info__forgot-password"
-                >
+                <Link href="/forgot-password" className="form__forgot-password">
                   Forgot password?
                 </Link>
               </div>
 
-              <div className="form__btns">
+              <div className="form__social-buttons">
                 <button type="button" className="btn-social fb-btn">
                   <i className="icon-facebook" />
                   Facebook

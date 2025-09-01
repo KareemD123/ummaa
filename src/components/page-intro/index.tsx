@@ -2,6 +2,8 @@ import Link from "next/link";
 import SwiperCore, { Autoplay, EffectFade, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+// Page-intro styles are imported in main.scss
+
 const PageIntro = () => {
   SwiperCore.use([EffectFade, Navigation, Autoplay]);
 
@@ -27,7 +29,7 @@ const PageIntro = () => {
             <div className="container">
               <div className="page-intro__slide__content">
                 <h3>Connecting Muslim Alumni Across Generations</h3>
-                <Link href="/register" className="btn-shop">
+                <Link href="/register" className="page-intro__cta-button">
                   <i className="icon-right" />
                   Join UMMAA
                 </Link>
@@ -44,7 +46,7 @@ const PageIntro = () => {
             <div className="container">
               <div className="page-intro__slide__content">
                 <h3>Professional Excellence Through Community</h3>
-                <Link href="/events" className="btn-shop">
+                <Link href="/events" className="page-intro__cta-button">
                   <i className="icon-right" />
                   View Events
                 </Link>
@@ -54,12 +56,12 @@ const PageIntro = () => {
         </SwiperSlide>
       </Swiper>
 
-      <div className="shop-data">
+      <div className="page-intro__data">
         <div className="container">
-          <ul className="shop-data__items">
+          <ul className="page-intro__data-items">
             <li>
               <i className="icon-shipping" />
-              <div className="data-item__content">
+              <div className="page-intro__data-item-content">
                 <h4>Growing Network</h4>
                 <p>100+ Muslim alumni across all U of T faculties</p>
               </div>
@@ -67,7 +69,7 @@ const PageIntro = () => {
 
             <li>
               <i className="icon-shipping" />
-              <div className="data-item__content">
+              <div className="page-intro__data-item-content">
                 <h4>Professional Excellence</h4>
                 <p>Our members lead in healthcare, tech, finance, and law</p>
               </div>
@@ -75,7 +77,7 @@ const PageIntro = () => {
 
             <li>
               <i className="icon-cash" />
-              <div className="data-item__content">
+              <div className="page-intro__data-item-content">
                 <h4>Student Support</h4>
                 <p>
                   Mentorship and scholarship opportunities for current students

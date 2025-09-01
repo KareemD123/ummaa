@@ -1,44 +1,59 @@
-# Comming soon
+# University of Toronto Muslim Alumni Association (UMMAA) Website
 
-I know it's been a while since I updated this repo, but hopefully in the next months I can add more features on the project.
-Thanks everyone who gave a star and forked it 🫶
+A modern, responsive website built for the University of Toronto Muslim Alumni Association to connect alumni, facilitate networking, and support current students through mentorship and community engagement.
 
-# Next.js Ecommerce
+## About UMMAA
 
-This repo contains a work in progress Ecommerce responsive made with Next.js, Redux, Redux-persist, Hooks, SCSS and BEM. If you like it please give it a star :)
+The University of Toronto Muslim Alumni Association connects Muslim graduates from all U of T campuses (St. George, Mississauga, Scarborough) across undergraduate, graduate, and professional programs. Our mission is to foster professional excellence, support current students, build community, and contribute positively to Canadian society.
 
-## Getting started
+## Getting Started
 
-It's easy to have it running locally.
-Just do a `yarn install` to install the dependencies.
-Then do a `yarn dev` to run it locally.
+To run the development server locally:
 
-## Backend
+```bash
+yarn install
+yarn dev
+```
 
-The backend of the project it's only mocked data. You can find them in `utils/data`.
-The API is being handled by Next API routes.
+Open [http://localhost:3200](http://localhost:3200) to view the website.
 
-## Design
+## Tech Stack
 
-[This](https://www.xdguru.com/free-xd-ecommerce-ui-kit-by-iceo/) is the design of the project.
+- **Framework:** Next.js 15 with TypeScript
+- **Styling:** SCSS with BEM methodology
+- **State Management:** Redux Toolkit with Redux Persist
+- **UI Components:** Custom responsive components
+- **Fonts:** Poppins via Next.js font optimization
 
-## Available pages
+## Features
 
-- Home page: /
-- Products page: /products
-- Product single page: /product/1
-- Cart page: /cart
-- Login page: /login
-- Register page: /register
-- 404 page: /page-not-found
+- **Member Directory:** Browse and connect with alumni across different industries
+- **Event Management:** View upcoming alumni events and networking opportunities
+- **Mentorship Program:** Connect students with experienced alumni mentors
+- **User Authentication:** Secure login and registration system
+- **Responsive Design:** Optimized for all devices and screen sizes
 
-## Screenshots
+## Available Pages
 
-![Next Ecommerce screenshot](https://lucaspulliese.com/wp-content/uploads/2020/09/ecommerce-1.jpg)
+- **Home:** `/` - Landing page with community stats and mission
+- **Members:** `/members` - Alumni directory with filtering and search
+- **Events:** `/events` - Upcoming events and networking opportunities
+- **About:** `/about` - Information about UMMAA and our mission
+- **Login/Register:** `/login`, `/register` - User authentication
+- **404:** `/page-not-found` - Custom error page
 
-![Next Ecommerce screenshot](https://lucaspulliese.com/wp-content/uploads/2020/09/ecommerce-2.jpg)
+## Data Structure
 
-## New features added - Nov 2024
+The website uses mock data for development, located in `src/utils/data/`:
+- `members.ts` - Alumni member profiles
+- `events.ts` - Community events and activities
 
-- Updated Next version.
-- Added eslint config.
+API endpoints are handled through Next.js API routes in `src/pages/api/`.
+
+## Recent Updates - December 2024
+
+- Cleaned up e-commerce template remnants
+- Implemented alumni-focused architecture
+- Updated Redux store for user management
+- Renamed API endpoints for clarity
+- Improved component structure and naming

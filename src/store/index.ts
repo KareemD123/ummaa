@@ -3,17 +3,14 @@ import { createWrapper } from "next-redux-wrapper";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import cartReducer from "./reducers/cart";
 import userReducer from "./reducers/user";
 
 //COMBINING ALL REDUCERS
 const reducer = {
-  cart: cartReducer,
   user: userReducer,
 };
 
 const rootReducer = combineReducers({
-  cart: cartReducer,
   user: userReducer,
 });
 
@@ -30,8 +27,8 @@ const makeStore = ({ isServer }: { isServer: boolean }) => {
   } else {
     //If it's on client side, create a store which will persist
     const persistConfig = {
-      key: "shoppingcart",
-      whitelist: ["cart", "user"], // only counter will be persisted, add other reducers if needed
+      key: "ummaa-website",
+      whitelist: ["user"], // only user will be persisted, add other reducers if needed
       storage, // if needed, use a safer storage
     };
 
