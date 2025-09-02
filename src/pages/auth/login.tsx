@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
-import Layout from "../layouts/Main";
-import { server } from "../utils/server";
-import { postData } from "../utils/services";
+import Layout from "../../layouts/Main";
+import { server } from "../../utils/server";
+import { postData } from "../../utils/services";
 
 type LoginMail = {
   email: string;
@@ -97,7 +97,10 @@ const LoginPage = () => {
                     <p>Keep me signed in</p>
                   </label>
                 </div>
-                <Link href="/forgot-password" className="form__forgot-password">
+                <Link
+                  href="/auth/forgot-password"
+                  className="form__forgot-password"
+                >
                   Forgot password?
                 </Link>
               </div>
@@ -120,7 +123,7 @@ const LoginPage = () => {
               </button>
 
               <p className="form__signup-link">
-                Not a member yet? <Link href="/register">Sign up</Link>
+                Not a member yet? <Link href="/auth/register">Sign up</Link>
               </p>
             </form>
           </div>

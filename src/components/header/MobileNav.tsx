@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React, { useState } from "react";
 
+import { getDropdownItems, getSimpleItems } from "./navigationConfig";
+
 interface MobileNavProps {
   isOpen: boolean;
   onClose: () => void;
@@ -44,214 +46,56 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
         </div>
 
         <div className="mobile-nav__content">
-          {/* About Section with Dropdown */}
-          <div className="mobile-nav-item">
-            <button
-              className="mobile-nav-link mobile-nav-link--dropdown"
-              onClick={(e) => handleDropdownClick("about", e)}
-            >
-              About
-              <svg
-                className={`dropdown-arrow ${activeDropdown === "about" ? "dropdown-arrow--active" : ""}`}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-              >
-                <polyline points="6,9 12,15 18,9"></polyline>
-              </svg>
-            </button>
-            <div
-              className={`mobile-nav-dropdown ${activeDropdown === "about" ? "mobile-nav-dropdown--active" : ""}`}
-            >
-              <Link
-                href="/about/mission"
-                className="mobile-dropdown-link"
-                onClick={handleLinkClick}
-              >
-                Our Mission
-              </Link>
-              <Link
-                href="/about/history"
-                className="mobile-dropdown-link"
-                onClick={handleLinkClick}
-              >
-                History
-              </Link>
-              <Link
-                href="/about/board"
-                className="mobile-dropdown-link"
-                onClick={handleLinkClick}
-              >
-                Board Members
-              </Link>
-              <Link
-                href="/about/contact"
-                className="mobile-dropdown-link"
-                onClick={handleLinkClick}
-              >
-                Contact Us
-              </Link>
-            </div>
-          </div>
+          {/* Render dropdown navigation items */}
+          {getDropdownItems().map((item) => {
+            const itemKey = item.label.toLowerCase();
+            return (
+              <div key={itemKey} className="mobile-nav-item">
+                <button
+                  className="mobile-nav-link mobile-nav-link--dropdown"
+                  onClick={(e) => handleDropdownClick(item.label, e)}
+                >
+                  {item.label}
+                  <svg
+                    className={`dropdown-arrow ${activeDropdown === item.label ? "dropdown-arrow--active" : ""}`}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <polyline points="6,9 12,15 18,9"></polyline>
+                  </svg>
+                </button>
+                <div
+                  className={`mobile-nav-dropdown ${activeDropdown === item.label ? "mobile-nav-dropdown--active" : ""}`}
+                >
+                  {item.dropdownSections?.flatMap((section) =>
+                    section.links.map((link, linkIndex) => (
+                      <Link
+                        key={`${section.title}-${linkIndex}`}
+                        href={link.href}
+                        className="mobile-dropdown-link"
+                        onClick={handleLinkClick}
+                      >
+                        {link.label}
+                      </Link>
+                    )),
+                  )}
+                </div>
+              </div>
+            );
+          })}
 
-          {/* Events Section with Dropdown */}
-          <div className="mobile-nav-item">
-            <button
-              className="mobile-nav-link mobile-nav-link--dropdown"
-              onClick={(e) => handleDropdownClick("events", e)}
+          {/* Render simple navigation items */}
+          {getSimpleItems().map((item) => (
+            <Link
+              key={item.label.toLowerCase()}
+              href={item.href}
+              className="mobile-nav-link"
+              onClick={handleLinkClick}
             >
-              Events
-              <svg
-                className={`dropdown-arrow ${activeDropdown === "events" ? "dropdown-arrow--active" : ""}`}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-              >
-                <polyline points="6,9 12,15 18,9"></polyline>
-              </svg>
-            </button>
-            <div
-              className={`mobile-nav-dropdown ${activeDropdown === "events" ? "mobile-nav-dropdown--active" : ""}`}
-            >
-              <Link
-                href="/events/upcoming"
-                className="mobile-dropdown-link"
-                onClick={handleLinkClick}
-              >
-                Upcoming Events
-              </Link>
-              <Link
-                href="/events/past"
-                className="mobile-dropdown-link"
-                onClick={handleLinkClick}
-              >
-                Past Events
-              </Link>
-              <Link
-                href="/events/annual-gala"
-                className="mobile-dropdown-link"
-                onClick={handleLinkClick}
-              >
-                Annual Gala
-              </Link>
-              <Link
-                href="/events/networking"
-                className="mobile-dropdown-link"
-                onClick={handleLinkClick}
-              >
-                Networking
-              </Link>
-            </div>
-          </div>
-
-          {/* Mentorship Section with Dropdown */}
-          <div className="mobile-nav-item">
-            <button
-              className="mobile-nav-link mobile-nav-link--dropdown"
-              onClick={(e) => handleDropdownClick("mentorship", e)}
-            >
-              Mentorship
-              <svg
-                className={`dropdown-arrow ${activeDropdown === "mentorship" ? "dropdown-arrow--active" : ""}`}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-              >
-                <polyline points="6,9 12,15 18,9"></polyline>
-              </svg>
-            </button>
-            <div
-              className={`mobile-nav-dropdown ${activeDropdown === "mentorship" ? "mobile-nav-dropdown--active" : ""}`}
-            >
-              <Link
-                href="/mentorship/find-mentor"
-                className="mobile-dropdown-link"
-                onClick={handleLinkClick}
-              >
-                Find a Mentor
-              </Link>
-              <Link
-                href="/mentorship/become-mentor"
-                className="mobile-dropdown-link"
-                onClick={handleLinkClick}
-              >
-                Become a Mentor
-              </Link>
-              <Link
-                href="/mentorship/success-stories"
-                className="mobile-dropdown-link"
-                onClick={handleLinkClick}
-              >
-                Success Stories
-              </Link>
-            </div>
-          </div>
-
-          {/* Resources Section with Dropdown */}
-          <div className="mobile-nav-item">
-            <button
-              className="mobile-nav-link mobile-nav-link--dropdown"
-              onClick={(e) => handleDropdownClick("resources", e)}
-            >
-              Resources
-              <svg
-                className={`dropdown-arrow ${activeDropdown === "resources" ? "dropdown-arrow--active" : ""}`}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-              >
-                <polyline points="6,9 12,15 18,9"></polyline>
-              </svg>
-            </button>
-            <div
-              className={`mobile-nav-dropdown ${activeDropdown === "resources" ? "mobile-nav-dropdown--active" : ""}`}
-            >
-              <Link
-                href="/resources/career"
-                className="mobile-dropdown-link"
-                onClick={handleLinkClick}
-              >
-                Career Resources
-              </Link>
-              <Link
-                href="/resources/scholarships"
-                className="mobile-dropdown-link"
-                onClick={handleLinkClick}
-              >
-                Scholarships
-              </Link>
-              <Link
-                href="/resources/directory"
-                className="mobile-dropdown-link"
-                onClick={handleLinkClick}
-              >
-                Alumni Directory
-              </Link>
-              <Link
-                href="/resources/newsletter"
-                className="mobile-dropdown-link"
-                onClick={handleLinkClick}
-              >
-                Newsletter
-              </Link>
-            </div>
-          </div>
-
-          {/* Simple nav items without dropdowns */}
-          <Link
-            href="/membership"
-            className="mobile-nav-link"
-            onClick={handleLinkClick}
-          >
-            Membership
-          </Link>
-          <Link
-            href="/donate"
-            className="mobile-nav-link"
-            onClick={handleLinkClick}
-          >
-            Donate
-          </Link>
+              {item.label}
+            </Link>
+          ))}
         </div>
       </nav>
     </>

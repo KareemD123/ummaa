@@ -1,28 +1,42 @@
+// SASS Variables
+$deep-teal: #116466;
+$university-blue: #31708e;
+$warm-gold: #fff500;
+$charcoal: #212a31;
+$light-gray: #d3d9d4;
+$sage-green: #687864;
+
+// Common variables
+$dark: #212a31;
+$gray: #687864;
+$yellow: #fff500;
+$white: #FFFFFF;
+
 :root {
   // UTMAA Brand Colors
-  --deep-teal: #116466;
-  --university-blue: #31708e;
-  --warm-gold: #fff500;
-  --charcoal: #212a31;
-  --light-gray: #d3d9d4;
-  --sage-green: #687864;
+  --deep-teal: #{$deep-teal};
+  --university-blue: #{$university-blue};
+  --warm-gold: #{$warm-gold};
+  --charcoal: #{$charcoal};
+  --light-gray: #{$light-gray};
+  --sage-green: #{$sage-green};
 
   // UTMAA Brand Colors - Grey & Blue Emphasis with Gold Accents
-  --color-primary: #31708e;        // University Blue (primary focus)
-  --color-secondary: #d3d9d4;      // Light Gray (secondary focus)
-  --color-accent: #fff500;         // Warm Gold (accent highlights)
-  --color-dark: #687864;           // Sage Green (dark text)
-  --color-light: #212a31;          // Charcoal (contrast backgrounds)
-  --color-supporting: #116466;     // Deep Teal (supporting elements)
+  --color-primary: #{$university-blue};        // University Blue (primary focus)
+  --color-secondary: #{$light-gray};      // Light Gray (secondary focus)
+  --color-accent: #{$warm-gold};         // Warm Gold (accent highlights)
+  --color-dark: #{$sage-green};           // Sage Green (dark text)
+  --color-light: #{$charcoal};          // Charcoal (contrast backgrounds)
+  --color-supporting: #{$deep-teal};     // Deep Teal (supporting elements)
   
   // Legacy color mappings for compatibility - Updated for grey/blue theme
-  --color-orange: #fff500;         // Gold accent for buttons/highlights
-  --color-orange-light: #31708e;   // University Blue for light accents
-  --color-black: #687864;          // Sage Green for main text
-  --color-text: #212a31;           // Charcoal for primary text
-  --color-white: #FFFFFF;
-  --color-gray: #d3d9d4;           // Light Gray for backgrounds
-  --color-red: #31708e;            // University Blue for alerts/emphasis
+  --color-orange: #{$warm-gold};         // Gold accent for buttons/highlights
+  --color-orange-light: #{$university-blue};   // University Blue for light accents
+  --color-black: #{$sage-green};          // Sage Green for main text
+  --color-text: #{$charcoal};           // Charcoal for primary text
+  --color-white: #{$white};
+  --color-gray: #{$light-gray};           // Light Gray for backgrounds
+  --color-red: #{$university-blue};            // University Blue for alerts/emphasis
 }
 
 @mixin inputPlaceholder() {

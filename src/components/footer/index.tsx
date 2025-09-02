@@ -65,7 +65,7 @@ const Footer = () => {
               </Link>
             </li>
             <li className="footer__links-item">
-              <Link href="/register" className="footer__links-link">
+              <Link href="/auth/register" className="footer__links-link">
                 Become a Member
               </Link>
             </li>

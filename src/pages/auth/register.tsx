@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import Layout from "../layouts/Main";
+import Layout from "../../layouts/Main";
 
 const RegisterPage = () => (
   <Layout>
@@ -74,7 +74,7 @@ const RegisterPage = () => (
             </button>
 
             <p className="form__signup-link">
-              <Link href="/login">Are you already a member?</Link>
+              <Link href="/auth/login">Are you already a member?</Link>
             </p>
           </form>
         </div>

@@ -124,7 +124,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
               <span>Join</span>
             </button>
           </Link>
-          <Link href="/login" legacyBehavior>
+          <Link href="/auth/login" legacyBehavior>
             <button className="header__btn-avatar">
               <i className="icon-avatar" />
             </button>

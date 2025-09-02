@@ -29,7 +29,7 @@ const PageIntro = () => {
             <div className="container">
               <div className="page-intro__slide__content">
                 <h3>Connecting Muslim Alumni Across Generations</h3>
-                <Link href="/register" className="page-intro__cta-button">
+                <Link href="/auth/register" className="page-intro__cta-button">
                   <i className="icon-right" />
                   Join UMMAA
                 </Link>

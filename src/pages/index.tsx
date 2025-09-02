@@ -59,7 +59,7 @@ const IndexPage = () => {
             >
               <div className="homepage__featured-item-content">
                 <h3>Join Our Growing Community</h3>
-                <Link href="/register" className="btn btn--rounded">
+                <Link href="/auth/register" className="btn btn--rounded">
                   Become a Member
                 </Link>
               </div>
@@ -159,7 +159,10 @@ const IndexPage = () => {
                 undergraduate, graduate, and professional programs across all
                 faculties.
               </p>
-              <Link href="/register" className="btn btn--rounded btn--yellow">
+              <Link
+                href="/auth/register"
+                className="btn btn--rounded btn--yellow"
+              >
                 Become a Member
               </Link>
             </div>

@@ -1,0 +1,162 @@
+@import '../../assets/css/partials/variables';
+@import '../../assets/css/partials/breakpoints';
+@import '../../assets/css/partials/mixins';
+
+.register-page {
+  padding: 40px 0 80px;
+
+  &__back-button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    font-size: 14px;
+    color: $dark;
+    text-decoration: none;
+
+    i {
+      margin-right: 8px;
+      font-size: 16px;
+    }
+
+    &:hover {
+      color: $yellow;
+    }
+  }
+
+  &__form-block {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    background: $white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+    @include breakpoint(phone) {
+      padding: 40px 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    color: $dark;
+
+    @include breakpoint(phone) {
+      font-size: 28px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 40px;
+    text-align: center;
+    color: $gray;
+    line-height: 1.6;
+  }
+
+  &__form {
+    .form__input-row {
+      margin-bottom: 24px;
+
+      .form__input {
+        width: 100%;
+        padding: 16px 20px;
+        border: 1px solid #e1e5e9;
+        border-radius: 6px;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: $yellow;
+        }
+
+        &::placeholder {
+          color: #a0a0a0;
+        }
+      }
+    }
+
+    .form__info {
+      margin-bottom: 32px;
+
+      .checkbox-wrapper {
+        .checkbox {
+          display: flex;
+          align-items: flex-start;
+          cursor: pointer;
+
+          input {
+            display: none;
+
+            &:checked + .checkbox__check {
+              background: $yellow;
+              border-color: $yellow;
+
+              &::after {
+                opacity: 1;
+              }
+            }
+          }
+
+          &__check {
+            position: relative;
+            width: 18px;
+            height: 18px;
+            margin-right: 12px;
+            margin-top: 2px;
+            border: 2px solid #e1e5e9;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+
+            &::after {
+              content: '';
+              position: absolute;
+              top: 2px;
+              left: 5px;
+              width: 4px;
+              height: 8px;
+              border: solid white;
+              border-width: 0 2px 2px 0;
+              transform: rotate(45deg);
+              opacity: 0;
+              transition: opacity 0.3s ease;
+            }
+          }
+
+          p {
+            margin: 0;
+            font-size: 14px;
+            color: $gray;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .form__signup-link {
+      text-align: center;
+      font-size: 14px;
+      color: $gray;
+
+      a {
+        color: $yellow;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

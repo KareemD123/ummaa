@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
-import Layout from "../layouts/Main";
-import { server } from "../utils/server";
-import { postData } from "../utils/services";
+import Layout from "../../layouts/Main";
+import { server } from "../../utils/server";
+import { postData } from "../../utils/services";
 
 type ForgotMail = {
   email: string;
@@ -22,7 +22,10 @@ const ForgotPassword = () => {
     <Layout>
       <section className="forgot-password-page">
         <div className="container">
-          <Link href="/login" className="forgot-password-page__back-button">
+          <Link
+            href="/auth/login"
+            className="forgot-password-page__back-button"
+          >
             <i className="icon-left" />
             Back to login
           </Link>
