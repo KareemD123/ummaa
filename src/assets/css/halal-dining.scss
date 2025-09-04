@@ -1,0 +1,448 @@
+.halal-dining-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fef7e0 0%, #f8f4e6 100%);
+
+  .hero-section {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="food" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="12.5" cy="12.5" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="6" cy="6" r="1" fill="rgba(255,255,255,0.08)"/><circle cx="19" cy="19" r="1" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23food)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      opacity: 0.95;
+
+      p {
+        margin-bottom: 1.5rem;
+      }
+
+      .nostalgia-section {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-top: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: left;
+
+        .msa-highlight {
+          background: rgba(255, 215, 0, 0.2);
+          border: 1px solid rgba(255, 215, 0, 0.3);
+          border-radius: 10px;
+          padding: 1rem;
+          margin: 1.5rem 0;
+          text-align: center;
+
+          p {
+            margin: 0;
+            font-weight: 600;
+            color: #ffd700;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+          }
+        }
+
+        .contribute-btn {
+          display: block;
+          background: #f59e0b;
+          color: white;
+          padding: 0.8rem 2rem;
+          border-radius: 25px;
+          text-decoration: none;
+          font-weight: 600;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+          text-align: center;
+          margin: 1rem auto 0;
+          width: fit-content;
+
+          &:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+          }
+        }
+
+        p {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  .dining-section {
+    padding: 3rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .dining-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .cuisine-filters {
+    display: flex;
+    flex-wrap: wrap;
+    background: #fef7e0;
+    border-bottom: 1px solid #f3e8c2;
+    padding: 1rem;
+    gap: 0.5rem;
+
+    .filter-btn {
+      background: white;
+      border: 1px solid #f3e8c2;
+      border-radius: 25px;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #92400e;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+
+      .count {
+        background: #fef3c7;
+        color: #92400e;
+        padding: 0.2rem 0.6rem;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+      }
+
+      &:hover {
+        background: rgba(217, 119, 6, 0.1);
+        color: #d97706;
+        border-color: #d97706;
+
+        .count {
+          background: rgba(217, 119, 6, 0.2);
+          color: #d97706;
+        }
+      }
+
+      &.active {
+        background: #d97706;
+        color: white;
+        border-color: #d97706;
+
+        .count {
+          background: rgba(255, 255, 255, 0.2);
+          color: white;
+        }
+      }
+    }
+  }
+
+  .dining-content {
+    padding: 2rem;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f3e8c2;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #92400e;
+      margin: 0;
+    }
+
+    .restaurants-count {
+      background: #f59e0b;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+  }
+
+  .restaurants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .restaurant-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f3e8c2;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      border-color: #f59e0b;
+    }
+
+    &.msa-favorite {
+      border: 2px solid #ffd700;
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+
+      &:hover {
+        border-color: #f59e0b;
+        box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+      }
+    }
+
+    .msa-badge {
+      position: absolute;
+      top: -8px;
+      right: 15px;
+      background: linear-gradient(135deg, #ffd700 0%, #f59e0b 100%);
+      color: #92400e;
+      padding: 0.4rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+
+      .star {
+        font-size: 1rem;
+      }
+    }
+
+    .restaurant-header {
+      margin-bottom: 1rem;
+      margin-top: 0.5rem;
+
+      .restaurant-name {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #92400e;
+        margin: 0 0 0.5rem 0;
+        line-height: 1.3;
+      }
+
+      .cuisine-tag {
+        display: inline-block;
+        background: #fef3c7;
+        color: #92400e;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        border: 1px solid #f3e8c2;
+      }
+    }
+
+    .restaurant-details {
+      flex: 1;
+      margin-bottom: 1.5rem;
+
+      .detail-item {
+        display: flex;
+        margin-bottom: 0.8rem;
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        .detail-label {
+          font-weight: 600;
+          color: #78350f;
+          min-width: 80px;
+          font-size: 0.9rem;
+          flex-shrink: 0;
+        }
+
+        .detail-value {
+          color: #92400e;
+          font-size: 0.9rem;
+          line-height: 1.4;
+        }
+      }
+    }
+
+    .restaurant-actions {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+
+      .action-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        padding: 0.6rem 1rem;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+        flex: 1;
+        justify-content: center;
+        min-width: 100px;
+
+        &.website-btn {
+          background: #f59e0b;
+          color: white;
+
+          &:hover {
+            background: #d97706;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+          }
+        }
+
+        &.social-btn {
+          background: #8b5cf6;
+          color: white;
+
+          &:hover {
+            background: #7c3aed;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);
+          }
+        }
+
+        &.map-btn {
+          background: #10b981;
+          color: white;
+
+          &:hover {
+            background: #059669;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+          }
+        }
+      }
+    }
+  }
+
+  // Responsive design
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 2rem 0;
+
+      .hero-content {
+        padding: 0 1rem;
+        padding-top: 50px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .description .nostalgia-section {
+        padding: 1.5rem;
+      }
+    }
+
+    .dining-section {
+      padding: 2rem 1rem;
+    }
+
+    .cuisine-filters {
+      justify-content: center;
+
+      .filter-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    .dining-content {
+      padding: 1.5rem;
+    }
+
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .restaurants-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .restaurant-card {
+      padding: 1rem;
+
+      .restaurant-header {
+        .restaurant-name {
+          font-size: 1.1rem;
+        }
+      }
+
+      .restaurant-actions {
+        flex-direction: column;
+
+        .action-btn {
+          flex: none;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cuisine-filters {
+      flex-direction: column;
+      align-items: stretch;
+
+      .filter-btn {
+        justify-content: center;
+      }
+    }
+
+    .msa-badge {
+      position: static !important;
+      margin-bottom: 1rem;
+      align-self: flex-start;
+    }
+  }
+}
