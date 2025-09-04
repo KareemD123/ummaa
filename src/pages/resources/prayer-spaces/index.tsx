@@ -27,7 +27,7 @@ const PrayerSpacesPage = () => {
     {
       name: "Dalla Lana School of Public Health",
       address: "155 College Street, Toronto, ON",
-      prayerSpace: "Rm 786",
+      prayerSpace: "Room 786",
       ablutionFacilities: "N/A",
       map: "https://map.utoronto.ca/?id=1809#!m/494459?s/",
     },
@@ -56,7 +56,7 @@ const PrayerSpacesPage = () => {
     {
       name: "Gerstein Science Information Technology",
       address: "9 King's College Cir, Toronto, ON",
-      prayerSpace: "B171",
+      prayerSpace: "Room B171",
       ablutionFacilities: "N/A",
       map: "https://map.utoronto.ca/?id=1809#!m/494508?s/",
     },
@@ -99,7 +99,7 @@ const PrayerSpacesPage = () => {
     {
       name: "Rotman School of Management",
       address: "105 St George Street, Toronto, ON",
-      prayerSpace: "room 3088",
+      prayerSpace: "Room 3088",
       ablutionFacilities: "N/A",
       map: "https://maps.app.goo.gl/tmzuV2BYQUBhSwbi9",
     },
@@ -313,10 +313,9 @@ const PrayerSpacesPage = () => {
       case "st-george":
         return { spaces: stGeorgeSpaces, title: "St. George Campus" };
       case "utm":
-        return {
-          spaces: [...utmSpaces, ...utscSpaces],
-          title: "UTM Mississauga & UTSC",
-        };
+        return { spaces: utmSpaces, title: "UTM Campus" };
+      case "utsc":
+        return { spaces: utscSpaces, title: "UTSC Campus" };
       case "hospitals":
         return { spaces: hospitalSpaces, title: "Hospitals near UofT" };
       case "mosques":
@@ -398,7 +397,14 @@ const PrayerSpacesPage = () => {
                 onClick={() => setActiveTab("utm")}
               >
                 <span className="tab-icon">🏫</span>
-                UTM & UTSC
+                UTM Campus
+              </button>
+              <button
+                className={`tab-btn ${activeTab === "utsc" ? "active" : ""}`}
+                onClick={() => setActiveTab("utsc")}
+              >
+                <span className="tab-icon">🏛️</span>
+                UTSC Campus
               </button>
               <button
                 className={`tab-btn ${activeTab === "hospitals" ? "active" : ""}`}

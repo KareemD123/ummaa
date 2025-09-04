@@ -21,11 +21,13 @@
 @import '../../pages/auth/forgot-password.scss';
 @import '../../pages/404.scss';
 @import 'prayer-spaces.scss';
+@import 'additional-networks.scss';
 
 html,
 body {
   overflow-x: hidden !important;
-  background-color: #FFFFFF;
+  // background-color: #FFFFFF;
+  background-color: var(--deep-teal);
 }
 
 
@@ -155,6 +157,7 @@ body {
 body {
   box-sizing: border-box;
   background-color: var(--color-white);
+  // background-color: var(--deep-teal);
   font-family: var(--main-font), "DM Sans", serif;
   color: var(--charcoal);
   font-size: 16px;
@@ -242,10 +245,10 @@ h5 {
 }
 
 .main-page {
-  padding-top: 65px;
+  // padding-top: 65px;
 
   @include breakpoint(phone) {
-    padding-top: 100px;
+    // padding-top: 100px;
   }
 }
 

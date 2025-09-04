@@ -1,0 +1,352 @@
+.additional-networks-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+
+  .hero-section {
+    background: linear-gradient(135deg, #2c5f5f 0%, #1a3d3d 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="network" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23network)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+      padding-top: 50px;
+    }
+
+    .hero-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      opacity: 0.95;
+
+      p {
+        margin-bottom: 1.5rem;
+      }
+
+      .fun-fact {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin-top: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: left;
+
+        p {
+          margin: 0;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .networks-section {
+    padding: 3rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .networks-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 1rem;
+    gap: 0.5rem;
+
+    .filter-btn {
+      background: white;
+      border: 1px solid #e9ecef;
+      border-radius: 25px;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #6c757d;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+
+      .filter-icon {
+        font-size: 1rem;
+      }
+
+      .count {
+        background: #e9ecef;
+        color: #495057;
+        padding: 0.2rem 0.6rem;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+      }
+
+      &:hover {
+        background: rgba(44, 85, 48, 0.1);
+        color: #2c5530;
+        border-color: #2c5530;
+
+        .count {
+          background: rgba(44, 85, 48, 0.2);
+          color: #2c5530;
+        }
+      }
+
+      &.active {
+        background: #2c5530;
+        color: white;
+        border-color: #2c5530;
+
+        .count {
+          background: rgba(255, 255, 255, 0.2);
+          color: white;
+        }
+      }
+    }
+  }
+
+  .networks-content {
+    padding: 2rem;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e9ecef;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2c5530;
+      margin: 0;
+    }
+
+    .networks-count {
+      background: #28a745;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+  }
+
+  .networks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .network-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      border-color: #28a745;
+    }
+
+    .network-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      .network-icon {
+        font-size: 2.5rem;
+        flex-shrink: 0;
+        margin-top: 0.2rem;
+      }
+
+      .network-name {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #2c5530;
+        margin: 0;
+        line-height: 1.3;
+      }
+    }
+
+    .network-description {
+      flex: 1;
+      margin-bottom: 1.5rem;
+
+      p {
+        color: #6c757d;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+    }
+
+    .network-actions {
+      display: flex;
+      justify-content: flex-end;
+
+      .visit-website-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #28a745;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+
+        .website-icon {
+          font-size: 1rem;
+        }
+
+        &:hover {
+          background: #218838;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+        }
+      }
+    }
+  }
+
+  // Responsive design
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 2rem 0;
+
+      .hero-content {
+        padding: 0 1rem;
+        padding-top: 50px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .hero-icon {
+        font-size: 3rem;
+      }
+
+      .description .fun-fact {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+      }
+    }
+
+    .networks-section {
+      padding: 2rem 1rem;
+    }
+
+    .category-filters {
+      justify-content: center;
+
+      .filter-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    .networks-content {
+      padding: 1.5rem;
+    }
+
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .networks-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .network-card {
+      padding: 1rem;
+
+      .network-header {
+        gap: 0.75rem;
+
+        .network-icon {
+          font-size: 2rem;
+        }
+
+        .network-name {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .category-filters {
+      flex-direction: column;
+      align-items: stretch;
+
+      .filter-btn {
+        justify-content: center;
+      }
+    }
+
+    .network-header {
+      text-align: center;
+    }
+  }
+}
