@@ -1,7 +1,7 @@
 // Override main-page padding for contact page
 .main-page .contact-page {
     margin-top: -65px;
-    
+
     @media (min-width: 768px) {
         margin-top: -100px;
     }
@@ -14,7 +14,7 @@
     .contact-hero {
         background: linear-gradient(135deg, var(--deep-teal) 0%, var(--university-blue) 100%);
         color: white;
-        padding: 80px 0 60px;
+        padding: 180px 0 60px;
         text-align: center;
 
         h1 {
@@ -38,7 +38,7 @@
     }
 
     .contact-content {
-        padding: 80px 0;
+        padding: 60px 0;
 
         .container {
             max-width: 1200px;
