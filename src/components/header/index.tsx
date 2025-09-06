@@ -76,17 +76,17 @@ const Header = ({ isErrorPage }: HeaderType) => {
   return (
     <header className={`header ${!onTop ? "header--fixed" : ""}`}>
       <div className="header__container container">
-        <Link href="/">
-          <h1 className="header__logo">
-            {/* <img
-              src="/images/logos/UMMAA-Logo-SVG.svg"
-              alt="UMMAA Logo"
-              width="175"
-              height="75"
-            /> */}
-            UMMAA
-          </h1>
-        </Link>
+        <div className="header__logo__container">
+          <Link
+            href="/"
+            style={{ textDecoration: "none !important", color: "inherit" }}
+          >
+            <h1 className="header__logo">UMMAA</h1>
+            <p className="header__logo-subtitle">
+              University of Toronto Muslim Alumni Association
+            </p>
+          </Link>
+        </div>
         {/* Conditional Navigation Rendering */}
         {isMobile ? (
           <MobileNav isOpen={menuOpen} onClose={closeMenu} />

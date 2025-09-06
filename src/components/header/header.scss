@@ -26,17 +26,60 @@
     display: flex;
     height: 100%;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    min-width: 0;
+  }
+
+  &__logo__container {
+    text-decoration: none !important;
+    margin-right: auto;
+    margin-left: 0;
+    flex-shrink: 0;
+
+    a {
+      text-decoration: none !important;
+      color: inherit !important;
+      border: none !important;
+      outline: none !important;
+
+      &:hover,
+      &:focus,
+      &:active,
+      &:visited,
+      &:link {
+        text-decoration: none !important;
+        color: inherit !important;
+        border: none !important;
+        outline: none !important;
+      }
+    }
   }
 
   // Header logo
   &__logo {
-    color: #FFF;
+    color: #FFF !important;
     display: flex;
-    font-size: 14px;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 0;
+    text-decoration: none !important;
+    line-height: 1;
+    font-size: 24px;
 
-    @include breakpoint(phone) {
-      font-size: 16px;
+    h1 {
+      font-size: 12px;
+      margin: 0;
+      font-weight: 700;
+      color: #FFF !important;
+      text-decoration: none !important;
+      border: none !important;
+      outline: none !important;
+
+      @include breakpoint(phone) {
+        font-size: 14px;
+      }
     }
 
     svg {
@@ -44,11 +87,27 @@
       height: 28px;
       fill: currentColor;
       object-fit: contain;
-      margin-right: 15px;
+      margin-bottom: 5px;
 
       @include breakpoint(phone) {
         width: 45px;
         height: 35px;
+      }
+    }
+
+    &-subtitle {
+      font-size: 8px;
+      margin: 2px 0 0 0;
+      text-decoration: none !important;
+      color: #FFF !important;
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+      text-align: left;
+
+      @include breakpoint(phone) {
+        font-size: 9px;
       }
     }
   }
@@ -313,7 +372,8 @@
 }
 
 .nav-dropdown-portal {
-  background: rgba(17, 100, 102, 0.5); /* 50% deep-teal with transparency */
+  background: rgba(17, 100, 102, 0.5);
+  /* 50% deep-teal with transparency */
   backdrop-filter: blur(8px);
   width: 75vw;
   border-radius: 0 0 8px 8px;
@@ -332,7 +392,8 @@
       padding: 0;
 
       h4 {
-        color: var(--warm-gold); /* Gold section headers */
+        color: var(--warm-gold);
+        /* Gold section headers */
         font-size: 0.8rem;
         font-weight: 600;
         text-transform: uppercase;
@@ -343,7 +404,8 @@
       }
 
       a {
-        color: #FFFFFF; /* White text for dropdown links */
+        color: #FFFFFF;
+        /* White text for dropdown links */
         font-size: 0.9rem;
         font-weight: 400;
         text-decoration: none;
@@ -353,7 +415,8 @@
         border-bottom: 1px solid transparent;
 
         &:hover {
-          color: var(--warm-gold); /* Gold hover color */
+          color: var(--warm-gold);
+          /* Gold hover color */
           border-bottom-color: var(--warm-gold);
         }
       }
@@ -492,6 +555,12 @@
 
 // Desktop Navigation Active States
 .desktop-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+  // overflow: hidden;
+
   .nav-item.has-dropdown:hover .nav-link,
   .nav-item.has-dropdown.active .nav-link {
     background-color: rgba(0, 0, 0, 0.05);

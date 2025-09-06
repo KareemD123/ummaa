@@ -53,7 +53,7 @@ export const navigationConfig: NavigationItem[] = [
         title: "Events",
         links: [
           { label: "All Upcoming Events", href: "/events/upcoming" },
-          { label: "Past Events", href: "/events/past" },
+          { label: "Past Events", href: "/events/past-events" },
           // { label: "Networking Events", href: "/events/networking" },
           // { label: "Professional Development", href: "/events/professional" },
           // { label: "Social Gatherings", href: "/events/social" },

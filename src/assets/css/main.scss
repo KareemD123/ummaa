@@ -14,6 +14,7 @@
 @import '../../pages/index.scss';
 @import '../../pages/members/members.scss';
 @import '../../pages/events/events.scss';
+@import '../../pages/events/past-events/past-events.scss';
 @import '../../pages/about/about.scss';
 @import '../../pages/contact/contact.scss';
 @import '../../pages/auth/login.scss';
@@ -370,7 +371,7 @@ h5 {
   gap: 2rem;
   margin-left: 10rem;
   flex-wrap: nowrap;
-  overflow: hidden;
+  // overflow: hidden;
 
   // Responsive gap adjustments for smaller desktop/tablet screens
   @media (max-width: 1200px) {

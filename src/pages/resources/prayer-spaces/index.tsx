@@ -332,7 +332,7 @@ const PrayerSpacesPage = () => {
       <div className="prayer-spaces-page">
         <div className="hero-section">
           <div className="hero-content">
-            <div className="hero-icon">🕌</div>
+            {/* <div className="hero-icon">🕌</div> */}
             <h1>Prayer Spaces Directory</h1>
             <p className="last-updated">Last Updated August 31, 2025</p>
 
@@ -389,35 +389,35 @@ const PrayerSpacesPage = () => {
                 className={`tab-btn ${activeTab === "st-george" ? "active" : ""}`}
                 onClick={() => setActiveTab("st-george")}
               >
-                <span className="tab-icon">🏛️</span>
+                {/* <span className="tab-icon">🏛️</span> */}
                 St. George Campus
               </button>
               <button
                 className={`tab-btn ${activeTab === "utm" ? "active" : ""}`}
                 onClick={() => setActiveTab("utm")}
               >
-                <span className="tab-icon">🏫</span>
+                {/* <span className="tab-icon">🏫</span> */}
                 UTM Campus
               </button>
               <button
                 className={`tab-btn ${activeTab === "utsc" ? "active" : ""}`}
                 onClick={() => setActiveTab("utsc")}
               >
-                <span className="tab-icon">🏛️</span>
+                {/* <span className="tab-icon">🏛️</span> */}
                 UTSC Campus
               </button>
               <button
                 className={`tab-btn ${activeTab === "hospitals" ? "active" : ""}`}
                 onClick={() => setActiveTab("hospitals")}
               >
-                <span className="tab-icon">🏥</span>
+                {/* <span className="tab-icon">🏥</span> */}
                 Hospitals
               </button>
               <button
                 className={`tab-btn ${activeTab === "mosques" ? "active" : ""}`}
                 onClick={() => setActiveTab("mosques")}
               >
-                <span className="tab-icon">🕌</span>
+                {/* <span className="tab-icon">🕌</span> */}
                 Mosques
               </button>
             </div>

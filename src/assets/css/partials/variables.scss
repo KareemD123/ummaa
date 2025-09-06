@@ -29,6 +29,11 @@ $white: #FFFFFF;
   --color-light: #{$charcoal};          // Charcoal (contrast backgrounds)
   --color-supporting: #{$deep-teal};     // Deep Teal (supporting elements)
   
+  // RGB values for rgba usage
+  --university-blue-rgb: 49, 112, 142;
+  --warm-gold-rgb: 255, 245, 0;
+  --deep-teal-rgb: 17, 100, 102;
+  
   // Legacy color mappings for compatibility - Updated for grey/blue theme
   --color-orange: #{$warm-gold};         // Gold accent for buttons/highlights
   --color-orange-light: #{$university-blue};   // University Blue for light accents
