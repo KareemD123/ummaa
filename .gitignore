@@ -33,3 +33,5 @@ yarn-error.log*
 
 /scripts
 /public/images/event-photos-original
+GOOGLE_SHEETS_SETUP.md
+google-apps-script/
