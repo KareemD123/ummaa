@@ -16,6 +16,9 @@
 @import '../../pages/events/events.scss';
 @import '../../pages/events/past-events/past-events.scss';
 @import '../../pages/about/about.scss';
+@import '../../pages/about/mission/mission.scss';
+@import '../../pages/about/history/history.scss';
+@import '../../pages/about/leadership/leadership.scss';
 @import '../../pages/contact/contact.scss';
 @import '../../pages/members/join/join.scss';
 @import '../../pages/auth/login.scss';
@@ -26,6 +29,8 @@
 @import 'additional-networks.scss';
 @import 'halal-dining.scss';
 @import '../../pages/donate/donate.scss';
+@import '../../components/custom-effects/ElectricBorder/ElectricBorder.scss';
+@import '../../components/custom-effects/DotGrid/DotGrid.scss';
 
 html,
 body {
@@ -365,93 +370,6 @@ h5 {
 }
 
 
-// Desktop Navigation Styles
-.desktop-nav {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-left: 10rem;
-  flex-wrap: nowrap;
-  // overflow: hidden;
-
-  // Responsive gap adjustments for smaller desktop/tablet screens
-  @media (max-width: 1200px) {
-    gap: 1.5rem;
-    margin-left: 5rem;
-  }
-
-  @media (max-width: 1024px) {
-    gap: 1rem;
-    margin-left: 2rem;
-  }
-
-  @media (max-width: 900px) {
-    gap: 0.5rem;
-    margin-left: 1rem;
-  }
-
-  .nav-item {
-    position: relative;
-    display: inline-block;
-
-    &.has-dropdown {
-      .nav-link {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-
-        .dropdown-arrow {
-          width: 16px;
-          height: 16px;
-          transition: transform 0.2s ease;
-        }
-      }
-
-      &:hover .dropdown-arrow,
-      &.active .dropdown-arrow {
-        transform: rotate(180deg);
-      }
-
-      &:hover,
-      &.active {
-        z-index: 10000;
-      }
-    }
-  }
-
-  .nav-link {
-    color: var(--color-secondary);
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-
-    // Responsive padding adjustments
-    @media (max-width: 1200px) {
-      padding: 0.5rem 0.75rem;
-    }
-
-    @media (max-width: 1024px) {
-      padding: 0.5rem 0.5rem;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 900px) {
-      padding: 0.5rem 0.25rem;
-      font-size: 0.9rem;
-    }
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.05);
-      color: var(--color-primary);
-    }
-  }
-
-}
-
-
 
 .site-header {
   position: fixed;
@@ -533,64 +451,6 @@ h5 {
     }
   }
 
-  .site-nav {
-    top: 0;
-    right: -250px;
-    width: 250px;
-    z-index: 9999;
-    height: 100vh;
-    margin-left: auto;
-    margin-right: auto;
-    position: fixed;
-    background-color: var(--light-gray);
-    transition: all .3s ease;
-    border-left: 1px solid var(--university-blue);
-
-    @include breakpoint(phone) {
-      position: relative;
-      height: auto;
-      right: 0;
-      width: auto;
-      border: none;
-      background-color: transparent;
-    }
-
-    .site-nav__btn {
-      padding: 13px 18px;
-      width: 100%;
-      font-size: 15px;
-      font-weight: 500;
-      text-align: left;
-
-      @include breakpoint(phone) {
-        display: none;
-      }
-    }
-
-    &.site-nav--open {
-      right: 0;
-    }
-
-    a {
-      font-size: 15px;
-      font-weight: 500;
-      width: 100%;
-      color: var(--sage-green);
-      display: block;
-      text-align: left;
-      padding: 15px 18px;
-
-      @include breakpoint(phone) {
-        width: auto;
-        padding: 0;
-        color: #FFF;
-        margin-right: 76px;
-        display: inline-block;
-        font-size: 14px;
-      }
-    }
-  }
-
   &.site-header--fixed {
     border-bottom: 1px solid var(--university-blue);
     background-color: var(--university-blue);
@@ -626,114 +486,6 @@ h5 {
     }
   }
 
-  // Navigation dropdown styles
-  .site-nav {
-    position: relative;
-
-    .nav-item {
-      position: relative;
-      display: inline-block;
-
-      &.has-dropdown {
-        >a {
-          position: relative;
-
-          // Add dropdown arrow indicator
-          &::after {
-            content: '▼';
-            font-size: 10px;
-            margin-left: 5px;
-            transition: transform 0.2s ease;
-          }
-        }
-
-        &:hover>a::after,
-        &.active>a::after {
-          transform: rotate(180deg);
-        }
-      }
-    }
-
-    .nav-dropdown {
-      position: fixed;
-      top: 100px; // Height of the header
-      left: 0;
-      right: 0;
-      transform: translateY(10px);
-      width: 100vw;
-      background: white;
-      border-radius: 0;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-      z-index: 1000;
-      border-top: 1px solid var(--light-gray);
-      border-bottom: 1px solid var(--light-gray);
-
-      .dropdown-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0;
-        padding: 40px 0;
-        max-width: 1200px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1001; // Ensure content is above the dropdown background
-      }
-
-      .dropdown-section {
-        padding: 0 25px;
-
-        &:first-child {
-          border-right: 1px solid var(--light-gray);
-        }
-
-        h4 {
-          color: var(--deep-teal);
-          font-size: 14px;
-          font-weight: 600;
-          margin: 0 0 15px 0;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
-
-        a {
-          display: block;
-          color: var(--charcoal) !important;
-          text-decoration: none;
-          padding: 8px 0;
-          font-size: 14px;
-          transition: color 0.2s ease, padding-left 0.2s ease;
-          border-bottom: none;
-
-          &:hover {
-            color: var(--university-blue) !important;
-            padding-left: 10px;
-          }
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-      }
-    }
-
-    // Show dropdown on hover
-    .nav-item.has-dropdown:hover .nav-dropdown,
-    .nav-item.has-dropdown.active .nav-dropdown {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    // Ensure dropdown stays visible when hovering over it
-    .nav-dropdown:hover {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-  }
 
   .search-form-wrapper {
     &.search-form--active {

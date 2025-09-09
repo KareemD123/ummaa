@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import Footer from "../../../components/footer";
 import MainLayout from "../../../layouts/Main";
 
 interface Network {
@@ -250,6 +251,7 @@ const AdditionalNetworksPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </MainLayout>
   );
 };

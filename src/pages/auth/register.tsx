@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import Footer from "../../components/footer";
 import Layout from "../../layouts/Main";
 
 const RegisterPage = () => (
@@ -80,6 +81,7 @@ const RegisterPage = () => (
         </div>
       </div>
     </section>
+    <Footer />
   </Layout>
 );
 

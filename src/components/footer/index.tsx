@@ -81,7 +81,7 @@ const Footer = () => {
             </li>
             <li className="footer__links-item">
               <a href="mailto:info@ummaa.org" className="footer__links-link">
-                info@ummaa.org
+                Email: info@ummaa.org
               </a>
             </li>
             <li className="footer__links-item">

@@ -1,10 +1,15 @@
 // SASS Variables
 $deep-teal: #116466;
-$university-blue: #31708e;
-$warm-gold: #fff500;
+// $university-blue: #31708e;
+$university-blue: #007bff;
+$warm-gold: #ded704d1;
 $charcoal: #212a31;
-$light-gray: #d3d9d4;
+// $light-gray: #d3d9d4;
+$light-gray: rgb(245, 245, 247); // Apple Color
 $sage-green: #687864;
+$university-bright-blue: #007bff;
+$university-dark-blue: #001e42;
+$university-regular-blue: #1e3766;
 
 // Common variables
 $dark: #212a31;
@@ -15,61 +20,71 @@ $white: #FFFFFF;
 :root {
   // UTMAA Brand Colors
   --deep-teal: #{$deep-teal};
-  --university-blue: #{$university-blue};
+  --university-blue: #{$university-regular-blue};
   --warm-gold: #{$warm-gold};
   --charcoal: #{$charcoal};
   --light-gray: #{$light-gray};
   --sage-green: #{$sage-green};
+  --university-bright-blue: #{$university-bright-blue};
+  --university-dark-blue: #{$university-dark-blue};
+  --university-regular-blue: #{$university-regular-blue};
 
   // UTMAA Brand Colors - Grey & Blue Emphasis with Gold Accents
-  --color-primary: #{$university-blue};        // University Blue (primary focus)
-  --color-secondary: #{$light-gray};      // Light Gray (secondary focus)
-  --color-accent: #{$warm-gold};         // Warm Gold (accent highlights)
-  --color-dark: #{$sage-green};           // Sage Green (dark text)
-  --color-light: #{$charcoal};          // Charcoal (contrast backgrounds)
-  --color-supporting: #{$deep-teal};     // Deep Teal (supporting elements)
-  
+  --color-primary: #{$university-dark-blue}; // University Blue (primary focus)
+  --color-secondary: #{$light-gray}; // Light Gray (secondary focus)
+  --color-accent: #{$warm-gold}; // Warm Gold (accent highlights)
+  --color-dark: #{$sage-green}; // Sage Green (dark text)
+  --color-light: #{$charcoal}; // Charcoal (contrast backgrounds)
+  --color-supporting: #{$deep-teal}; // Deep Teal (supporting elements)
+
   // RGB values for rgba usage
   --university-blue-rgb: 49, 112, 142;
   --warm-gold-rgb: 255, 245, 0;
   --deep-teal-rgb: 17, 100, 102;
-  
+
   // Legacy color mappings for compatibility - Updated for grey/blue theme
-  --color-orange: #{$warm-gold};         // Gold accent for buttons/highlights
-  --color-orange-light: #{$university-blue};   // University Blue for light accents
-  --color-black: #{$sage-green};          // Sage Green for main text
-  --color-text: #{$charcoal};           // Charcoal for primary text
+  --color-orange: #{$warm-gold}; // Gold accent for buttons/highlights
+  --color-orange-light: #{$university-blue}; // University Blue for light accents
+  --color-black: #{$sage-green}; // Sage Green for main text
+  --color-text: #{$charcoal}; // Charcoal for primary text
   --color-white: #{$white};
-  --color-gray: #{$light-gray};           // Light Gray for backgrounds
-  --color-red: #{$university-blue};            // University Blue for alerts/emphasis
+  --color-gray: #{$light-gray}; // Light Gray for backgrounds
+  --color-red: #{$university-blue}; // University Blue for alerts/emphasis
 }
 
 @mixin inputPlaceholder() {
   $selector: '';
   $prefixes: (
-      moz: "::-moz",
-      webkit: "::-webkit",
-      ie: ":-ms"
+    moz: "::-moz",
+    webkit: "::-webkit",
+    ie: ":-ms"
   );
-  @each $prop, $value in $prefixes {
-      @if $prop != "moz" {
-          $selector: #{$value}-input-placeholder;
-      } @else {
-          $selector: #{$value}-placeholder;
-      }
-      @if & {
-          &#{$selector} {
-              @content;
-          }
-      } @else {
-          #{$selector} {
-              @content;
-          }
-      }
+
+@each $prop, $value in $prefixes {
+  @if $prop !="moz" {
+    $selector: #{$value}-input-placeholder;
   }
-  &::placeholder {
-    @content;
+
+  @else {
+    $selector: #{$value}-placeholder;
   }
+
+  @if & {
+    &#{$selector} {
+      @content;
+    }
+  }
+
+  @else {
+    #{$selector} {
+      @content;
+    }
+  }
+}
+
+&::placeholder {
+  @content;
+}
 }
 
 
@@ -77,6 +92,7 @@ $white: #FFFFFF;
   0% {
     background-position: -200px 0;
   }
+
   100% {
     background-position: calc(200px + 100%) 0;
   }

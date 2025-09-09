@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import Footer from "../../../components/footer";
 import MainLayout from "../../../layouts/Main";
 
 interface PrayerSpace {
@@ -435,6 +436,7 @@ const PrayerSpacesPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </MainLayout>
   );
 };

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
+import Footer from "../../components/footer";
 import Layout from "../../layouts/Main";
 import { server } from "../../utils/server";
 import { postData } from "../../utils/services";
@@ -94,6 +95,7 @@ const ForgotPassword = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </Layout>
   );
 };

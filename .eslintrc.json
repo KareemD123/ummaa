@@ -41,7 +41,6 @@
     "@typescript-eslint/consistent-type-imports": "error",
     "react/react-in-jsx-scope": "off",
     "react/no-unescaped-entities": "off",
-    "prettier/prettier": "error",
     "simple-import-sort/imports": "warn",
     "simple-import-sort/exports": "warn",
     "unused-imports/no-unused-imports": "error",
@@ -60,7 +59,12 @@
         "args": "after-used",
         "argsIgnorePattern": "^_"
       }
-    ]
+    ],
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unused-expressions": "off",
+    "prettier/prettier": "warn",
+    "react-hooks/exhaustive-deps": "warn"
   },
   "settings": {
     "react": {

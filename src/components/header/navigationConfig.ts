@@ -21,7 +21,7 @@ export interface DropdownLink {
 export const navigationConfig: NavigationItem[] = [
   {
     label: "About",
-    href: "/about",
+    href: "/",
     hasDropdown: true,
     dropdownSections: [
       {
@@ -29,8 +29,8 @@ export const navigationConfig: NavigationItem[] = [
         links: [
           { label: "UMMAA History", href: "/about/history" },
           { label: "Mission & Vision", href: "/about/mission" },
-          { label: "Leadership Team", href: "/about/leadership" },
-          // { label: "Board of Directors", href: "/about/board" },
+          // { label: "Leadership Team", href: "/about/leadership" },
+          // { label: "Board of Advisors", href: "/about/board" },
         ],
       },
       //   {
@@ -46,7 +46,7 @@ export const navigationConfig: NavigationItem[] = [
   },
   {
     label: "Events",
-    href: "/events",
+    href: "/",
     hasDropdown: true,
     dropdownSections: [
       {
@@ -73,7 +73,7 @@ export const navigationConfig: NavigationItem[] = [
   },
   {
     label: "Members",
-    href: "/members",
+    href: "/",
     hasDropdown: true,
     dropdownSections: [
       // {
@@ -95,7 +95,8 @@ export const navigationConfig: NavigationItem[] = [
           },
           {
             label: "Give Back Through Sponsorship",
-            href: "/members/sponsorship",
+            href: "/contact",
+            // href: "/members/sponsorship",
           },
           // { label: "Member Benefits", href: "/members/benefits" },
           // { label: "Renew Membership", href: "/members/renewal" },
@@ -106,7 +107,7 @@ export const navigationConfig: NavigationItem[] = [
   },
   {
     label: "Resources",
-    href: "/resources",
+    href: "/",
     hasDropdown: true,
     dropdownSections: [
       // {
@@ -128,7 +129,7 @@ export const navigationConfig: NavigationItem[] = [
             href: "/resources/additional-networks",
           },
           // { label: "Scholarships", href: "/resources/scholarships" },
-          { label: "Newsletter Archive", href: "/resources/newsletter" },
+          // { label: "Newsletter Archive", href: "/resources/newsletter" },
           {
             label: "Scholarships (Coming Soon)",
             href: "/resources/scholarships",

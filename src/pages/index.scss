@@ -4,62 +4,142 @@
 
 .homepage {
   .homepage__community-stats {
-    padding: 40px 0;
+    background: linear-gradient(125deg, var(--university-regular-blue) 25%, var(--university-dark-blue) 75%);
+    padding: 60px;
+    border-radius: 16px;
     text-align: center;
+    margin: 0;
+    z-index: 10;
 
     .homepage__community-stats-title {
-      color: var(--charcoal);
-      margin-bottom: 30px;
-      font-size: 24px;
+      color: var(--light-gray);
+      margin-bottom: 0px;
+      font-size: 28px;
     }
 
     .homepage__community-stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
     }
 
     .homepage__community-stats-number {
-      color: var(--university-blue);
-      font-size: 42px;
-      font-weight: 600;
+      // background: linear-gradient(135deg, var(--warm-gold) 0%, #FFE55C 50%, var(--warm-gold) 100%);
+      // background: linear-gradient(135deg, var(--light-gray) 0%, var(--light-gray) 50%, var(--light-gray) 100%);
+      color: var(--light-gray);
+      // -webkit-background-clip: text;
+      // -webkit-text-fill-color: transparent;
+      // background-clip: text;
+      font-size: 64px;
+      font-weight: 700;
       margin-bottom: 5px;
+      // text-shadow: 0 0 20px rgba(192, 192, 192, 0.8), 0 0 40px rgba(192, 192, 192, 0.6), 0 0 60px rgba(192, 192, 192, 0.4);
+      // filter: drop-shadow(0 0 10px rgba(192, 192, 192, 0.7));
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+        text-shadow: 0 0 30px rgba(192, 192, 192, 1), 0 0 50px rgba(192, 192, 192, 0.8), 0 0 80px rgba(192, 192, 192, 0.6);
+        filter: drop-shadow(0 0 15px rgba(192, 192, 192, 0.9));
+      }
     }
 
     .homepage__community-stats-label {
-      color: var(--charcoal);
+      color: var(--light-gray);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    // Responsive adjustments matching membership section
+    @include breakpoint(phone) {
+      padding: 40px 30px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 30px 20px;
+
+      .homepage__community-stats-title {
+        font-size: 20px;
+      }
+
+      .homepage__community-stats-number {
+        font-size: 48px;
+      }
+
+      .homepage__community-stats-label {
+        font-size: 14px;
+      }
     }
   }
 
   .homepage__membership-section {
-    background-color: var(--light-gray);
+    // background-color: var(--university-regular-blue);
+    background: linear-gradient(90deg, var(--university-regular-blue) 0%, var(--university-dark-blue) 100%);
     padding: 60px;
-    border-radius: 15px;
+    border-radius: 16px; // Match ElectricBorder borderRadius
     text-align: center;
-    margin: 50px 0;
+    margin: 0; // Remove margin since ElectricBorder wrapper handles spacing
+    z-index: 10;
+    border-radius: 10px;
 
     .homepage__membership-title {
-      color: var(--charcoal);
+      color: var(--light-gray);
       margin-bottom: 20px;
     }
 
+    .membership-btn {
+      background: linear-gradient(225deg, var(--light-gray) 0%, var(--university-dark-blue) 30%);
+      border: 1px solid var(--warm-gold);
+      color: var(--light-gray);
+    }
+
+    .membership-btn:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
+    }
+
     .homepage__membership-description {
-      color: var(--charcoal);
+      color: var(--light-gray);
       font-size: 18px;
       line-height: 1.6;
       margin-bottom: 30px;
       max-width: 700px;
       margin: 0 auto 30px auto;
     }
+
+    // Responsive adjustments for electric border
+    @include breakpoint(phone) {
+      padding: 40px 30px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 30px 20px;
+
+      .homepage__membership-title {
+        font-size: 24px;
+      }
+
+      .homepage__membership-description {
+        font-size: 16px;
+      }
+    }
   }
 
   .homepage__section--transparent {
     padding: 50px 0;
+    margin-bottom: 10px;
     background-color: transparent;
+  }
+
+  // Electric border wrapper styling
+  .electric-border {
+    margin: 2rem 0;
   }
 
   .homepage__featured {
     padding: 35px 0 62px 0;
+    border-radius: 10px;
+    z-index: 10;
 
     @include breakpoint(phone) {
       padding: 70px 0 92px 0;
@@ -113,33 +193,98 @@
       height: 200px;
       display: flex;
       margin-bottom: 10px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
       padding: 21px 22px;
       position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
 
       @include breakpoint(phone) {
         height: 300px;
         margin-bottom: 0;
       }
 
-      &:before {
-        content: '';
-        left: 0;
-        z-index: 5;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background-color: rgba(0, 0, 0, 0.2);
+      // Default background for non-icon items
+      &:not(.homepage__featured-item--icon) {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &:before {
+          content: '';
+          left: 0;
+          z-index: 5;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      // Icon-based featured items
+      &.homepage__featured-item--icon {
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+
+        @include breakpoint(phone) {
+          padding: 20px 15px;
+        }
+
+        &:hover {
+          transform: scale(1.05) translateY(-8px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+          z-index: 10;
+
+          .homepage__featured-item-icon i {
+            transform: scale(1.2);
+          }
+        }
+
+        .homepage__featured-item-icon {
+          margin-bottom: 15px;
+
+          @include breakpoint(phone) {
+            margin-bottom: 10px;
+          }
+
+          i {
+            font-size: 3rem;
+            color: #ffffff;
+            transition: transform 0.3s ease;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+            @include breakpoint(phone) {
+              font-size: 3.5rem;
+            }
+          }
+        }
+
+        // Community section - Blue gradient
+        &.homepage__featured-item--community {
+          background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+
+        // Events section - Green gradient
+        &.homepage__featured-item--events {
+          background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+        }
+
+        // Mentorship section - Purple gradient
+        &.homepage__featured-item--mentorship {
+          background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 50%, #a78bfa 100%);
+        }
       }
 
       .homepage__featured-item-content {
         z-index: 10;
         display: flex;
         position: relative;
-        align-items: flex-end;
         width: 100%;
+        align-items: flex-end;
 
         h3 {
           font-size: 18px;
@@ -153,54 +298,74 @@
           }
         }
       }
+
+      // Specific styling for icon-based items
+      &.homepage__featured-item--icon {
+        .homepage__featured-item-content {
+          align-items: center;
+          flex-direction: column;
+          text-align: center;
+          justify-content: flex-end;
+
+          h3 {
+            @include breakpoint(phone) {
+              font-size: 20px;
+              margin-bottom: 10px;
+            }
+          }
+
+          .btn {
+            @include breakpoint(phone) {
+              font-size: 12px;
+              padding: 8px 16px;
+              min-width: auto;
+            }
+          }
+        }
+      }
     }
   }
+}
 
-  .homepage__mission-values {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+// Main content area with relative positioning for DotGrid
+.homepage__main-content {
+  position: relative;
+  z-index: 10;
+}
+
+// DotGrid specific to main content area
+.homepage__main-content-dotgrid {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+}
+
+.homepage__section {
+  margin-bottom: 70px;
+  z-index: 10;
+  border-radius: 10px;
+
+  @include breakpoint(phone) {
+    margin-bottom: 100px;
+  }
+
+  .section__intro {
+    margin-bottom: 36px;
 
     @include breakpoint(phone) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
+      margin-bottom: 93px;
     }
 
-    li {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
+    h4 {
+      font-size: 23px;
+      font-weight: 300;
+      text-align: center;
 
-      i {
-        flex-shrink: 0;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: var(--university-blue);
-        color: var(--warm-gold);
-        border-radius: 10px;
-        font-size: 20px;
-      }
-
-      .homepage__mission-values-content {
-        h4 {
-          color: var(--charcoal);
-          font-size: 18px;
-          font-weight: 600;
-          margin-bottom: 10px;
-        }
-
-        p {
-          color: var(--charcoal);
-          font-size: 14px;
-          line-height: 1.6;
-          margin: 0;
-        }
+      @include breakpoint(phone) {
+        font-size: 29px;
       }
     }
   }

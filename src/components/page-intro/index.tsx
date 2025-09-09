@@ -24,7 +24,7 @@ const PageIntro = () => {
     {
       title: "Connecting Muslim Alumni Across Generations",
       ctaText: "Join UMMAA",
-      ctaLink: "/auth/register",
+      ctaLink: "/members/join",
     },
     {
       title: "Professional Excellence Through Community",
@@ -34,7 +34,7 @@ const PageIntro = () => {
     {
       title: "Building Lasting Connections",
       ctaText: "Learn More",
-      ctaLink: "/about",
+      ctaLink: "/about/mission",
     },
     {
       title: "Celebrating Our Heritage",
@@ -44,7 +44,7 @@ const PageIntro = () => {
     {
       title: "Connecting Muslim Alumni Across Generations",
       ctaText: "Join UMMAA",
-      ctaLink: "/auth/register",
+      ctaLink: "/members/join",
     },
     {
       title: "Professional Excellence Through Community",
@@ -54,7 +54,7 @@ const PageIntro = () => {
     {
       title: "Building Lasting Connections",
       ctaText: "Learn More",
-      ctaLink: "/about",
+      ctaLink: "/about/mission",
     },
     {
       title: "Celebrating Our Heritage",
@@ -92,36 +92,31 @@ const PageIntro = () => {
         ))}
       </Swiper>
 
-      <div className="page-intro__data">
-        <div className="container">
-          <div className="page-intro__active-content">
-            <div className="page-intro__content-item">
-              {/* <i className="icon-right" /> */}
-              <div className="page-intro__data-item-content">
-                <h4 className="page-intro__data-title">
-                  {slideContent[activeSlide]?.title}
-                </h4>
-                <Link
-                  href={slideContent[activeSlide]?.ctaLink || "#"}
-                  className="page-intro__data-cta"
-                >
-                  {slideContent[activeSlide]?.ctaText}
-                </Link>
-              </div>
-            </div>
+      {/* Centered content overlay */}
+      <div className="page-intro__overlay">
+        <div className="page-intro__content-card">
+          <h2 className="page-intro__title">
+            {slideContent[activeSlide]?.title}
+          </h2>
+          <Link
+            href={slideContent[activeSlide]?.ctaLink || "#"}
+            className="page-intro__cta-button"
+          >
+            {slideContent[activeSlide]?.ctaText}
+            <i className="icon-right" />
+          </Link>
+        </div>
 
-            {/* Slide indicators */}
-            <div className="page-intro__indicators">
-              {eventPhotos.map((_, index) => (
-                <div
-                  key={index}
-                  className={`page-intro__indicator ${
-                    index === activeSlide ? "active" : ""
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
+        {/* Slide indicators */}
+        <div className="page-intro__indicators">
+          {eventPhotos.map((_, index) => (
+            <div
+              key={index}
+              className={`page-intro__indicator ${
+                index === activeSlide ? "active" : ""
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>

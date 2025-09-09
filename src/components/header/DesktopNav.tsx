@@ -118,13 +118,13 @@ const DesktopNav: React.FC<DesktopNavProps> = ({
 
     // Position the dropdown under the nav item, centered horizontally
     const viewportWidth = window.innerWidth;
-    const dropdownWidth = viewportWidth * 0.75; // 75% of viewport width
+    const dropdownWidth = viewportWidth * 0.5; // 75% of viewport width
     const leftPosition = (viewportWidth - dropdownWidth) / 2; // Center the dropdown
 
     const style = {
       position: "fixed" as const,
       top: `${rect.bottom}px`,
-      left: `${leftPosition}px`,
+      left: `${leftPosition + 20}px`,
       width: `${dropdownWidth}px`,
       zIndex: 9999,
     };

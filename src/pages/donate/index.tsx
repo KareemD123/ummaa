@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import React, { useState } from "react";
 
+import Footer from "@/components/footer";
 import Main from "@/layouts/Main";
 
 interface DonationFormData {
@@ -464,6 +465,7 @@ const Donate: NextPage = () => {
             </div>
           </div>
         </div>
+        <Footer />
       </Main>
     </>
   );

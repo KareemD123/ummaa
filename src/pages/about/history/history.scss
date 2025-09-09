@@ -1,0 +1,76 @@
+// History page styles
+@import '../../../assets/css/partials/variables.scss';
+@import '../../../assets/css/partials/breakpoints.scss';
+
+.history-page {
+  padding: 50px 0;
+
+  .history-page__header {
+    text-align: center;
+    margin-bottom: 50px;
+
+    .history-page__title {
+      color: var(--university-blue);
+      margin-bottom: 20px;
+    }
+
+    .history-page__subtitle {
+      color: var(--charcoal);
+      font-size: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+  .history-page__content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .history-page__section {
+    .history-page__text-content {
+      background-color: var(--light-gray);
+      padding: 40px;
+      border-radius: 10px;
+      border-left: 5px solid var(--deep-teal);
+    }
+
+    .history-page__text {
+      color: var(--charcoal);
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include breakpointMax(phone) {
+    padding: 30px 0;
+
+    .history-page__header {
+      margin-bottom: 30px;
+
+      .history-page__title {
+        font-size: 2rem;
+      }
+
+      .history-page__subtitle {
+        font-size: 18px;
+      }
+    }
+
+    .history-page__section {
+      .history-page__text-content {
+        padding: 25px;
+      }
+
+      .history-page__text {
+        font-size: 16px;
+      }
+    }
+  }
+}

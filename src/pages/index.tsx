@@ -1,174 +1,303 @@
+import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
+import { DotGrid, ElectricBorder } from "@/components/custom-effects";
 import Footer from "@/components/footer";
 import PageIntro from "@/components/page-intro";
-import Subscribe from "@/components/subscribe";
 
 import Layout from "../layouts/Main";
 
 // Homepage styles are imported in main.scss
 
 const IndexPage = () => {
+  const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
+  const [currentPhotoIndex, setCurrentPhotoIndex] = useState<number>(0);
+
+  // Array of all event photos for gallery
+  const eventPhotos = [
+    "/images/event-photos/event-photo-01.jpg",
+    "/images/event-photos/event-photo-02.jpg",
+    "/images/event-photos/event-photo-03.jpg",
+    "/images/event-photos/event-photo-04.jpg",
+    "/images/event-photos/event-photo-05.jpg",
+    "/images/event-photos/event-photo-06.jpg",
+    "/images/event-photos/event-photo-07.jpg",
+    "/images/event-photos/event-photo-08.jpg",
+    "/images/event-photos/event-photo-09.jpg",
+    "/images/event-photos/event-photo-10.jpg",
+    "/images/event-photos/event-photo-11.jpg",
+    "/images/event-photos/event-photo-12.jpg",
+    "/images/event-photos/event-photo-13.jpg",
+    "/images/event-photos/event-photo-14.jpg",
+    "/images/event-photos/event-photo-15.jpg",
+    "/images/event-photos/event-photo-16.jpg",
+    "/images/event-photos/event-photo-17.jpg",
+    "/images/event-photos/event-photo-18.jpg",
+    "/images/event-photos/event-photo-19.jpg",
+  ];
+
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (!selectedPhoto) return;
+
+      if (e.key === "Escape") {
+        closeModal();
+      } else if (e.key === "ArrowLeft") {
+        navigatePhoto(-1);
+      } else if (e.key === "ArrowRight") {
+        navigatePhoto(1);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, [selectedPhoto, currentPhotoIndex]);
+
+  const openModal = (photo: string, index: number) => {
+    setSelectedPhoto(photo);
+    setCurrentPhotoIndex(index);
+  };
+
+  const closeModal = () => {
+    setSelectedPhoto(null);
+  };
+
+  const navigatePhoto = (direction: number) => {
+    const newIndex = currentPhotoIndex + direction;
+    if (newIndex >= 0 && newIndex < eventPhotos.length) {
+      setCurrentPhotoIndex(newIndex);
+      setSelectedPhoto(eventPhotos[newIndex]);
+    }
+  };
+
   return (
     <Layout>
       <div className="homepage">
         <PageIntro />
 
-        <section className="section homepage__section--transparent">
-          <div className="container">
-            <div className="homepage__community-stats">
-              <h3 className="homepage__community-stats-title">
-                Our Community Impact
-              </h3>
-              {/* TODO: Fetch these stats dynamically */}
-              <div className="homepage__community-stats-grid">
-                <div>
-                  <h4 className="homepage__community-stats-number">150+</h4>
-                  <p className="homepage__community-stats-label">
-                    Active Alumni
-                  </p>
-                </div>
-                <div>
-                  <h4 className="homepage__community-stats-number">50+</h4>
-                  <p className="homepage__community-stats-label">
-                    Available Mentors
-                  </p>
-                </div>
-                <div>
-                  <h4 className="homepage__community-stats-number">6</h4>
-                  <p className="homepage__community-stats-label">
-                    Industries Represented
-                  </p>
-                </div>
-                <div>
-                  <h4 className="homepage__community-stats-number">15+</h4>
-                  <p className="homepage__community-stats-label">
-                    Years of Experience
-                  </p>
+        {/* Main content area with DotGrid background */}
+        <div className="homepage__main-content">
+          {/* Interactive dot grid background for main content only */}
+          <DotGrid
+            dotSize={6}
+            gap={45}
+            shockRadius={300}
+            // baseColor="rgba(125, 249, 255, 0.4)"
+            baseColor="#7df9ff"
+            hoverColor="rgba(154, 85, 196, 0.64)"
+            // animationSpeed={0.1}
+            speedTrigger={0.1}
+            className="homepage__main-content-dotgrid"
+          />
+          <section className="section homepage__section--transparent">
+            <div className="container">
+              <div className="homepage__community-stats">
+                <h3 className="homepage__community-stats-title">
+                  Our Community Impact
+                </h3>
+                {/* TODO: Fetch these stats dynamically */}
+                <div className="homepage__community-stats-grid">
+                  <div>
+                    <h4 className="homepage__community-stats-number">150+</h4>
+                    <p className="homepage__community-stats-label">
+                      Active Alumni
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="homepage__community-stats-number">50+</h4>
+                    <p className="homepage__community-stats-label">
+                      Available Mentors
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="homepage__community-stats-number">6</h4>
+                    <p className="homepage__community-stats-label">
+                      Industries Represented
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="homepage__community-stats-number">15+</h4>
+                    <p className="homepage__community-stats-label">
+                      Years of Experience
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="homepage__featured">
-          <div className="container">
-            <article
-              style={{ backgroundImage: "url(/images/uoftcampusimg1.png)" }}
-              className="homepage__featured-item homepage__featured-item-large"
-            >
-              <div className="homepage__featured-item-content">
-                <h3>Join Our Growing Community</h3>
-                <Link href="/auth/register" className="btn btn--rounded">
-                  Become a Member
-                </Link>
+          <section className="homepage__featured">
+            <div className="container">
+              <article className="homepage__featured-item homepage__featured-item-large homepage__featured-item--icon homepage__featured-item--community">
+                <div className="homepage__featured-item-icon">
+                  <i className="icon-avatar" />
+                </div>
+                <div className="homepage__featured-item-content">
+                  <h3>Join Our Growing Community</h3>
+                  <Link href="/auth/register" className="btn btn--rounded">
+                    Become a Member
+                  </Link>
+                </div>
+              </article>
+
+              <article className="homepage__featured-item homepage__featured-item-small-first homepage__featured-item--icon homepage__featured-item--events">
+                <div className="homepage__featured-item-icon">
+                  <i className="icon-send" />
+                </div>
+                <div className="homepage__featured-item-content">
+                  <h3>Upcoming Events</h3>
+                  <Link href="/events" className="btn btn--rounded">
+                    View Calendar
+                  </Link>
+                </div>
+              </article>
+
+              <article className="homepage__featured-item homepage__featured-item-small homepage__featured-item--icon homepage__featured-item--mentorship">
+                <div className="homepage__featured-item-icon">
+                  <i className="icon-materials" />
+                </div>
+                <div className="homepage__featured-item-content">
+                  <h3>Mentorship Program</h3>
+                  <Link href="/mentorship" className="btn btn--rounded">
+                    GET INVOLVED
+                  </Link>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          {/* Event Photo Gallery Section */}
+          <section className="homepage__section">
+            <div className="container">
+              <div className="past-events-page__gallery-section">
+                <h2 className="past-events-page__section-title">
+                  Event Photo Gallery
+                </h2>
+                <p className="past-events-page__gallery-description">
+                  Browse through photos from our various events and
+                  celebrations.
+                </p>
+
+                <div className="past-events-page__gallery">
+                  {eventPhotos.map((photo, index) => {
+                    // Create different sizes for masonry layout
+                    const sizes = ["small", "medium", "large"];
+                    const randomSize = sizes[index % 3];
+
+                    return (
+                      <div
+                        key={index}
+                        className={`past-events-page__gallery-item past-events-page__gallery-item--${randomSize}`}
+                        onClick={() => openModal(photo, index)}
+                      >
+                        <Image
+                          src={photo}
+                          alt={`Event photo ${index + 1}`}
+                          width={400}
+                          height={400}
+                          className="past-events-page__gallery-image"
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                          }}
+                        />
+                        <div className="past-events-page__gallery-overlay">
+                          <span className="past-events-page__gallery-zoom">
+                            🔍
+                          </span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            </article>
+            </div>
+          </section>
 
-            <article
-              style={{ backgroundImage: "url(/images/uoftimg2.jpg)" }}
-              className="homepage__featured-item homepage__featured-item-small-first"
-            >
-              <div className="homepage__featured-item-content">
-                <h3>Upcoming Events</h3>
-                <Link href="/events" className="btn btn--rounded">
-                  View Calendar
-                </Link>
-              </div>
-            </article>
+          {/* <ProductsFeatured /> */}
+          {/* <Subscribe /> */}
 
-            <article
-              style={{ backgroundImage: "url(/images/featured-3.jpg)" }}
-              className="homepage__featured-item homepage__featured-item-small"
-            >
-              <div className="homepage__featured-item-content">
-                <h3>Mentorship Program</h3>
-                <Link href="/mentorship" className="btn btn--rounded">
-                  GET INVOLVED
-                </Link>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container">
-            <header className="section__intro">
-              <h4>Our Mission & Values</h4>
-            </header>
-
-            <ul className="homepage__mission-values">
-              <li>
-                <i className="icon-shipping" />
-                <div className="homepage__mission-values-content">
-                  <h4>Professional Excellence</h4>
-                  <p>
-                    Connecting Muslim alumni across all faculties and decades to
-                    foster strong professional networks rooted in academic
-                    excellence.
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <i className="icon-payment" />
-                <div className="homepage__mission-values-content">
-                  <h4>Student Support</h4>
-                  <p>
-                    Supporting current Muslim students through mentorship,
-                    career guidance, and scholarship opportunities.
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <i className="icon-cash" />
-                <div className="homepage__mission-values-content">
-                  <h4>Community Building</h4>
-                  <p>
-                    Creating meaningful connections among alumni who share
-                    common values, experiences, and Islamic principles.
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <i className="icon-materials" />
-                <div className="homepage__mission-values-content">
-                  <h4>Social Responsibility</h4>
-                  <p>
-                    Contributing positively to Canadian society through
-                    community engagement, interfaith dialogue, and service.
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        {/* <ProductsFeatured /> */}
-        <Subscribe />
-
-        <section className="section">
-          <div className="container">
-            <div className="homepage__membership-section">
-              <h2 className="homepage__membership-title">Join Our Community</h2>
-              <p className="homepage__membership-description">
-                Our target membership includes Muslim alumni from all U of T
-                campuses (St. George, Mississauga, Scarborough) spanning
-                undergraduate, graduate, and professional programs across all
-                faculties.
-              </p>
-              <Link
-                href="/auth/register"
-                className="btn btn--rounded btn--yellow"
+          <section className="section">
+            <div className="container">
+              <ElectricBorder
+                color="#7df9ff"
+                speed={0.4}
+                chaos={0.5}
+                thickness={3}
+                style={{ borderRadius: 15 }}
               >
-                Become a Member
-              </Link>
+                <div className="homepage__membership-section">
+                  <h2 className="homepage__membership-title">
+                    Join Our Community
+                  </h2>
+                  <p className="homepage__membership-description">
+                    Our target membership includes Muslim alumni from all U of T
+                    campuses (St. George, Mississauga, Scarborough) spanning
+                    undergraduate, graduate, and professional programs across
+                    all faculties.
+                  </p>
+                  <Link
+                    href="/members/join"
+                    className="membership-btn btn btn--rounded"
+                  >
+                    Become a Member
+                  </Link>
+                </div>
+              </ElectricBorder>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      {/* Modal for enlarged photo view */}
+      {selectedPhoto && (
+        <div className="past-events-page__modal" onClick={closeModal}>
+          <div
+            className="past-events-page__modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="past-events-page__modal-close"
+              onClick={closeModal}
+            >
+              ×
+            </button>
+
+            {/* Navigation arrows */}
+            {currentPhotoIndex > 0 && (
+              <button
+                className="past-events-page__modal-nav past-events-page__modal-nav--prev"
+                onClick={() => navigatePhoto(-1)}
+              >
+                ‹
+              </button>
+            )}
+
+            {currentPhotoIndex < eventPhotos.length - 1 && (
+              <button
+                className="past-events-page__modal-nav past-events-page__modal-nav--next"
+                onClick={() => navigatePhoto(1)}
+              >
+                ›
+              </button>
+            )}
+
+            <img
+              src={selectedPhoto}
+              alt={`Event photo ${currentPhotoIndex + 1} of ${eventPhotos.length}`}
+              className="past-events-page__modal-image"
+            />
+
+            {/* Photo counter */}
+            <div className="past-events-page__modal-counter">
+              {currentPhotoIndex + 1} / {eventPhotos.length}
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      )}
 
       <Footer />
     </Layout>
