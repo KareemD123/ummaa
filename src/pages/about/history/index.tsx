@@ -1,4 +1,3 @@
-import Breadcrumb from "@/components/breadcrumb";
 import Footer from "@/components/footer";
 
 import Layout from "../../../layouts/Main";
@@ -8,19 +7,19 @@ import Layout from "../../../layouts/Main";
 const History = () => {
   return (
     <Layout>
-      <Breadcrumb />
+      <div className="history-hero">
+        <div className="container">
+          <h1>Our History</h1>
+          <p>
+            The story of how UMMAA was founded and our journey to build the
+            largest and most vibrant Muslim identity at the University of
+            Toronto.
+          </p>
+        </div>
+      </div>
 
       <section className="history-page">
         <div className="container">
-          <div className="history-page__header">
-            <h1 className="history-page__title">Our History</h1>
-            <p className="history-page__subtitle">
-              The story of how UMMAA was founded and our journey to build the
-              largest and most vibrant Muslim identity at the University of
-              Toronto.
-            </p>
-          </div>
-
           <div className="history-page__content">
             <div className="history-page__section">
               <div className="history-page__text-content">

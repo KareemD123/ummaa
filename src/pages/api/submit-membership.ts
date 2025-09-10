@@ -1,22 +1,31 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
+interface AcademicEntry {
+  graduationYear: string;
+  campus: string;
+  faculty: string;
+  otherFaculty?: string;
+  program: string;
+}
+
 interface MembershipFormData {
   firstName: string;
   lastName: string;
   email: string;
   phone: string;
-  graduationYear: string;
-  faculty: string;
-  program: string;
+  academicEntries: AcademicEntry[];
   currentCity: string;
   currentCountry: string;
   profession: string;
   company: string;
   linkedinProfile: string;
   interests: string[];
-  volunteerInterest: string;
   hearAboutUs: string;
   additionalComments: string;
+  includeInDirectory: boolean;
+  friendReferrals: string[];
+  favoriteMemory: string;
+  agreeToTerms: boolean;
 }
 
 export default async function handler(
@@ -45,13 +54,14 @@ export default async function handler(
 
     // Validate required fields
     const formData: MembershipFormData = req.body;
+
+    // Log the received data for debugging
+    console.log("Received form data:", JSON.stringify(formData, null, 2));
+
     const requiredFields = [
       "firstName",
       "lastName",
       "email",
-      "graduationYear",
-      "faculty",
-      "program",
       "currentCity",
       "currentCountry",
       "hearAboutUs",
@@ -60,11 +70,77 @@ export default async function handler(
     for (const field of requiredFields) {
       const value = formData[field as keyof MembershipFormData];
       if (!value || value.toString().trim() === "") {
+        console.log(`Validation failed for field: ${field}, value:`, value);
         return res.status(400).json({
           success: false,
           message: `${field} is required`,
         });
       }
+    }
+
+    // Validate academic entries
+    if (
+      !formData.academicEntries ||
+      !Array.isArray(formData.academicEntries) ||
+      formData.academicEntries.length === 0
+    ) {
+      console.log(
+        "Academic entries validation failed:",
+        formData.academicEntries,
+      );
+      return res.status(400).json({
+        success: false,
+        message: "At least one academic entry is required",
+      });
+    }
+
+    // Validate each academic entry
+    for (let i = 0; i < formData.academicEntries.length; i++) {
+      const entry = formData.academicEntries[i];
+      const requiredAcademicFields = [
+        "graduationYear",
+        "campus",
+        "faculty",
+        "program",
+      ];
+
+      for (const field of requiredAcademicFields) {
+        if (
+          !entry[field as keyof AcademicEntry] ||
+          entry[field as keyof AcademicEntry]?.toString().trim() === ""
+        ) {
+          console.log(
+            `Academic entry ${i + 1} validation failed for field: ${field}`,
+          );
+          return res.status(400).json({
+            success: false,
+            message: `Academic entry ${i + 1}: ${field} is required`,
+          });
+        }
+      }
+
+      // If faculty is "Other", otherFaculty is required
+      if (
+        entry.faculty === "Other" &&
+        (!entry.otherFaculty || entry.otherFaculty.trim() === "")
+      ) {
+        console.log(
+          `Academic entry ${i + 1} validation failed: otherFaculty required when faculty is Other`,
+        );
+        return res.status(400).json({
+          success: false,
+          message: `Academic entry ${i + 1}: Please specify the faculty when selecting "Other"`,
+        });
+      }
+    }
+
+    // Validate terms agreement
+    if (!formData.agreeToTerms) {
+      console.log("Terms agreement validation failed:", formData.agreeToTerms);
+      return res.status(400).json({
+        success: false,
+        message: "You must agree to the terms and conditions",
+      });
     }
 
     // Validate email format
@@ -77,6 +153,7 @@ export default async function handler(
     }
 
     // Submit to Google Apps Script
+    console.log("Submitting to Google Apps Script:", GOOGLE_SCRIPT_URL);
     const response = await fetch(GOOGLE_SCRIPT_URL, {
       method: "POST",
       headers: {
@@ -84,6 +161,8 @@ export default async function handler(
       },
       body: JSON.stringify(formData),
     });
+
+    console.log("Google Apps Script response status:", response.status);
 
     // Check if response is ok
     if (!response.ok) {

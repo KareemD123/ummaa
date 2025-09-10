@@ -12,7 +12,7 @@ const PageIntro = () => {
   // Array of event photos for the carousel
   const eventPhotos = [
     "/images/event-photos/event-photo-19.jpg",
-    "/images/event-photos/event-photo-01.jpg",
+    // "/images/event-photos/event-photo-01.jpg",
     "/images/event-photos/event-photo-03.jpg",
     "/images/event-photos/event-photo-08.jpg",
     "/images/event-photos/event-photo-10.jpg",

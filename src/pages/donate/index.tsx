@@ -159,6 +159,11 @@ const Donate: NextPage = () => {
       </Head>
       <Main>
         <div className="donate-page">
+          {/* Coming Soon Ribbon Overlay */}
+          <div className="coming-soon-ribbon">
+            <span>Coming Soon...</span>
+          </div>
+
           <div className="donate-hero">
             <div className="container">
               <h1>Support Our Mission</h1>

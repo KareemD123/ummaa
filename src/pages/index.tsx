@@ -100,13 +100,13 @@ const IndexPage = () => {
                 {/* TODO: Fetch these stats dynamically */}
                 <div className="homepage__community-stats-grid">
                   <div>
-                    <h4 className="homepage__community-stats-number">150+</h4>
+                    <h4 className="homepage__community-stats-number">120+</h4>
                     <p className="homepage__community-stats-label">
                       Active Alumni
                     </p>
                   </div>
                   <div>
-                    <h4 className="homepage__community-stats-number">50+</h4>
+                    <h4 className="homepage__community-stats-number">20+</h4>
                     <p className="homepage__community-stats-label">
                       Available Mentors
                     </p>
@@ -118,9 +118,9 @@ const IndexPage = () => {
                     </p>
                   </div>
                   <div>
-                    <h4 className="homepage__community-stats-number">15+</h4>
+                    <h4 className="homepage__community-stats-number">3+</h4>
                     <p className="homepage__community-stats-label">
-                      Years of Experience
+                      Events Hosted
                     </p>
                   </div>
                 </div>

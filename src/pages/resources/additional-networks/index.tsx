@@ -182,14 +182,16 @@ const AdditionalNetworksPage = () => {
       <div className="additional-networks-page">
         <div className="hero-section">
           <div className="hero-content">
-            <h1>Additional Professional Networks</h1>
+            <h1>
+              Additional Professional Networks & Muslim Owned Organizations
+            </h1>
 
             <div className="description">
-              <p>
+              {/* <p>
                 <strong>
                   Connect with Other Professional Muslim Networks!
                 </strong>
-              </p>
+              </p> */}
               <p>
                 Explore a curated list of professional organizations and
                 networks that can support and empower Muslim alumni from the
@@ -197,14 +199,14 @@ const AdditionalNetworksPage = () => {
                 opportunities for mentorship, career development, and meaningful
                 connections.
               </p>
-              <div className="fun-fact">
+              {/* <div className="fun-fact">
                 <p>
                   <span className="fun-fact-icon">✨</span>
                   <strong>Fun fact</strong> - many of these networks were
                   founded by members of UofT Muslim Alumni! Join a legacy of
                   leadership and impact!
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

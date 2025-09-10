@@ -1,3 +1,62 @@
+// Donate page styles
+@import '../../assets/css/partials/variables.scss';
+@import '../../assets/css/partials/breakpoints.scss';
+
+.coming-soon-ribbon {
+    position: fixed;
+    top: 50%;
+    left: -100px;
+    right: -100px;
+    z-index: 99;
+    background: linear-gradient(45deg, rgba(255, 193, 7, 0.95), rgba(255, 152, 0, 0.95));
+    color: var(--university-blue);
+    text-align: center;
+    padding: 20px 0;
+    transform: rotate(-20deg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    pointer-events: none;
+
+    span {
+        font-size: 2.5rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        display: block;
+
+        @include breakpoint(phone) {
+            font-size: 2rem;
+            letter-spacing: 3px;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+    &::before {
+        left: 20px;
+    }
+
+    &::after {
+        right: 20px;
+    }
+}
+
 // Override main-page padding for donate page
 .main-page .donate-page {
     margin-top: -65px;
@@ -311,17 +370,12 @@
                 gap: 1rem;
 
                 .payment-method {
-                    border: 2px solid #e9ecef;
-                    border-radius: 8px;
-                    padding: 1rem;
-                    transition: all 0.3s ease;
-                    cursor: pointer;
                     position: relative;
-
-                    &:hover {
-                        border-color: #10b981;
-                        background: #f0fdf4;
-                    }
+                    border: 2px solid #e5e7eb;
+                    border-radius: 8px;
+                    padding: 1rem 1rem 1rem 3rem;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
 
                     input[type="radio"] {
                         position: absolute;

@@ -24,19 +24,19 @@ const Footer = () => {
                 Upcoming Events
               </Link>
             </li>
-            <li className="footer__links-item">
+            {/* <li className="footer__links-item">
               <Link href="/mentorship" className="footer__links-link">
                 Mentorship Program
               </Link>
-            </li>
+            </li> */}
             <li className="footer__links-item">
-              <Link href="/volunteer" className="footer__links-link">
-                Volunteer Opportunities
+              <Link href="/contact" className="footer__links-link">
+                Interested in Volunteering?
               </Link>
             </li>
             <li className="footer__links-item">
               <Link href="/scholarships" className="footer__links-link">
-                Scholarship Fund
+                Scholarship Fund (Coming Soon)
               </Link>
             </li>
             <li className="footer__links-item">
@@ -49,12 +49,12 @@ const Footer = () => {
             <li className="footer__links-item footer__links-item--title">
               Resources
             </li>
-            <li className="footer__links-item">
+            {/* <li className="footer__links-item">
               <Link href="/members" className="footer__links-link">
                 Member Directory
               </Link>
-            </li>
-            <li className="footer__links-item">
+            </li> */}
+            {/* <li className="footer__links-item">
               <Link href="/career" className="footer__links-link">
                 Career Resources
               </Link>
@@ -63,14 +63,14 @@ const Footer = () => {
               <Link href="/newsletter" className="footer__links-link">
                 Newsletter
               </Link>
-            </li>
+            </li> */}
             <li className="footer__links-item">
-              <Link href="/auth/register" className="footer__links-link">
+              <Link href="/members/join" className="footer__links-link">
                 Become a Member
               </Link>
             </li>
             <li className="footer__links-item">
-              <Link href="/feedback" className="footer__links-link">
+              <Link href="/contact" className="footer__links-link">
                 Site Feedback
               </Link>
             </li>
@@ -84,11 +84,11 @@ const Footer = () => {
                 Email: info@ummaa.org
               </a>
             </li>
-            <li className="footer__links-item">
+            {/* <li className="footer__links-item">
               <a href="tel:+14161234567" className="footer__links-link">
                 Phone: +1 416 123 4567
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
@@ -100,31 +100,36 @@ const Footer = () => {
           in shared faith and academic excellence.
         </p>
         <ul className="footer__social">
-          <li className="footer__social-item">
+          {/* <li className="footer__social-item">
             <a href="#" className="footer__social-link">
               <i className="icon-facebook" />
             </a>
-          </li>
-          <li className="footer__social-item">
+          </li> */}
+          {/* <li className="footer__social-item">
             <a href="#" className="footer__social-link">
               <i className="icon-twitter" />
             </a>
-          </li>
-          <li className="footer__social-item">
+          </li> */}
+          {/* <li className="footer__social-item">
             <a href="#" className="footer__social-link">
               <i className="icon-linkedin" />
             </a>
-          </li>
+          </li> */}
           <li className="footer__social-item">
-            <a href="#" className="footer__social-link">
+            <a
+              href="https://www.instagram.com/ummaa_uoft/"
+              target="_blank"
+              className="footer__social-link"
+              rel="noreferrer"
+            >
               <i className="icon-instagram" />
             </a>
           </li>
-          <li className="footer__social-item">
+          {/* <li className="footer__social-item">
             <a href="#" className="footer__social-link">
               <i className="icon-youtube-play" />
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
 

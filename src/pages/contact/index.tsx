@@ -52,11 +52,21 @@ const Contact: NextPage = () => {
     setSubmitStatus("idle");
 
     try {
-      // TODO: Implement actual form submission logic
-      // For now, simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          to: "admin@ummaa.org",
+        }),
+      });
 
-      console.log("Form submitted:", formData);
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
       setSubmitStatus("success");
       setFormData({ name: "", email: "", inquiryType: "", message: "" });
     } catch (error) {
@@ -220,7 +230,7 @@ const Contact: NextPage = () => {
                 </div>
 
                 <div className="contact-info">
-                  <h3>Other Ways to Reach Us</h3>
+                  <h3>Alternative Contacts</h3>
                   <div className="contact-methods">
                     <div className="contact-method">
                       <div className="method-content">
@@ -231,15 +241,15 @@ const Contact: NextPage = () => {
                     <div className="contact-method">
                       <div className="method-content">
                         <h4>Social Media</h4>
-                        <p>Follow us for updates and community news</p>
+                        <p>Instagram: @ummaa_uoft</p>
                       </div>
                     </div>
-                    <div className="contact-method">
+                    {/* <div className="contact-method">
                       <div className="method-content">
                         <h4>Response Time</h4>
                         <p>We typically respond within 24-48 hours</p>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

@@ -1,4 +1,3 @@
-import Breadcrumb from "@/components/breadcrumb";
 import Footer from "@/components/footer";
 
 import Layout from "../../../layouts/Main";
@@ -8,22 +7,22 @@ import Layout from "../../../layouts/Main";
 const Mission = () => {
   return (
     <Layout>
-      <Breadcrumb />
+      <div className="mission-hero">
+        <div className="container">
+          <h1>Mission and Vision</h1>
+          <p>
+            Our commitment to connecting Muslim graduates and fostering a
+            vibrant community rooted in shared faith, academic excellence, and
+            professional growth.
+          </p>
+        </div>
+      </div>
 
       <section className="mission-page">
         <div className="container">
-          <div className="mission-page__header">
-            <h1 className="mission-page__title">Mission and Vision</h1>
-            <p className="mission-page__subtitle">
-              Our commitment to connecting Muslim graduates and fostering a
-              vibrant community rooted in shared faith, academic excellence, and
-              professional growth.
-            </p>
-          </div>
-
           <div className="mission-page__content">
             <div className="mission-page__section">
-              <h2 className="mission-page__section-title">Mission</h2>
+              <h2 className="mission-page__section-title">Mission & Vision</h2>
               <div className="mission-page__text-content">
                 <p className="mission-page__text">
                   The University of Toronto Muslim Alumni Association (UMMAA)
@@ -35,12 +34,6 @@ const Mission = () => {
                   lasting relationships among alumni who share common values and
                   experiences.
                 </p>
-              </div>
-            </div>
-
-            <div className="mission-page__section">
-              <h2 className="mission-page__section-title">Vision</h2>
-              <div className="mission-page__text-content">
                 <p className="mission-page__text">
                   UMMAA envisions a thriving community where Muslim alumni
                   actively contribute to the University of Toronto and Muslim

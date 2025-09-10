@@ -89,10 +89,10 @@ export const navigationConfig: NavigationItem[] = [
         title: "Membership",
         links: [
           { label: "Become a Member", href: "/members/join" },
-          {
-            label: "Not an Alum? Join the Canadian Muslim Network (CMA)",
-            href: "/members/cma",
-          },
+          // {
+          //   label: "Not an Alum? Join the Canadian Muslim Network (CMN)",
+          //   href: "/members/cmn",
+          // },
           {
             label: "Give Back Through Sponsorship",
             href: "/contact",
