@@ -136,7 +136,7 @@ const IndexPage = () => {
                 </div>
                 <div className="homepage__featured-item-content">
                   <h3>Join Our Growing Community</h3>
-                  <Link href="/auth/register" className="btn btn--rounded">
+                  <Link href="/members/join" className="btn btn--rounded">
                     Become a Member
                   </Link>
                 </div>
@@ -148,7 +148,7 @@ const IndexPage = () => {
                 </div>
                 <div className="homepage__featured-item-content">
                   <h3>Upcoming Events</h3>
-                  <Link href="/events" className="btn btn--rounded">
+                  <Link href="/events/upcoming" className="btn btn--rounded">
                     View Calendar
                   </Link>
                 </div>

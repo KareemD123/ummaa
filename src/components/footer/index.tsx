@@ -20,7 +20,7 @@ const Footer = () => {
               Get Involved
             </li>
             <li className="footer__links-item">
-              <Link href="/events" className="footer__links-link">
+              <Link href="/events/upcoming" className="footer__links-link">
                 Upcoming Events
               </Link>
             </li>
