@@ -18,6 +18,7 @@ interface UpcomingEvent {
   image: string;
   category: string;
   featured?: boolean;
+  tentative?: boolean;
 }
 
 const UpcomingEvents = () => {
@@ -31,15 +32,18 @@ const UpcomingEvents = () => {
       id: "1",
       title: "Inaugural Networking Evening",
       date: "2025-11-15",
+      // date: "TBD",
       time: "6:00 PM - 9:00 PM",
       location:
-        "Hart House Great Hall, University of Toronto St. George Campus",
+        // "Hart House Great Hall, University of Toronto St. George Campus",
+        "TBD",
       description:
         "Join us for our inaugural networking evening where Muslim alumni from diverse fields will come together to share experiences, build connections, and celebrate our community. This special event marks the beginning of UMMAA's journey in fostering meaningful professional relationships.",
       registrationLink: "/contact",
       image: "/images/event-photos/event-photo-03.jpg",
       category: "Networking",
       featured: true,
+      tentative: true,
     },
   ];
 
@@ -184,14 +188,14 @@ const UpcomingEvents = () => {
                           <h3 className="event-title">{event.title}</h3>
                           <div className="event-date-time">
                             <div className="event-date">
-                              {formatDate(event.date)}
+                              {formatDate(event.date)} {event.tentative ? "(Tentative)" : ""}
                             </div>
                             <div className="event-time">{event.time}</div>
                           </div>
                         </div>
                         <div className="event-location">
                           <i className="icon-location" />
-                          <span>{event.location}</span>
+                          <span>Location: {event.location}</span>
                         </div>
                         <p className="event-description">{event.description}</p>
                         {event.registrationLink && (
