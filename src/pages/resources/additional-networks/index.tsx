@@ -182,9 +182,7 @@ const AdditionalNetworksPage = () => {
       <div className="additional-networks-page">
         <div className="hero-section">
           <div className="hero-content">
-            <h1>
-              Additional Professional Networks & Muslim Owned Organizations
-            </h1>
+            <h1>Additional Professional Networks & Muslim Led Organizations</h1>
 
             <div className="description">
               {/* <p>

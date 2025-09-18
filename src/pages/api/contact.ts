@@ -24,8 +24,7 @@ export default async function handler(
 
   try {
     // Replace this URL with your Google Apps Script web app URL
-    const googleScriptUrl =
-      process.env.GOOGLE_EMAIL_SCRIPT_URL || "YOUR_GOOGLE_SCRIPT_URL_HERE";
+    const googleScriptUrl = process.env.GOOGLE_EMAIL_SCRIPT_URL || "URL";
 
     const response = await fetch(googleScriptUrl, {
       method: "POST",

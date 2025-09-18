@@ -31,9 +31,10 @@ const UpcomingEvents = () => {
     {
       id: "1",
       title: "Inaugural Networking Evening",
-      date: "2025-11-15",
-      // date: "TBD",
-      time: "6:00 PM - 9:00 PM",
+      // date: "2025-11-15",
+      date: "Date: TBD",
+      // time: "6:00 PM - 9:00 PM",
+      time: "Time: TBD",
       location:
         // "Hart House Great Hall, University of Toronto St. George Campus",
         "TBD",
@@ -96,15 +97,15 @@ const UpcomingEvents = () => {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [selectedPhoto, currentPhotoIndex]);
 
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  };
+  // const formatDate = (dateString: string) => {
+  //   const date = new Date(dateString);
+  //   return date.toLocaleDateString("en-US", {
+  //     weekday: "long",
+  //     year: "numeric",
+  //     month: "long",
+  //     day: "numeric",
+  //   });
+  // };
 
   const isEventSoon = (dateString: string) => {
     const eventDate = new Date(dateString);
@@ -188,7 +189,8 @@ const UpcomingEvents = () => {
                           <h3 className="event-title">{event.title}</h3>
                           <div className="event-date-time">
                             <div className="event-date">
-                              {formatDate(event.date)} {event.tentative ? "(Tentative)" : ""}
+                              {/* {formatDate(event.date)} {event.tentative ? "(Tentative)" : ""} */}
+                              {event.date}
                             </div>
                             <div className="event-time">{event.time}</div>
                           </div>

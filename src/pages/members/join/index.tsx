@@ -13,7 +13,10 @@ interface AcademicEntry {
   program: string;
 }
 
+type ProfileType = "UofT Alumni" | "Current UofT Student" | "Community Member";
+
 interface FormData {
+  profileType: ProfileType;
   firstName: string;
   lastName: string;
   email: string;
@@ -35,6 +38,7 @@ interface FormData {
 
 const JoinPage: NextPage = () => {
   const [formData, setFormData] = useState<FormData>({
+    profileType: "UofT Alumni",
     firstName: "",
     lastName: "",
     email: "",
@@ -238,6 +242,7 @@ const JoinPage: NextPage = () => {
         setSubmitStatus("success");
         // Reset form on successful submission
         setFormData({
+          profileType: "UofT Alumni",
           firstName: "",
           lastName: "",
           email: "",
@@ -265,17 +270,20 @@ const JoinPage: NextPage = () => {
           agreeToTerms: false,
         });
       } else {
+        console.error(
+          "Form submission failed:",
+          result.message || "Unknown error",
+        );
         setSubmitStatus("error");
         setErrorMessage(
-          result.message ||
-            "An error occurred while submitting your application.",
+          "Error submitting form. Please email info@ummaa.org with your information.",
         );
       }
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitStatus("error");
       setErrorMessage(
-        "Network error. Please check your connection and try again.",
+        "Error submitting form. Please email info@ummaa.org with your information.",
       );
     } finally {
       setIsSubmitting(false);
@@ -348,6 +356,31 @@ const JoinPage: NextPage = () => {
                   </p>
 
                   <form onSubmit={onSubmit} className="join-form">
+                    {/* Profile Type */}
+                    <div className="form-section">
+                      <h3>Profile Type</h3>
+                      <div className="form-group">
+                        <label htmlFor="profileType">
+                          I am a <span className="required">*</span>
+                        </label>
+                        <select
+                          id="profileType"
+                          name="profileType"
+                          value={formData.profileType}
+                          onChange={handleInputChange}
+                          required
+                        >
+                          <option value="UofT Alumni">UofT Alumni</option>
+                          <option value="Current UofT Student">
+                            Current UofT Student
+                          </option>
+                          <option value="Community Member">
+                            Community Member
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+
                     {/* Personal Information */}
                     <div className="form-section">
                       <h3>Personal Information</h3>
@@ -773,8 +806,16 @@ const JoinPage: NextPage = () => {
                       </div>
 
                       <div className="disclaimer">
-                        <h4>Disclaimer & Terms</h4>
+                        <h4>Privacy Policy</h4>
                         <div className="disclaimer-content">
+                          <p>
+                            The University of Toronto Muslim Alumni Association
+                            respects your privacy. The information gathered
+                            through the site is collected and used for the
+                            administration of the association's advancement and
+                            administrative activities. If you have questions,
+                            please contact us at info@ummaa.org.
+                          </p>
                           <p>
                             By submitting this application, you acknowledge
                             that:
@@ -784,20 +825,8 @@ const JoinPage: NextPage = () => {
                               The information provided is accurate and complete
                             </li>
                             <li>
-                              You are a graduate or current student of the
-                              University of Toronto
-                            </li>
-                            <li>
                               You agree to UMMAA's community guidelines and code
                               of conduct
-                            </li>
-                            <li>
-                              UMMAA reserves the right to verify membership
-                              eligibility
-                            </li>
-                            <li>
-                              Your personal information will be handled in
-                              accordance with our privacy policy
                             </li>
                           </ul>
                         </div>

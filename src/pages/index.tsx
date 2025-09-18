@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { DotGrid, ElectricBorder } from "@/components/custom-effects";
 import Footer from "@/components/footer";
 import PageIntro from "@/components/page-intro";
+import { animateCountUp } from "@/utils/countUp";
 
 import Layout from "../layouts/Main";
 
@@ -13,6 +14,37 @@ import Layout from "../layouts/Main";
 const IndexPage = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState<number>(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (hasAnimated) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const numberElements = entry.target.querySelectorAll(
+              ".homepage__community-stats-number",
+            );
+            numberElements.forEach((el) => {
+              const target = parseInt(el.getAttribute("data-count") || "0");
+              animateCountUp(el as HTMLElement, target, 2000);
+            });
+            setHasAnimated(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+
+    const statsSection = document.querySelector(".homepage__community-stats");
+    if (statsSection) {
+      observer.observe(statsSection);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
 
   // Array of all event photos for gallery
   const eventPhotos = [
@@ -97,28 +129,47 @@ const IndexPage = () => {
                 <h3 className="homepage__community-stats-title">
                   Our Community Impact
                 </h3>
-                {/* TODO: Fetch these stats dynamically */}
                 <div className="homepage__community-stats-grid">
                   <div>
-                    <h4 className="homepage__community-stats-number">120+</h4>
+                    <h4
+                      className="homepage__community-stats-number"
+                      data-count="120"
+                    >
+                      0+
+                    </h4>
                     <p className="homepage__community-stats-label">
                       Active Alumni
                     </p>
                   </div>
                   <div>
-                    <h4 className="homepage__community-stats-number">20+</h4>
+                    <h4
+                      className="homepage__community-stats-number"
+                      data-count="20"
+                    >
+                      0+
+                    </h4>
                     <p className="homepage__community-stats-label">
                       Available Mentors
                     </p>
                   </div>
                   <div>
-                    <h4 className="homepage__community-stats-number">6</h4>
+                    <h4
+                      className="homepage__community-stats-number"
+                      data-count="10"
+                    >
+                      0+
+                    </h4>
                     <p className="homepage__community-stats-label">
                       Industries Represented
                     </p>
                   </div>
                   <div>
-                    <h4 className="homepage__community-stats-number">3+</h4>
+                    <h4
+                      className="homepage__community-stats-number"
+                      data-count="3"
+                    >
+                      0+
+                    </h4>
                     <p className="homepage__community-stats-label">
                       Events Hosted
                     </p>
@@ -149,7 +200,7 @@ const IndexPage = () => {
                 <div className="homepage__featured-item-content">
                   <h3>Upcoming Events</h3>
                   <Link href="/events/upcoming" className="btn btn--rounded">
-                    View Calendar
+                    View
                   </Link>
                 </div>
               </article>
