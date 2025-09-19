@@ -143,11 +143,11 @@ export const navigationConfig: NavigationItem[] = [
     href: "/contact",
     hasDropdown: false,
   },
-  {
-    label: "Donate",
-    href: "/donate",
-    hasDropdown: false,
-  },
+  // {
+  //   label: "Donate",
+  //   href: "/donate",
+  //   hasDropdown: false,
+  // },
 ];
 
 // Helper function to get navigation items with dropdowns
