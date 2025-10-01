@@ -15,8 +15,9 @@
   transition: all .3s ease;
   // Consistent dark transparent background with 10% deep-teal hue
   // background-color: rgba(17, 100, 102, 0.5);
-  // background-color: var(--university-dark-blue);
-  background-color: #1e3766;
+  background-color: var(--university-dark-blue);
+  // background-color: #1e3766;
+  // background-color: #0c4054;
   backdrop-filter: blur(8px);
 
   @include breakpoint(phone) {

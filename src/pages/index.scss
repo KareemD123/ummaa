@@ -91,11 +91,13 @@
       background: linear-gradient(225deg, var(--light-gray) 0%, var(--university-dark-blue) 30%);
       border: 1px solid var(--warm-gold);
       color: var(--light-gray);
+      text-decoration: none;
+      text-underline-offset: 0px;
     }
 
     .membership-btn:hover {
       transform: scale(1.1);
-      transition: transform 0.3s ease;
+      transition: transform 1s ease;
     }
 
     .homepage__membership-description {
@@ -127,7 +129,7 @@
 
   .homepage__section--transparent {
     padding: 50px 0;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     background-color: transparent;
   }
 
@@ -137,62 +139,38 @@
   }
 
   .homepage__featured {
-    padding: 35px 0 62px 0;
+    // padding: 35px 0 20px 0;
+    padding: 0;
     border-radius: 10px;
     z-index: 10;
+    // border: 3px solid red;
 
     @include breakpoint(phone) {
-      padding: 70px 0 92px 0;
+      // padding: 70px 0 92px 0;
+      padding: 0;
     }
 
     .container {
-      @include breakpoint(phone) {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
 
       @include breakpoint(phone) {
-        display: grid;
-        grid-gap: 34px;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-areas: "\31  \31  \31  \31  \31  \31  \32  \32  \32  \33  \33  \33 ";
+        flex-direction: row;
       }
     }
 
-    .homepage__featured-item-large {
-      grid-area: \31;
-      width: 100%;
-    }
-
-    .homepage__featured-item-small-first {
-      grid-area: \32;
-
-      @include breakpoint(phone) {
-        width: 49%;
-      }
-
-      @include breakpoint(phone) {
-        width: 100%;
-      }
-    }
-
+    .homepage__featured-item-large,
+    .homepage__featured-item-small-first,
     .homepage__featured-item-small {
-      grid-area: \33;
-
-      @include breakpoint(phone) {
-        width: 49%;
-      }
-
-      @include breakpoint(phone) {
-        width: 100%;
-      }
+      flex: 1;
+      width: 100%;
     }
 
     .homepage__featured-item {
       height: 200px;
       display: flex;
-      margin-bottom: 10px;
+      margin-bottom: 0;
       padding: 21px 22px;
       position: relative;
       border-radius: 12px;
@@ -201,7 +179,6 @@
 
       @include breakpoint(phone) {
         height: 300px;
-        margin-bottom: 0;
       }
 
       // Default background for non-icon items
@@ -223,7 +200,7 @@
 
       // Icon-based featured items
       &.homepage__featured-item--icon {
-        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+        background: linear-gradient(125deg, var(--university-regular-blue) 5%, var(--university-dark-blue) 95%);
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -263,19 +240,11 @@
           }
         }
 
-        // Community section - Blue gradient
-        &.homepage__featured-item--community {
-          background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
-        }
-
-        // Events section - Green gradient
-        &.homepage__featured-item--events {
-          background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
-        }
-
-        // Mentorship section - Purple gradient
+        // All featured items now use the same gradient as community stats
+        &.homepage__featured-item--community,
+        &.homepage__featured-item--events,
         &.homepage__featured-item--mentorship {
-          background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 50%, #a78bfa 100%);
+          background: linear-gradient(125deg, var(--university-regular-blue) 45%, var(--university-dark-blue) 95%);
         }
       }
 
