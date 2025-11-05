@@ -83,8 +83,8 @@
 
   // Events Grid Section
   .events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
     margin-bottom: 3rem;
   }
@@ -96,6 +96,12 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
 
     &:hover {
       transform: translateY(-8px);
@@ -139,8 +145,18 @@
 
     .event-image-container {
       position: relative;
-      height: 200px;
+      flex-shrink: 0;
+      width: 420px;
       overflow: hidden;
+
+      @media (max-width: 768px) {
+        width: 100%;
+        height: 400px;
+      }
+
+      @media (max-width: 480px) {
+        height: 350px;
+      }
 
       .event-image {
         width: 100%;
@@ -148,9 +164,10 @@
         object-fit: cover;
         transition: transform 0.3s ease;
         cursor: pointer;
+        background-color: #f8f9fa;
 
         &:hover {
-          transform: scale(1.1);
+          transform: scale(1.02);
         }
       }
 
@@ -169,29 +186,40 @@
     }
 
     .event-content {
-      padding: 1.5rem;
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      @media (max-width: 768px) {
+        padding: 1.5rem;
+      }
 
       .event-header {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
 
         .event-title {
-          font-size: 1.3rem;
+          font-size: 1.5rem;
           font-weight: 700;
           color: var(--charcoal);
-          margin-bottom: 0.8rem;
+          margin-bottom: 1rem;
           line-height: 1.3;
+
+          @media (max-width: 768px) {
+            font-size: 1.3rem;
+          }
         }
 
         .event-date-time {
           .event-date {
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 600;
             color: var(--deep-teal);
             margin-bottom: 0.3rem;
           }
 
           .event-time {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: #666;
           }
         }
@@ -201,8 +229,8 @@
         display: flex;
         align-items: flex-start;
         gap: 0.5rem;
-        margin-bottom: 1rem;
-        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
         color: #666;
 
         .icon-location {
@@ -214,12 +242,48 @@
 
       .event-description {
         color: #666;
-        line-height: 1.6;
-        font-size: 0.9rem;
+        line-height: 1.7;
+        font-size: 0.95rem;
         margin-bottom: 1.5rem;
+        flex: 1;
+
+        // Agenda section styling
+        strong {
+          color: var(--charcoal);
+          font-weight: 600;
+          display: block;
+          margin-top: 1.5rem;
+          margin-bottom: 0.75rem;
+          font-size: 1.05rem;
+        }
+
+        ul {
+          list-style: none;
+          padding-left: 0;
+          margin-top: 1rem;
+
+          li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #555;
+            line-height: 1.6;
+
+            &:before {
+              content: "•";
+              position: absolute;
+              left: 0;
+              color: var(--deep-teal);
+              font-weight: bold;
+              font-size: 1.2rem;
+            }
+          }
+        }
       }
 
       .event-actions {
+        margin-top: auto;
+
         .register-btn {
           background: linear-gradient(135deg, var(--deep-teal), var(--university-blue));
           color: white;
@@ -227,11 +291,16 @@
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          padding: 0.75rem 1.5rem;
+          padding: 0.85rem 1.75rem;
           border-radius: 25px;
           font-weight: 600;
-          font-size: 0.9rem;
+          font-size: 0.95rem;
           transition: all 0.3s ease;
+
+          @media (max-width: 768px) {
+            width: 100%;
+            justify-content: center;
+          }
 
           &:hover {
             background: linear-gradient(135deg, var(--university-blue), var(--deep-teal));

@@ -110,11 +110,6 @@ const Footer = () => {
               <i className="icon-twitter" />
             </a>
           </li> */}
-          {/* <li className="footer__social-item">
-            <a href="#" className="footer__social-link">
-              <i className="icon-linkedin" />
-            </a>
-          </li> */}
           <li className="footer__social-item">
             <a
               href="https://www.instagram.com/ummaa_uoft/"
@@ -123,6 +118,16 @@ const Footer = () => {
               rel="noreferrer"
             >
               <i className="icon-instagram" />
+            </a>
+          </li>
+          <li className="footer__social-item">
+            <a
+              href="https://www.linkedin.com/company/university-of-toronto-muslim-alumni-association"
+              target="_blank"
+              className="footer__social-link"
+              rel="noreferrer"
+            >
+              <i className="icon-linkedin" />
             </a>
           </li>
           {/* <li className="footer__social-item">

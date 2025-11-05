@@ -240,8 +240,30 @@ const Contact: NextPage = () => {
                     </div>
                     <div className="contact-method">
                       <div className="method-content">
-                        <h4>Social Media</h4>
-                        <p>Instagram: @ummaa_uoft</p>
+                        <h4>Instagram</h4>
+                        <p>
+                          <a
+                            href="https://www.instagram.com/ummaa_uoft/"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            @ummaa_uoft
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                    <div className="contact-method">
+                      <div className="method-content">
+                        <h4>LinkedIn</h4>
+                        <p>
+                          <a
+                            href="https://www.linkedin.com/company/university-of-toronto-muslim-alumni-association"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            University of Toronto Muslim Alumni Association
+                          </a>
+                        </p>
                       </div>
                     </div>
                     {/* <div className="contact-method">

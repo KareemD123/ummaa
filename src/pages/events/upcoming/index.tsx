@@ -30,21 +30,17 @@ const UpcomingEvents = () => {
   const upcomingEvents: UpcomingEvent[] = [
     {
       id: "1",
-      title: "Inaugural Networking Evening",
-      // date: "2025-11-15",
-      date: "Date: TBD",
-      // time: "6:00 PM - 9:00 PM",
-      time: "Time: TBD",
-      location:
-        // "Hart House Great Hall, University of Toronto St. George Campus",
-        "TBD",
+      title: "UMMAA Inaugural Event - Alumni Mixer",
+      date: "Wednesday, November 26th, 2025",
+      time: "5:30 PM - 8:30 PM",
+      location: "Will be sent via email",
       description:
-        "Join us for our inaugural networking evening where Muslim alumni from diverse fields will come together to share experiences, build connections, and celebrate our community. This special event marks the beginning of UMMAA's journey in fostering meaningful professional relationships.",
-      registrationLink: "/contact",
-      image: "/images/event-photos/event-photo-03.jpg",
+        "The University of Toronto Muslim Alumni Association (UMMAA) is thrilled to host its inaugural event in celebration of our recent launch. UMMAA brings together Muslim graduates from all faculties and generations, fostering a vibrant network rooted in shared faith, academic excellence, and professional growth. Our mission is to support young professionals through mentorship, career guidance, and meaningful opportunities, while building lasting relationships among alumni who share common values and experiences. This event will be an opportunity to connect with fellow Muslim Alumni, meet our team, and enjoy an evening of networking, light refreshments, and community building.<br/><br/><strong>Agenda:</strong><ul><li>5:30 PM – Registration, networking, and light refreshments</li><li>6:15 PM – Welcome remarks and Quran recitation</li><li>6:30 PM – Key speeches</li><li>7:15 PM – Networking</li><li>8:30 PM – Event concludes</li></ul>",
+      registrationLink: "https://tally.so/r/mK7qRz",
+      image: "/images/event-graphics/inaugural-event.png",
       category: "Networking",
       featured: true,
-      tentative: true,
+      tentative: false,
     },
   ];
 
@@ -95,7 +91,7 @@ const UpcomingEvents = () => {
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [selectedPhoto, currentPhotoIndex]);
+  }, [selectedPhoto, currentPhotoIndex, nextPhoto, prevPhoto]);
 
   // const formatDate = (dateString: string) => {
   //   const date = new Date(dateString);
@@ -199,12 +195,19 @@ const UpcomingEvents = () => {
                           <i className="icon-location" />
                           <span>Location: {event.location}</span>
                         </div>
-                        <p className="event-description">{event.description}</p>
+                        <div
+                          className="event-description"
+                          dangerouslySetInnerHTML={{
+                            __html: event.description,
+                          }}
+                        />
                         {event.registrationLink && (
                           <div className="event-actions">
                             <a
                               href={event.registrationLink}
                               className="register-btn"
+                              target="_blank"
+                              rel="noreferrer"
                             >
                               Register Now
                               <i className="icon-right" />
