@@ -3,6 +3,42 @@
 @import '../assets/css/partials/breakpoints.scss';
 
 .homepage {
+  .homepage__spotlight {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+
+    .homepage__spotlight-container {
+      width: 50vw;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .homepage__spotlight-image {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 12px;
+      }
+    }
+
+    @include breakpoint(phone) {
+      padding: 60px 0;
+    }
+
+    @media (max-width: 768px) {
+      padding: 30px 0;
+
+      .homepage__spotlight-container {
+        width: 90vw;
+      }
+    }
+  }
+
   .homepage__community-stats {
     background: linear-gradient(125deg, var(--university-regular-blue) 25%, var(--university-dark-blue) 75%);
     padding: 60px;

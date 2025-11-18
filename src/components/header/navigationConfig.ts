@@ -29,7 +29,7 @@ export const navigationConfig: NavigationItem[] = [
         links: [
           { label: "UMMAA History", href: "/about/history" },
           { label: "Mission & Vision", href: "/about/mission" },
-          // { label: "Leadership Team", href: "/about/leadership" },
+          { label: "Leadership Team", href: "/about/leadership" },
           // { label: "Board of Advisors", href: "/about/board" },
         ],
       },

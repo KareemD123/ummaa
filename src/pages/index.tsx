@@ -109,6 +109,7 @@ const IndexPage = () => {
       <div className="homepage">
         <PageIntro />
 
+
         {/* Main content area with DotGrid background */}
         <div className="homepage__main-content">
           {/* Interactive dot grid background for main content only */}
@@ -123,6 +124,19 @@ const IndexPage = () => {
             speedTrigger={0.1}
             className="homepage__main-content-dotgrid"
           />
+          {/* Spotlight Section */}
+          <section className="homepage__spotlight">
+            <div className="homepage__spotlight-container">
+              <Image
+                src="/images/team/Meet-Our-Advisors.png"
+                alt="Meet Our Advisors"
+                width={1920}
+                height={1080}
+                className="homepage__spotlight-image"
+                priority
+              />
+            </div>
+          </section>
           <section className="section homepage__section--transparent">
             <div className="container">
               <div className="homepage__community-stats">

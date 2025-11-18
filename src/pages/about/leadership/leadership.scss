@@ -2,145 +2,359 @@
 @import '../../../assets/css/partials/variables.scss';
 @import '../../../assets/css/partials/breakpoints.scss';
 
-.leadership-page {
-  padding: 50px 0;
+.leadership-hero {
+  background: linear-gradient(rgba(0, 42, 92, 0.3), rgba(0, 42, 92, 0.5)),
+    url('/images/campus/Quad-Campus.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 80px 0 120px;
+  margin-top: -1px;
+  position: relative;
 
-  .leadership-page__header {
-    text-align: center;
-    margin-bottom: 50px;
+  @include breakpoint(phone) {
+    padding: 100px 0 140px;
+  }
 
-    .leadership-page__title {
-      color: var(--university-blue);
-      margin-bottom: 20px;
-    }
+  // Fix background position at viewports wider than 1120px
+  @media (min-width: 1120px) {
+    background-position: center center;
+    background-attachment: scroll;
+  }
 
-    .leadership-page__subtitle {
-      color: var(--charcoal);
-      font-size: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
+  .container {
+    text-align: left;
+    max-width: 1200px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+
+    @include breakpoint(phone) {
+      font-size: 3.5rem;
     }
   }
+
+  p {
+    font-size: 1.1rem;
+    max-width: 500px;
+    opacity: 0.95;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+    @include breakpoint(phone) {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.leadership-page {
+  padding: 50px 0 120px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 70vh;
 
   .leadership-page__content {
     max-width: 1200px;
     margin: 0 auto;
   }
 
+  .leadership-page__section {
+    margin-bottom: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 80px;
+    }
+  }
+
+  .leadership-page__section-title {
+    color: var(--university-blue);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 600;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--university-blue) 0%, #7df9ff 50%, var(--warm-gold) 100%);
+      border-radius: 2px;
+    }
+  }
+
   .leadership-page__team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
     margin-top: 40px;
   }
 
   .leadership-page__member {
+    display: flex;
+    justify-content: center;
+  }
+
+  .leadership-page__member-card {
     text-align: center;
-    padding: 30px 20px;
-    background-color: var(--light-gray);
-    border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 40px 30px 35px;
+    border-radius: 20px;
+    background: white;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 350px;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+
+    // Gradient border effect
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 20px;
+      padding: 3px;
+      background: linear-gradient(135deg, var(--university-blue) 0%, #7df9ff 50%, var(--university-blue) 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
 
     &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 42, 92, 0.15),
+        0 0 30px rgba(125, 249, 255, 0.2);
 
-    .leadership-page__member-photo {
-      width: 150px;
-      height: 150px;
-      margin: 0 auto 20px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 4px solid var(--university-blue);
-      background-color: var(--university-blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      &::before {
+        opacity: 1;
       }
 
-      // Fallback for missing images
-      &:empty::after {
-        content: "👤";
-        font-size: 60px;
-        color: white;
+      .leadership-page__hexagon-container {
+        transform: scale(1.05);
       }
-    }
 
-    .leadership-page__member-name {
-      color: var(--university-blue);
-      margin-bottom: 10px;
-      font-size: 1.4rem;
-      font-weight: 600;
-    }
-
-    .leadership-page__member-title {
-      color: var(--deep-teal);
-      font-weight: 600;
-      margin-bottom: 15px;
-      font-size: 1rem;
-    }
-
-    .leadership-page__member-description {
-      color: var(--charcoal);
-      font-size: 14px;
-      line-height: 1.6;
+      .leadership-page__badge {
+        transform: scale(1.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
     }
   }
 
+  // Circular photo container
+  // TO ADJUST CIRCLE SIZE: Change the width/height value below
+  // Current size: 220px (increase/decrease as needed)
+  .leadership-page__hexagon-container {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 25px;
+    position: relative;
+    transition: transform 0.4s ease;
+
+    // Rotating gradient border (separate from image)
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg,
+          var(--university-blue) 0deg,
+          #7df9ff 90deg,
+          var(--warm-gold) 180deg,
+          #7df9ff 270deg,
+          var(--university-blue) 360deg);
+      // TO ADJUST ROTATION SPEED: Change the duration below
+      // Current: 10s (increase for slower, decrease for faster)
+      animation: rotateBorder 10s linear infinite;
+      z-index: 0;
+    }
+  }
+
+  .leadership-page__hexagon {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+  }
+
+  @keyframes rotateBorder {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes gradientRotate {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  // Role badges
+  .leadership-page__badge {
+    display: inline-block;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    &:hover::before {
+      left: 100%;
+    }
+
+    &--advisor {
+      background: linear-gradient(135deg, #6B46C1 0%, #9B59B6 100%);
+      color: white;
+      border: 2px solid var(--warm-gold);
+      box-shadow: 0 4px 15px rgba(107, 70, 193, 0.3);
+    }
+
+    &--founder {
+      background: linear-gradient(135deg, var(--university-blue) 0%, var(--university-dark-blue) 100%);
+      color: white;
+      border: 2px solid var(--warm-gold);
+      box-shadow: 0 4px 15px rgba(0, 42, 92, 0.3);
+    }
+  }
+
+  .leadership-page__member-name {
+    color: var(--university-blue);
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .leadership-page__member-title {
+    color: var(--deep-teal);
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .leadership-page__member-description {
+    color: var(--charcoal);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  // Responsive adjustments
   @include breakpointMax(tablet-lg) {
     .leadership-page__team-grid {
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      gap: 35px;
     }
 
-    .leadership-page__member {
-      padding: 25px 15px;
+    .leadership-page__hexagon-container {
+      width: 190px;
+      height: 190px;
+    }
 
-      .leadership-page__member-photo {
-        width: 120px;
-        height: 120px;
-      }
+    .leadership-page__member-card {
+      padding: 35px 25px 30px;
     }
   }
 
   @include breakpointMax(phone) {
     padding: 30px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
 
-    .leadership-page__header {
-      margin-bottom: 30px;
+    .leadership-page__section {
+      margin-bottom: 50px;
+    }
 
-      .leadership-page__title {
-        font-size: 2rem;
-      }
-
-      .leadership-page__subtitle {
-        font-size: 18px;
-      }
+    .leadership-page__section-title {
+      font-size: 1.5rem;
+      margin-bottom: 35px;
     }
 
     .leadership-page__team-grid {
       grid-template-columns: 1fr;
-      gap: 25px;
+      gap: 30px;
     }
 
-    .leadership-page__member {
-      padding: 20px 15px;
+    .leadership-page__hexagon-container {
+      width: 170px;
+      height: 170px;
+      margin-bottom: 20px;
+    }
 
-      .leadership-page__member-photo {
-        width: 100px;
-        height: 100px;
-      }
+    .leadership-page__member-card {
+      padding: 30px 20px 25px;
+      max-width: 100%;
+    }
 
-      .leadership-page__member-name {
-        font-size: 1.2rem;
-      }
+    .leadership-page__member-name {
+      font-size: 1.3rem;
+    }
+
+    .leadership-page__member-title {
+      font-size: 0.95rem;
+    }
+
+    .leadership-page__badge {
+      padding: 6px 20px;
+      font-size: 11px;
+      margin-bottom: 15px;
     }
   }
 }
