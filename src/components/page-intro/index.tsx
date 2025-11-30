@@ -3,20 +3,23 @@ import { useState } from "react";
 import SwiperCore, { Autoplay, EffectFade, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { eventPhotos } from "@/config/imageUrls";
+
 // Page-intro styles are imported in main.scss
 
 const PageIntro = () => {
   SwiperCore.use([EffectFade, Navigation, Autoplay]);
   const [activeSlide, setActiveSlide] = useState(0);
 
-  // Array of event photos for the carousel
-  const eventPhotos = [
-    "/images/event-photos/event-photo-19.jpg",
-    // "/images/event-photos/event-photo-01.jpg",
-    "/images/event-photos/event-photo-03.jpg",
-    "/images/event-photos/event-photo-08.jpg",
-    "/images/event-photos/event-photo-10.jpg",
-    "/images/event-photos/event-photo-17.jpg",
+  // Array of event photos for the carousel from centralized config
+  const carouselPhotos = [
+    eventPhotos.photo46,
+    eventPhotos.photo03,
+    eventPhotos.photo25,
+    eventPhotos.photo49,
+    eventPhotos.photo08,
+    eventPhotos.photo10,
+    eventPhotos.photo17,
   ];
 
   // Slide content data
@@ -78,7 +81,7 @@ const PageIntro = () => {
         onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
         className="swiper-wrapper"
       >
-        {eventPhotos.slice(0, 6).map((photo, index) => (
+        {carouselPhotos.map((photo, index) => (
           <SwiperSlide key={index}>
             <div
               className="page-intro__slide"
@@ -109,12 +112,11 @@ const PageIntro = () => {
 
         {/* Slide indicators */}
         <div className="page-intro__indicators">
-          {eventPhotos.map((_, index) => (
+          {carouselPhotos.map((_, index) => (
             <div
               key={index}
-              className={`page-intro__indicator ${
-                index === activeSlide ? "active" : ""
-              }`}
+              className={`page-intro__indicator ${index === activeSlide ? "active" : ""
+                }`}
             />
           ))}
         </div>

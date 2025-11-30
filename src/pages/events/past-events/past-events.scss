@@ -131,6 +131,9 @@
     flex: 0 0 300px;
     height: 250px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__event-img {
@@ -138,6 +141,7 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block;
 
     &:hover {
       transform: scale(1.05);
@@ -229,6 +233,7 @@
   // Gallery Section
   &__gallery-section {
     margin-top: 4rem;
+    padding-bottom: 6rem;
   }
 
   &__gallery-description {
@@ -239,9 +244,10 @@
 
   &__gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1rem;
     margin-top: 2rem;
+    grid-auto-rows: 200px;
   }
 
   &__gallery-item {
@@ -250,6 +256,7 @@
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease;
+    height: 100%;
 
     &:hover {
       transform: scale(1.05);
@@ -257,14 +264,17 @@
 
     &--small {
       grid-row: span 1;
+      max-height: 200px;
     }
 
     &--medium {
-      grid-row: span 2;
+      grid-row: span 1;
+      max-height: 200px;
     }
 
     &--large {
-      grid-row: span 3;
+      grid-row: span 2;
+      max-height: 400px;
     }
   }
 
@@ -273,7 +283,6 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    min-height: 200px;
 
     // Optimize for performance with smaller preview images
     image-rendering: auto;
@@ -462,8 +471,9 @@
     }
 
     &__gallery {
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       gap: 0.5rem;
+      grid-auto-rows: 150px;
     }
 
     &__gallery-item {
@@ -472,6 +482,7 @@
       &--medium,
       &--large {
         grid-row: span 1;
+        max-height: 150px;
       }
     }
 

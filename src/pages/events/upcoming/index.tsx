@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import Footer from "@/components/footer";
+import { eventPhotosArray } from "@/config/imageUrls";
 
 import Layout from "../../../layouts/Main";
 
@@ -26,33 +27,11 @@ const UpcomingEvents = () => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState<number>(0);
   const [showAllEvents, setShowAllEvents] = useState<boolean>(false);
 
-  // Sample upcoming events data
-  const upcomingEvents: UpcomingEvent[] = [
-    {
-      id: "1",
-      title: "UMMAA Inaugural Event - Alumni Mixer",
-      date: "Wednesday, November 26th, 2025",
-      time: "5:30 PM - 8:30 PM",
-      location: "Will be sent via email",
-      description:
-        "The University of Toronto Muslim Alumni Association (UMMAA) is thrilled to host its inaugural event in celebration of our recent launch. UMMAA brings together Muslim graduates from all faculties and generations, fostering a vibrant network rooted in shared faith, academic excellence, and professional growth. Our mission is to support young professionals through mentorship, career guidance, and meaningful opportunities, while building lasting relationships among alumni who share common values and experiences. This event will be an opportunity to connect with fellow Muslim Alumni, meet our team, and enjoy an evening of networking, light refreshments, and community building.<br/><br/><strong>Agenda:</strong><ul><li>5:30 PM – Registration, networking, and light refreshments</li><li>6:15 PM – Welcome remarks and Quran recitation</li><li>6:30 PM – Key speeches</li><li>7:15 PM – Networking</li><li>8:30 PM – Event concludes</li></ul>",
-      registrationLink: "https://tally.so/r/mK7qRz",
-      image: "/images/event-graphics/inaugural-event.png",
-      category: "Networking",
-      featured: true,
-      tentative: false,
-    },
-  ];
+  // Upcoming events data - currently empty, will be updated when new events are scheduled
+  const upcomingEvents: UpcomingEvent[] = [];
 
-  // All event photos for the gallery
-  const eventPhotos = [
-    "/images/event-photos/event-photo-01.jpg",
-    "/images/event-photos/event-photo-03.jpg",
-    "/images/event-photos/event-photo-08.jpg",
-    "/images/event-photos/event-photo-10.jpg",
-    "/images/event-photos/event-photo-17.jpg",
-    "/images/event-photos/event-photo-19.jpg",
-  ];
+  // All event photos for the gallery from centralized config
+  const eventPhotos = eventPhotosArray.slice(0, 6);
 
   const openPhotoModal = (photo: string) => {
     setSelectedPhoto(photo);

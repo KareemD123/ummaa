@@ -1,7 +1,9 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import Footer from "@/components/footer";
+import PhotoGallery from "@/components/photo-gallery";
+import { eventPhotos, eventPhotosArray } from "@/config/imageUrls";
 
 import Layout from "../../../layouts/Main";
 
@@ -18,14 +20,22 @@ interface PastEvent {
 }
 
 const PastEvents = () => {
-  const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
-  const [currentPhotoIndex, setCurrentPhotoIndex] = useState<number>(0);
   const [showAllEvents, setShowAllEvents] = useState<boolean>(false);
 
   // Sample past events data
   const pastEvents: PastEvent[] = [
     {
       id: "1",
+      title: "UMMAA Inaugural Event - Alumni Mixer",
+      date: "2024-11-26",
+      location: "Toronto, ON",
+      description:
+        "The University of Toronto Muslim Alumni Association (UMMAA) hosted its inaugural event in celebration of our recent launch. Alumni from all faculties and generations came together for an evening of networking, light refreshments, and community building.",
+      attendees: 85,
+      image: eventPhotos.photo25,
+    },
+    {
+      id: "2",
       title: "Alumni CEO & Founder Panel",
       date: "2025-02-27",
       location:
@@ -33,10 +43,10 @@ const PastEvents = () => {
       description:
         "Highlighting Careers in Engineering, Entrepeneurship & Start-ups",
       attendees: 70,
-      image: "/images/event-photos/event-photo-01.jpg",
+      image: eventPhotos.photo01,
     },
     {
-      id: "2",
+      id: "3",
       title: "Alumni Law Panel",
       date: "2025-01-14",
       location:
@@ -44,10 +54,10 @@ const PastEvents = () => {
       description:
         "Illuminating the path for advocacy: Highlighting careers in Law, Government, and Public Policy",
       attendees: 60,
-      image: "/images/event-photos/event-photo-19.jpg",
+      image: eventPhotos.photo19,
     },
     {
-      id: "3",
+      id: "4",
       title: "Alumni Healthcare & Health Innovation Panel",
       date: "2024-10-17",
       location:
@@ -55,67 +65,10 @@ const PastEvents = () => {
       description:
         "Engaging in discussions on the intersection of healthcare and innovation",
       attendees: 40,
-      image: "/images/event-photos/event-photo-13.jpg",
+      image: eventPhotos.photo13,
     },
   ];
 
-  // Array of all event photos
-  const eventPhotos = [
-    "/images/event-photos/event-photo-01.jpg",
-    "/images/event-photos/event-photo-02.jpg",
-    "/images/event-photos/event-photo-03.jpg",
-    "/images/event-photos/event-photo-04.jpg",
-    "/images/event-photos/event-photo-05.jpg",
-    "/images/event-photos/event-photo-06.jpg",
-    "/images/event-photos/event-photo-07.jpg",
-    "/images/event-photos/event-photo-08.jpg",
-    "/images/event-photos/event-photo-09.jpg",
-    "/images/event-photos/event-photo-10.jpg",
-    "/images/event-photos/event-photo-11.jpg",
-    "/images/event-photos/event-photo-12.jpg",
-    "/images/event-photos/event-photo-13.jpg",
-    "/images/event-photos/event-photo-14.jpg",
-    "/images/event-photos/event-photo-15.jpg",
-    "/images/event-photos/event-photo-16.jpg",
-    "/images/event-photos/event-photo-17.jpg",
-    "/images/event-photos/event-photo-18.jpg",
-    "/images/event-photos/event-photo-19.jpg",
-  ];
-
-  // Handle keyboard navigation
-  useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (!selectedPhoto) return;
-
-      if (e.key === "Escape") {
-        closeModal();
-      } else if (e.key === "ArrowLeft") {
-        navigatePhoto(-1);
-      } else if (e.key === "ArrowRight") {
-        navigatePhoto(1);
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyPress);
-    return () => window.removeEventListener("keydown", handleKeyPress);
-  }, [selectedPhoto, currentPhotoIndex]);
-
-  const openModal = (photo: string, index: number) => {
-    setSelectedPhoto(photo);
-    setCurrentPhotoIndex(index);
-  };
-
-  const closeModal = () => {
-    setSelectedPhoto(null);
-  };
-
-  const navigatePhoto = (direction: number) => {
-    const newIndex = currentPhotoIndex + direction;
-    if (newIndex >= 0 && newIndex < eventPhotos.length) {
-      setCurrentPhotoIndex(newIndex);
-      setSelectedPhoto(eventPhotos[newIndex]);
-    }
-  };
 
   return (
     <Layout>
@@ -207,98 +160,15 @@ const PastEvents = () => {
             </div>
 
             {/* Photo Gallery */}
-            <div className="past-events-page__gallery-section">
-              <h2 className="past-events-page__section-title">
-                Event Photo Gallery
-              </h2>
-              <p className="past-events-page__gallery-description">
-                Browse through photos from our various events and celebrations.
-              </p>
-
-              <div className="past-events-page__gallery">
-                {eventPhotos.map((photo, index) => {
-                  // Create different sizes for masonry layout
-                  const sizes = ["small", "medium", "large"];
-                  const randomSize = sizes[index % 3];
-
-                  return (
-                    <div
-                      key={index}
-                      className={`past-events-page__gallery-item past-events-page__gallery-item--${randomSize}`}
-                      onClick={() => openModal(photo, index)}
-                    >
-                      <Image
-                        src={photo}
-                        alt={`Event photo ${index + 1}`}
-                        width={400}
-                        height={400}
-                        className="past-events-page__gallery-image"
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                        }}
-                      />
-                      <div className="past-events-page__gallery-overlay">
-                        <span className="past-events-page__gallery-zoom">
-                          🔍
-                        </span>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+            <PhotoGallery
+              photos={eventPhotosArray}
+              title="Event Photo Gallery"
+              description="Browse through photos from our various events and celebrations."
+              shuffleOnMount={true}
+            />
           </div>
         </section>
       </div>
-
-      {/* Modal for enlarged photo view */}
-      {selectedPhoto && (
-        <div className="past-events-page__modal" onClick={closeModal}>
-          <div
-            className="past-events-page__modal-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="past-events-page__modal-close"
-              onClick={closeModal}
-            >
-              ×
-            </button>
-
-            {/* Navigation arrows */}
-            {currentPhotoIndex > 0 && (
-              <button
-                className="past-events-page__modal-nav past-events-page__modal-nav--prev"
-                onClick={() => navigatePhoto(-1)}
-              >
-                ‹
-              </button>
-            )}
-
-            {currentPhotoIndex < eventPhotos.length - 1 && (
-              <button
-                className="past-events-page__modal-nav past-events-page__modal-nav--next"
-                onClick={() => navigatePhoto(1)}
-              >
-                ›
-              </button>
-            )}
-
-            <img
-              src={selectedPhoto}
-              alt={`Event photo ${currentPhotoIndex + 1} of ${eventPhotos.length}`}
-              className="past-events-page__modal-image"
-            />
-
-            {/* Photo counter */}
-            <div className="past-events-page__modal-counter">
-              {currentPhotoIndex + 1} / {eventPhotos.length}
-            </div>
-          </div>
-        </div>
-      )}
 
       <Footer />
     </Layout>

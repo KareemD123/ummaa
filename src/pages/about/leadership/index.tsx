@@ -1,4 +1,5 @@
 import Footer from "@/components/footer";
+import { leadershipImages } from "@/config/imageUrls";
 
 import Layout from "../../../layouts/Main";
 
@@ -21,7 +22,7 @@ const Leadership = () => {
       name: "Ziyaad Vahed",
       title: "Director at Ministry of Children, Community, and Social Services",
       description: "Director at Ministry of Children, Community, and Social Services",
-      image: "https://aguxgwlixjmeuop8.public.blob.vercel-storage.com/Ziyaad-Vahed.jpg",
+      image: leadershipImages.ziyaadVahed,
       role: 'advisor',
       linkedinUrl: "https://www.linkedin.com/in/ziyaadvahed/",
     },
@@ -30,7 +31,7 @@ const Leadership = () => {
       name: "Shaheen Shaikh, P.Eng.",
       title: "Vice President, Station Engineering, Ontario Power Generation",
       description: "Vice President, Station Engineering, Ontario Power Generation",
-      image: "https://aguxgwlixjmeuop8.public.blob.vercel-storage.com/Shaheen-Shaikh.jpg",
+      image: leadershipImages.shaheenShaikh,
       role: 'advisor',
       linkedinUrl: "https://www.linkedin.com/in/shaheen-shaikh-p-eng-b033786b/",
     },
@@ -39,7 +40,7 @@ const Leadership = () => {
       name: "Dr. Fariha Khan",
       title: "Primary Care Physician",
       description: "Family Physician",
-      image: "https://aguxgwlixjmeuop8.public.blob.vercel-storage.com/Fariha-Khan.jpeg",
+      image: leadershipImages.farihaKhan,
       role: 'advisor',
       linkedinUrl: "https://www.linkedin.com/in/fariha-khan-58a18050/",
     },
