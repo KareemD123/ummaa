@@ -911,9 +911,7 @@ const JoinPage: NextPage = () => {
                       If you have any questions about membership or the
                       application process, feel free to{" "}
                       <a href="/contact">contact us</a> or email us at{" "}
-                      <a href="mailto:membership@ummaa.org">
-                        membership@ummaa.org
-                      </a>
+                      <a href="mailto:alumni@ummaa.org">alumni@ummaa.org</a>
                     </p>
                   </div>
                 </div>

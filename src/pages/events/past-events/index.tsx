@@ -27,7 +27,7 @@ const PastEvents = () => {
     {
       id: "1",
       title: "UMMAA Inaugural Event - Alumni Mixer",
-      date: "2024-11-26",
+      date: "2025-11-26",
       location: "Toronto, ON",
       description:
         "The University of Toronto Muslim Alumni Association (UMMAA) hosted its inaugural event in celebration of our recent launch. Alumni from all faculties and generations came together for an evening of networking, light refreshments, and community building.",
@@ -68,7 +68,6 @@ const PastEvents = () => {
       image: eventPhotos.photo13,
     },
   ];
-
 
   return (
     <Layout>

@@ -75,9 +75,7 @@ const PhotoGallery = ({
   return (
     <>
       <div className="past-events-page__gallery-section">
-        {title && (
-          <h2 className="past-events-page__section-title">{title}</h2>
-        )}
+        {title && <h2 className="past-events-page__section-title">{title}</h2>}
         {description && (
           <p className="past-events-page__gallery-description">{description}</p>
         )}

@@ -115,8 +115,9 @@ const PageIntro = () => {
           {carouselPhotos.map((_, index) => (
             <div
               key={index}
-              className={`page-intro__indicator ${index === activeSlide ? "active" : ""
-                }`}
+              className={`page-intro__indicator ${
+                index === activeSlide ? "active" : ""
+              }`}
             />
           ))}
         </div>

@@ -1,12 +1,13 @@
 /**
  * Centralized Image URL Configuration
- * 
+ *
  * This file manages all external image URLs (Vercel Blob Storage, etc.)
  * If the base URL changes, you only need to update it here.
  */
 
 // Vercel Blob Storage base URL
-const VERCEL_BLOB_BASE_URL = "https://aguxgwlixjmeuop8.public.blob.vercel-storage.com";
+const VERCEL_BLOB_BASE_URL =
+  "https://aguxgwlixjmeuop8.public.blob.vercel-storage.com";
 
 /**
  * Helper function to generate Vercel blob storage URLs
@@ -90,4 +91,4 @@ export const eventPhotosArray = Object.values(eventPhotos);
 /**
  * Export the base URL and helper function for custom use cases
  */
-export { VERCEL_BLOB_BASE_URL, getBlobUrl };
+export { getBlobUrl, VERCEL_BLOB_BASE_URL };

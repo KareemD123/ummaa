@@ -7,6 +7,7 @@ import Footer from "@/components/footer";
 import PageIntro from "@/components/page-intro";
 import PhotoGallery from "@/components/photo-gallery";
 import { eventPhotosArray } from "@/config/imageUrls";
+import blogPosts from "@/data/blog-posts.json";
 import { animateCountUp } from "@/utils/countUp";
 
 import Layout from "../layouts/Main";
@@ -46,12 +47,70 @@ const IndexPage = () => {
     return () => observer.disconnect();
   }, [hasAnimated]);
 
-
   return (
     <Layout>
       <div className="homepage">
         <PageIntro />
 
+        {/* Blog Highlight Section */}
+        {blogPosts.length > 0 && (
+          <section className="homepage__blog-highlight">
+            <div className="container">
+              <h2 className="homepage__blog-highlight-title">
+                Latest from Our Community
+              </h2>
+              <div className="homepage__blog-highlight-content">
+                {blogPosts[0].featuredImage && (
+                  <div className="homepage__blog-highlight-image">
+                    <Link href={`/blog/${blogPosts[0].slug}`}>
+                      <Image
+                        src={blogPosts[0].featuredImage}
+                        alt={blogPosts[0].title}
+                        width={800}
+                        height={500}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                      />
+                    </Link>
+                  </div>
+                )}
+                <div className="homepage__blog-highlight-text">
+                  <div className="homepage__blog-highlight-meta">
+                    <span className="homepage__blog-highlight-author">
+                      {blogPosts[0].author}
+                    </span>
+                    <span className="homepage__blog-highlight-date">
+                      {new Date(
+                        blogPosts[0].date + "T00:00:00",
+                      ).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </span>
+                  </div>
+                  <h3 className="homepage__blog-highlight-post-title">
+                    <Link href={`/blog/${blogPosts[0].slug}`}>
+                      {blogPosts[0].title}
+                    </Link>
+                  </h3>
+                  <p className="homepage__blog-highlight-excerpt">
+                    {blogPosts[0].excerpt}
+                  </p>
+                  <Link
+                    href={`/blog/${blogPosts[0].slug}`}
+                    className="btn btn--rounded"
+                  >
+                    Read Full Story
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Main content area with DotGrid background */}
         <div className="homepage__main-content">

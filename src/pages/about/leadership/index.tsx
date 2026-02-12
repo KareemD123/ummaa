@@ -11,7 +11,7 @@ interface LeadershipMember {
   title: string;
   description: string;
   image: string;
-  role: 'advisor' | 'founder';
+  role: "advisor" | "founder";
   linkedinUrl?: string;
 }
 
@@ -21,18 +21,20 @@ const Leadership = () => {
       id: 1,
       name: "Ziyaad Vahed",
       title: "Director at Ministry of Children, Community, and Social Services",
-      description: "Director at Ministry of Children, Community, and Social Services",
+      description:
+        "Director at Ministry of Children, Community, and Social Services",
       image: leadershipImages.ziyaadVahed,
-      role: 'advisor',
+      role: "advisor",
       linkedinUrl: "https://www.linkedin.com/in/ziyaadvahed/",
     },
     {
       id: 2,
       name: "Shaheen Shaikh, P.Eng.",
       title: "Vice President, Station Engineering, Ontario Power Generation",
-      description: "Vice President, Station Engineering, Ontario Power Generation",
+      description:
+        "Vice President, Station Engineering, Ontario Power Generation",
       image: leadershipImages.shaheenShaikh,
-      role: 'advisor',
+      role: "advisor",
       linkedinUrl: "https://www.linkedin.com/in/shaheen-shaikh-p-eng-b033786b/",
     },
     {
@@ -41,7 +43,7 @@ const Leadership = () => {
       title: "Primary Care Physician",
       description: "Family Physician",
       image: leadershipImages.farihaKhan,
-      role: 'advisor',
+      role: "advisor",
       linkedinUrl: "https://www.linkedin.com/in/fariha-khan-58a18050/",
     },
   ];
@@ -92,7 +94,9 @@ const Leadership = () => {
           <div className="leadership-page__content">
             {/* Board of Advisors Section */}
             <div className="leadership-page__section">
-              <h2 className="leadership-page__section-title">Board of Advisors</h2>
+              <h2 className="leadership-page__section-title">
+                Board of Advisors
+              </h2>
               <div className="leadership-page__team-grid">
                 {boardOfAdvisors.map((member) => (
                   <div key={member.id} className="leadership-page__member">
