@@ -1,5 +1,7 @@
 .blog-page {
   min-height: 100vh;
+  position: relative;
+  isolation: isolate;
 }
 
 .blog-hero {
@@ -7,6 +9,8 @@
   color: white;
   padding: 80px 0 60px;
   text-align: center;
+  position: relative;
+  z-index: 1;
 
   h1 {
     font-size: 3rem;
@@ -32,7 +36,11 @@
 }
 
 .blog-content {
-  padding: 60px 0;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .blog-grid {
@@ -165,12 +173,16 @@
 .blog-post-page {
   min-height: 100vh;
   background: #f8f9fa;
+  position: relative;
+  isolation: isolate;
 }
 
 .blog-post-header {
   background: linear-gradient(135deg, #002a5c 0%, #004d99 100%);
   color: white;
   padding: 140px 0 40px;
+  position: relative;
+  z-index: 1;
 
   .container {
     max-width: 900px;
@@ -239,10 +251,14 @@
 
 .blog-post-content {
   background: white;
-  padding: 60px 0;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
 
   .container {
-    max-width: 800px;
+    max-width: 700px;
   }
 }
 

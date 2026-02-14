@@ -20,7 +20,7 @@ const Leadership = () => {
     {
       id: 1,
       name: "Ziyaad Vahed",
-      title: "Director at Ministry of Children, Community, and Social Services",
+      title: "Deputy Chief of Staff, Intergovernmental & Agency Relations, City Manager's Office, City of Toronto",
       description:
         "Director at Ministry of Children, Community, and Social Services",
       image: leadershipImages.ziyaadVahed,
@@ -49,32 +49,32 @@ const Leadership = () => {
   ];
 
   // Founders section temporarily commented out
-  // const executiveDirectors: LeadershipMember[] = [
-  //   {
-  //     id: 1,
-  //     name: "Kareem Draz",
-  //     title: "Software Engineer & College Professor",
-  //     description: "Founder description",
-  //     image: "/images/team/Kareem_Headshot_Small.jpg",
-  //     role: 'founder',
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Alya Mohmood",
-  //     title: "Clinical Research Professional",
-  //     description: "Executive Director description",
-  //     image: "/images/team/alya-mohmood.jpg",
-  //     role: 'founder',
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Noor Bahsoun, PhD (c)",
-  //     title: "Scientist | Engineer",
-  //     description: "Executive Director description",
-  //     image: "/images/team/noor-bahsoun.jpeg",
-  //     role: 'founder',
-  //   },
-  // ];
+  const executiveDirectors: LeadershipMember[] = [
+    {
+      id: 1,
+      name: "Kareem Draz, P.Eng",
+      title: "Software Engineer & College Professor",
+      description: "Founder description",
+      image: "/images/team/Kareem_Headshot_Small.jpg",
+      role: 'founder',
+    },
+    {
+      id: 2,
+      name: "Alya Mohmood",
+      title: "Clinical Research Professional",
+      description: "Executive Director description",
+      image: "/images/team/alya-mohmood.jpg",
+      role: 'founder',
+    },
+    {
+      id: 3,
+      name: "Noor Bahsoun, PhD (c)",
+      title: "Scientist | Engineer",
+      description: "Executive Director description",
+      image: "/images/team/noor-bahsoun.jpeg",
+      role: 'founder',
+    },
+  ];
 
   return (
     <Layout>
@@ -146,10 +146,10 @@ const Leadership = () => {
             </div>
 
             {/* Executive Directors Section */}
-            {/* <div className="leadership-page__section">
+            <div className="leadership-page__section">
               <h2 className="leadership-page__section-title">Founders</h2>
               <div className="leadership-page__team-grid">
-                {executiveDirectors.map((member) => (
+                {executiveDirectors?.map((member) => (
                   <div key={member.id} className="leadership-page__member">
                     <div className="leadership-page__member-card">
                       <div className="leadership-page__hexagon-container">
@@ -170,7 +170,7 @@ const Leadership = () => {
                   </div>
                 ))}
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </section>

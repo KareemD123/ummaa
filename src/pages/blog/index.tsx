@@ -5,6 +5,7 @@ import Link from "next/link";
 import React from "react";
 
 import Footer from "@/components/footer";
+// import FloatingParticles from "@/components/custom-effects/FloatingParticles";
 import blogPosts from "@/data/blog-posts.json";
 import Main from "@/layouts/Main";
 
@@ -20,6 +21,13 @@ const Blog: NextPage = () => {
       </Head>
       <Main>
         <div className="blog-page">
+          {/* <FloatingParticles
+            colors={['#007bff', '#116466', '#1e3766']}
+            count={40}
+            minSize={3}
+            maxSize={8}
+            speed={0.3}
+          /> */}
           <div className="blog-hero">
             <div className="container">
               <h1>UMMAA Blog</h1>
