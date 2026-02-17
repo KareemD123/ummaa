@@ -20,7 +20,8 @@ const Leadership = () => {
     {
       id: 1,
       name: "Ziyaad Vahed",
-      title: "Deputy Chief of Staff, Intergovernmental & Agency Relations, City Manager's Office, City of Toronto",
+      title:
+        "Deputy Chief of Staff, Intergovernmental & Agency Relations, City Manager's Office, City of Toronto",
       description:
         "Director at Ministry of Children, Community, and Social Services",
       image: leadershipImages.ziyaadVahed,
@@ -56,7 +57,7 @@ const Leadership = () => {
       title: "Software Engineer & College Professor",
       description: "Founder description",
       image: "/images/team/Kareem_Headshot_Small.jpg",
-      role: 'founder',
+      role: "founder",
     },
     {
       id: 2,
@@ -64,7 +65,7 @@ const Leadership = () => {
       title: "Clinical Research Professional",
       description: "Executive Director description",
       image: "/images/team/alya-mohmood.jpg",
-      role: 'founder',
+      role: "founder",
     },
     {
       id: 3,
@@ -72,7 +73,7 @@ const Leadership = () => {
       title: "Scientist | Engineer",
       description: "Executive Director description",
       image: "/images/team/noor-bahsoun.jpeg",
-      role: 'founder',
+      role: "founder",
     },
   ];
 
