@@ -64,7 +64,7 @@ const Leadership = () => {
       name: "Alya Mohmood",
       title: "Clinical Research Professional",
       description: "Executive Director description",
-      image: "/images/team/alya-mohmood.jpg",
+      image: "/images/team/Alya-Mohmood.jpg",
       role: "founder",
     },
     {
